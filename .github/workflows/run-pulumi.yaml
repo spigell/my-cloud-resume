@@ -1,0 +1,60 @@
+name: Run deploy via Pulumi
+on:
+  push:
+    branches:
+      - production
+    paths:
+      - 'infra/**'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: infra
+
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: yarn install
+      - uses: pulumi/actions@v4
+        id: pulumi
+        with:
+          command: preview
+          stack-name: ${{ github.ref_name }}
+          work-dir: infra
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+  up:
+    needs:
+      - preview
+    name: Deploy
+    environment:
+      name: ${{ github.ref_name }}
+      url: ${{ steps.pulumi.outputs.urls }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Installing dependencies
+        run: yarn install
+        working-directory: infra
+      - uses: pulumi/actions@v4
+        id: pulumi
+        with:
+          command: up
+          stack-name: ${{ github.ref_name }}
+          work-dir: infra
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
