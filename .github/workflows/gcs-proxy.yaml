@@ -1,0 +1,80 @@
+name: Build and upload the GCS proxy
+on:
+  push:
+    branches:
+      - 'production'
+    paths:
+      - '.github/workflows/gcs-proxy.yaml'
+
+env:
+  REGISTRY: us-central1-docker.pkg.dev
+  GCS_REF: 2bee0b
+
+jobs:
+  docker-release:
+    name: Release a docker image
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Checkout submodule to needed ref
+        run: git checkout ${{ env.GCS_REF }}
+        working-directory: backend/gcs-proxy
+      - id: auth
+        name: Authenticate with Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          token_format: 'access_token'
+          credentials_json: ${{ secrets.GOOGLE_UPLOADER_CREDENTIALS }}
+          create_credentials_file: false
+      - name: Login to Artifact Registry
+        id: registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
+      - name: Compute docker tag
+        id: docker-tag
+        run: >-
+          echo "TAG=${{ env.REGISTRY }}/${{ env.GCP_PROJECT }}/resume-images/gcp-proxy:${{ env.GCS_REF }}" >> $GITHUB_OUTPUT
+      - id: docker-push-tagged
+        name: Tag Docker image and push to Google Artifact Registry
+        uses: docker/build-push-action@v2
+        with:
+          context: backend/gcs-proxy
+          push: true
+          tags: |
+            ${{ steps.docker-tag.outputs.TAG }}
+      # Need to update pulumi configuration
+      - name: Set gcs proxy image to pulumi configuration
+        working-directory: infra
+        run: pulumi config set --path cloud-resume:gcp.gcs-proxy ${{ steps.docker-tag.outputs.TAG }} -s ${{ github.ref_name }}
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_UPLOADER_CREDENTIALS }}
+      - uses: devops-infra/action-commit-push@master
+        id: commit-push
+        with:
+          github_token: "${{ github.token }}"
+          add_timestamp: true
+          commit_prefix: "[AUTO] "
+          commit_message: "Update version of gcs-proxy"
+          force: false
+          target_branch: gcs/version
+      - uses: devops-infra/action-pull-request@v0.5.5
+        with:
+          github_token: ${{ github.token }}
+          source_branch: ${{ steps.commit-push.outputs.branch_name }}
+          target_branch: ${{ github.ref_name }}
+          title: '[AUTO] Update version of gcs-proxy'
+          reviewer: spigell
+          assignee: spigell
+          label: automatic
+          old_string: "<!-- Add your description here -->"
+          new_string: "** Automatic pull request**"
+          get_diff: true
+          ignore_users: "dependabot"
+          allow_no_diff: false
