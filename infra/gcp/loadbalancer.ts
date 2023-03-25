@@ -4,6 +4,7 @@ import * as gcp from '@pulumi/gcp';
 
 const networkTier = 'STANDARD';
 const resumePath = '/resume.html';
+const startPath = '/start.html'
 const tokenParam = 'token';
 
 export function Deploy(
@@ -49,7 +50,7 @@ export function Deploy(
     defaultUrlRedirect: {
       stripQuery: true,
       httpsRedirect: true,
-      pathRedirect: '/404.html',
+      pathRedirect: startPath,
     },
     hostRules: [
       {
@@ -64,7 +65,7 @@ export function Deploy(
         defaultUrlRedirect: {
           stripQuery: true,
           httpsRedirect: true,
-          pathRedirect: '/404.html',
+          pathRedirect: startPath,
         },
         routeRules: [
           {
@@ -75,7 +76,7 @@ export function Deploy(
                 fullPathMatch: resumePath,
                 queryParameterMatches: [
                   {
-                    name: 'token',
+                    name: tokenParam,
                     exactMatch: rand.result,
                   },
                 ],
@@ -87,7 +88,12 @@ export function Deploy(
             service: service.selfLink,
             matchRules: [
               {
-                fullPathMatch: '/style.css',
+                headerMatches: [
+                  {
+                    headerName: 'Referer',
+                    suffixMatch: rand.result,
+                  },
+                ],
               },
             ],
           },
@@ -96,7 +102,7 @@ export function Deploy(
             service: service.selfLink,
             matchRules: [
               {
-                fullPathMatch: '/404.html',
+                fullPathMatch: startPath,
               },
             ],
           },

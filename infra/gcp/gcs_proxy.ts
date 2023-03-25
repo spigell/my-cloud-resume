@@ -1,10 +1,8 @@
-import * as pulumi from '@pulumi/pulumi';
 import * as gcp from '@pulumi/gcp';
 
 const name = 'gcs-proxy';
-const commit = '2bee0b10ceea7121acd3e240a4ab0855c1a93c52';
 
-export function Deploy(project: string, stack: string, region: string) {
+export function Deploy(project: string, stack: string, region: string, image: string) {
   const proxy = new gcp.cloudrun.Service(
     name,
     {
@@ -23,7 +21,7 @@ export function Deploy(project: string, stack: string, region: string) {
           },
         },
         spec: {
-          containerConcurrency: 2,
+          containerConcurrency: 3,
           containers: [
             {
               envs: [
@@ -32,7 +30,7 @@ export function Deploy(project: string, stack: string, region: string) {
                   value: `${project}-${stack}`,
                 },
               ],
-              image: pulumi.interpolate`gcr.io/${project}/${name}:${commit}`,
+              image: image,
               ports: [
                 {
                   containerPort: 8080,

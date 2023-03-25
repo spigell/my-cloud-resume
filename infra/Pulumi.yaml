@@ -1,3 +1,5 @@
 name: my-cloud-resume
 description: Based on Cloud Resume Challenge
+backend:
+  url: gs://spigell-pulumi-states
 runtime: nodejs

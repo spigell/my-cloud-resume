@@ -1,0 +1,3 @@
+[submodule "backend/gcs-proxy"]
+	path = backend/gcs-proxy
+	url = https://github.com/domZippilli/gcs-proxy-cloud-run.git
