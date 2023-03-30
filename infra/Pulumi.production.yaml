@@ -1,12 +1,14 @@
 secretsprovider: gcpkms://projects/spigell-resume-production/locations/global/keyRings/pulumi-runner-keyring/cryptoKeys/pulumi-runner-key
 encryptedkey: CiQAwI7Uw2DS8Bf4NiF3ajugXdBw62GlLvRVtJUlmbeFuKmT2AISSQAcq2Fz4pDcC/wESlXxGBPdbNs2SjmGC1cTfTEz6OT+mZ9SNAv4LH71eXqJYF/XxtarYyYeOyZ7FNY7mU6X/QTIL3u1T6Rjcbk=
 config:
+  cloud-resume:gcp:
+    gcs-proxy: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
   gcp:project: spigell-resume-production
   gcp:region: us-central1
   my-cloud-resume:resume:
     gcp:
       domains:
-      - spigell-resume.infraunlimited.tech
-      - spigell-resume-dev.infraunlimited.tech
+        - spigell-resume.infraunlimited.tech
+        - spigell-resume-dev.infraunlimited.tech
       gcs-proxy:
         image: ""
