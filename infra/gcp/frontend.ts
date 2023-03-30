@@ -2,7 +2,7 @@ import * as pulumi from '@pulumi/pulumi';
 import * as gcp from '@pulumi/gcp';
 import * as fs from 'fs';
 
-export function Deploy(project: string, stack: string) {
+export function Deploy(bucket: gcp.storage.Bucket) {
   const files = fs.readdirSync('../frontend');
 
   // Upload all files
@@ -24,14 +24,14 @@ export function Deploy(project: string, stack: string) {
         break;
     }
     new gcp.storage.BucketObject(
-      `${project}-${file}-deploy`,
+      `${file}-deploy`,
       {
-        bucket: `${project}-${stack}`,
+        bucket: pulumi.interpolate `${bucket.name}`,
         name: file,
         contentType: contentType,
         source: new pulumi.asset.FileAsset(`../frontend/${file}`),
       },
-      { deleteBeforeReplace: true }
+      { deleteBeforeReplace: true, dependsOn: [bucket]}
     );
   });
 }

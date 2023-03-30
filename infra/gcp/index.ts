@@ -11,31 +11,27 @@ const region = config.require('region');
 
 export class Resume {
   domains: string[];
-  stack: string;
   gcs_proxy_image: string;
   readonly project: string;
   readonly region: string;
 
-  constructor(domains: string[], gcs_proxy: string, stack: string) {
+  constructor(domains: string[], gcs_proxy: string) {
     this.domains = domains;
-    this.stack = stack;
     this.gcs_proxy_image = gcs_proxy;
     this.project = project;
     this.region = region;
   }
   Deploy() {
-    storage.Deploy(`${this.project}-${this.stack}`, this.region);
+    const bucket = storage.Deploy(`${this.project}`, this.region);
 
     const proxyName = proxy.Deploy(
       this.project,
-      this.stack,
       this.region,
       this.gcs_proxy_image
     );
 
     const { lb, urls } = loadbalancer.Deploy(
       this.project,
-      this.stack,
       this.region,
       this.domains,
       proxyName
@@ -47,7 +43,7 @@ export class Resume {
       )
     );
 
-    frontend.Deploy(this.project, this.stack);
+    frontend.Deploy(bucket);
 
     return urls;
   }

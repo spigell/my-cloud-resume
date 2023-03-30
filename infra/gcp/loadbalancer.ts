@@ -9,7 +9,6 @@ const tokenParam = 'token';
 
 export function Deploy(
   name: string,
-  stack: string,
   region: string,
   domains: string[],
   proxy: pulumi.Output<string>
@@ -20,13 +19,13 @@ export function Deploy(
   });
 
   const ipaddress = new gcp.compute.Address(name, {
-    name: `${name}-${stack}`,
+    name: `${name}`,
     networkTier: networkTier,
     addressType: 'EXTERNAL',
   });
 
   const eg = new gcp.compute.RegionNetworkEndpointGroup(name, {
-    name: `${name}-${stack}`,
+    name: `${name}`,
     networkEndpointType: 'SERVERLESS',
     region: region,
     cloudRun: {
@@ -35,7 +34,7 @@ export function Deploy(
   });
 
   const service = new gcp.compute.BackendService(name, {
-    name: `${name}-${stack}`,
+    name: `${name}`,
     enableCdn: false,
     connectionDrainingTimeoutSec: 10,
     backends: [
@@ -46,7 +45,7 @@ export function Deploy(
   });
 
   const httpsUmap = new gcp.compute.URLMap(`${name}-https`, {
-    name: `${name}-${stack}-https`,
+    name: `${name}-https`,
     defaultUrlRedirect: {
       stripQuery: true,
       httpsRedirect: true,
@@ -112,7 +111,7 @@ export function Deploy(
   });
 
   const httpUmap = new gcp.compute.URLMap(`${name}-http`, {
-    name: `${name}-${stack}-http`,
+    name: `${name}http`,
     defaultUrlRedirect: {
       stripQuery: false,
       httpsRedirect: true,
@@ -128,7 +127,7 @@ export function Deploy(
   const httpsTarget = new gcp.compute.TargetHttpsProxy(
     `${name}-https`,
     {
-      name: `${name}-${stack}-https`,
+      name: `${name}-https`,
       urlMap: httpsUmap.selfLink,
       sslCertificates: [certificate.id],
     },
@@ -138,14 +137,14 @@ export function Deploy(
   const httpTarget = new gcp.compute.TargetHttpProxy(
     `${name}-http`,
     {
-      name: `${name}-${stack}-http`,
+      name: `${name}-http`,
       urlMap: httpUmap.selfLink,
     },
     { dependsOn: [httpUmap] }
   );
 
   new gcp.compute.ForwardingRule(`${name}-https`, {
-    name: `${name}-${stack}-https`,
+    name: `${name}-https`,
     networkTier: networkTier,
     target: httpsTarget.selfLink,
     ipAddress: ipaddress.address,
@@ -154,7 +153,7 @@ export function Deploy(
   });
 
   new gcp.compute.ForwardingRule(`${name}-http`, {
-    name: `${name}-${stack}-http`,
+    name: `${name}-http`,
     networkTier: networkTier,
     target: httpTarget.selfLink,
     ipAddress: ipaddress.address,

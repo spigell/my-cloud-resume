@@ -14,8 +14,6 @@ type Config = {
   };
 };
 
-const stack = pulumi.getStack();
-
 const config = new pulumi.Config();
 
 const resume = config.requireObject<Config>('resume');
@@ -23,7 +21,6 @@ const resume = config.requireObject<Config>('resume');
 const gr = new gcp.Resume(
   resume.gcp.domains,
   resume.gcp.gcs.proxy.image,
-  stack
 );
 
 // Export urls as secrets.

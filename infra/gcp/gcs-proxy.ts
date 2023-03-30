@@ -4,7 +4,6 @@ const name = 'gcs-proxy';
 
 export function Deploy(
   project: string,
-  stack: string,
   region: string,
   image: string
 ) {
@@ -12,7 +11,7 @@ export function Deploy(
     name,
     {
       location: region,
-      name: `${name}-${stack}`,
+      name: `${name}`,
       project: project,
       metadata: {
         annotations: {
@@ -32,7 +31,7 @@ export function Deploy(
               envs: [
                 {
                   name: 'BUCKET_NAME',
-                  value: `${project}-${stack}`,
+                  value: `${project}`,
                 },
               ],
               image: image,
@@ -50,8 +49,6 @@ export function Deploy(
               },
             },
           ],
-          serviceAccountName:
-            '415992991707-compute@developer.gserviceaccount.com',
           timeoutSeconds: 300,
         },
       },

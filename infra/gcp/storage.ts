@@ -9,5 +9,5 @@ export function Deploy(name: string, region: string) {
     uniformBucketLevelAccess: true,
   });
 
-  return storage.name;
+  return storage;
 }
