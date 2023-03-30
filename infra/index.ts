@@ -18,10 +18,7 @@ const config = new pulumi.Config();
 
 const resume = config.requireObject<Config>('resume');
 
-const gr = new gcp.Resume(
-  resume.gcp.domains,
-  resume.gcp.gcs.proxy.image,
-);
+const gr = new gcp.Resume(resume.gcp.domains, resume.gcp.gcs.proxy.image);
 
 // Export urls as secrets.
 export const url = gr.Deploy()[0];

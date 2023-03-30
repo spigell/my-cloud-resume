@@ -26,12 +26,12 @@ export function Deploy(bucket: gcp.storage.Bucket) {
     new gcp.storage.BucketObject(
       `${file}-deploy`,
       {
-        bucket: pulumi.interpolate `${bucket.name}`,
+        bucket: pulumi.interpolate`${bucket.name}`,
         name: file,
         contentType: contentType,
         source: new pulumi.asset.FileAsset(`../frontend/${file}`),
       },
-      { deleteBeforeReplace: true, dependsOn: [bucket]}
+      { deleteBeforeReplace: true, dependsOn: [bucket] }
     );
   });
 }

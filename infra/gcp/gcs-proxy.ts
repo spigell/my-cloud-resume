@@ -2,11 +2,7 @@ import * as gcp from '@pulumi/gcp';
 
 const name = 'gcs-proxy';
 
-export function Deploy(
-  project: string,
-  region: string,
-  image: string
-) {
+export function Deploy(project: string, region: string, image: string) {
   const proxy = new gcp.cloudrun.Service(
     name,
     {
