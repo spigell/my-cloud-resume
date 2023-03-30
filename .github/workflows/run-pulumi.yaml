@@ -40,7 +40,7 @@ jobs:
     name: Deploy
     environment:
       name: ${{ github.ref_name }}
-      url: ${{ steps.pulumi.outputs.urls }}
+      url: ${{ steps.pulumi.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

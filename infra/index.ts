@@ -24,4 +24,4 @@ const gr = new gcp.Resume(
 );
 
 // Export urls as secrets.
-export const urls = pulumi.secret(gr.Deploy());
+export const url = gr.Deploy()[0];
