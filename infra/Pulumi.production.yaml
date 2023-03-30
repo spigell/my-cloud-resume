@@ -3,10 +3,12 @@ encryptedkey: CiQAwI7Uw2DS8Bf4NiF3ajugXdBw62GlLvRVtJUlmbeFuKmT2AISSQAcq2Fz4pDcC/
 config:
   gcp:project: spigell-resume-production
   gcp:region: us-central1
+  my-cloud-resume:gcp:
+    gcs-proxy: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
   my-cloud-resume:resume:
     gcp:
       domains:
-      - spigell-resume.infraunlimited.tech
-      - spigell-resume-dev.infraunlimited.tech
+        - spigell-resume.infraunlimited.tech
+        - spigell-resume-dev.infraunlimited.tech
       gcs-proxy:
         image: ""
