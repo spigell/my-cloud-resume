@@ -30,6 +30,7 @@ jobs:
         with:
           command: preview
           stack-name: ${{ github.ref_name }}
+          diff: true
           work-dir: infra
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
