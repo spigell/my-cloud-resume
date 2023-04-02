@@ -12,8 +12,9 @@ defaults:
 jobs:
   destroy:
     name: Destroy
+    if: github.event.ref_type == 'branch'
     environment:
-      name: ${{ github.ref_name }}
+      name: ${{ github.event.ref }}
       url: ${{ steps.pulumi.outputs.url }}
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +30,7 @@ jobs:
         id: pulumi
         with:
           command: destroy
-          stack-name: ${{ github.ref_name }}
+          stack-name: ${{ github.event.ref }}
           work-dir: infra
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
