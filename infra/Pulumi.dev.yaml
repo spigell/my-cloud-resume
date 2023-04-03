@@ -6,8 +6,8 @@ config:
   my-cloud-resume:resume:
     gcp:
       domains:
-      - domain1.com
-      - domain2.com
+      - spigell-resume.infraunlimited.tech
+      - spigell-resume-dev.infraunlimited.tech
       gcs:
         proxy:
           image: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
