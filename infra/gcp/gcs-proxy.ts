@@ -11,7 +11,7 @@ export function Deploy(project: string, region: string, image: string) {
       project: project,
       metadata: {
         annotations: {
-          'run.googleapis.com/ingress': 'all',
+          'run.googleapis.com/ingress': 'All',
         },
       },
       template: {
