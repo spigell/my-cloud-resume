@@ -59,5 +59,5 @@ export function Deploy(project: string, region: string, image: string) {
     member: 'allUsers',
   });
 
-  return proxy.name;
+  return proxy;
 }
