@@ -129,11 +129,24 @@ export class GCPClassic {
       },
     });
 
-    const certificate = new gcp.compute.ManagedSslCertificate(
+    const dnsAuth: pulumi.Output<string>[] = [];
+
+    this.params.domains.forEach((domain) => {
+      const a = new gcp.certificatemanager.DnsAuthorization(
+        this.params.name,
+        {
+          domain: domain,
+        }
+      );
+      dnsAuth.push(a.id);
+    });
+
+    const certificate = new gcp.certificatemanager.Certificate(
       this.params.name,
       {
         managed: {
           domains: this.params.domains,
+          dnsAuthorizations: dnsAuth,
         },
       }
     );
