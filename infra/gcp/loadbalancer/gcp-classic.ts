@@ -2,7 +2,6 @@ import * as pulumi from '@pulumi/pulumi';
 import * as random from '@pulumi/random';
 import * as gcp from '@pulumi/gcp';
 
-const networkTier = 'STANDARD';
 const tokenParam = 'token';
 
 export type Params = {
@@ -29,9 +28,8 @@ export class GCPClassic {
       }
     );
 
-    const ipaddress = new gcp.compute.Address(this.params.name, {
+    const ipaddress = new gcp.compute.GlobalAddress(this.params.name, {
       name: `${this.params.name}`,
-      networkTier: networkTier,
       addressType: 'EXTERNAL',
     });
 
@@ -131,13 +129,11 @@ export class GCPClassic {
 
     const dnsAuth: pulumi.Output<string>[] = [];
 
-    this.params.domains.forEach((domain) => {
-      const a = new gcp.certificatemanager.DnsAuthorization(
-        this.params.name,
-        {
-          domain: domain,
-        }
-      );
+    this.params.domains.forEach((domain, idx) => {
+      const a = new gcp.certificatemanager.DnsAuthorization(domain, {
+        name: `auth-${idx}`,
+        domain: domain,
+      });
       dnsAuth.push(a.id);
     });
 
@@ -151,12 +147,26 @@ export class GCPClassic {
       }
     );
 
+    const certificateMap = new gcp.certificatemanager.CertificateMap(
+      this.params.name,
+      {}
+    );
+
+    this.params.domains.forEach((domain) => {
+      new gcp.certificatemanager.CertificateMapEntry(domain, {
+        name: domain.replace(/\./g, '-'),
+        map: certificateMap.name,
+        certificates: [certificate.id],
+        hostname: domain,
+      });
+    });
+
     const httpsTarget = new gcp.compute.TargetHttpsProxy(
       `${this.params.name}-https`,
       {
         name: `${this.params.name}-https`,
         urlMap: httpsUmap.selfLink,
-        sslCertificates: [certificate.id],
+        certificateMap: pulumi.interpolate`//certificatemanager.googleapis.com/${certificateMap.id}`,
       },
       { dependsOn: [httpsUmap] }
     );
@@ -170,18 +180,16 @@ export class GCPClassic {
       { dependsOn: [httpUmap] }
     );
 
-    new gcp.compute.ForwardingRule(`${this.params.name}-https`, {
+    new gcp.compute.GlobalForwardingRule(`${this.params.name}-https`, {
       name: `${this.params.name}-https`,
-      networkTier: networkTier,
       target: httpsTarget.selfLink,
       ipAddress: ipaddress.address,
       portRange: '443',
       loadBalancingScheme: 'EXTERNAL',
     });
 
-    new gcp.compute.ForwardingRule(`${this.params.name}-http`, {
+    new gcp.compute.GlobalForwardingRule(`${this.params.name}-http`, {
       name: `${this.params.name}-http`,
-      networkTier: networkTier,
       target: httpTarget.selfLink,
       ipAddress: ipaddress.address,
       portRange: '80',

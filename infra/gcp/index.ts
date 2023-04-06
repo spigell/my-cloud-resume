@@ -9,7 +9,10 @@ const project = config.require('project');
 const region = config.require('region');
 
 export type GCP = {
-  loadbalancer: string;
+  loadbalancers: {
+    primary: string;
+    backup: string;
+  };
   domains: string[];
   gcs: GCSConfig;
 };
@@ -40,7 +43,7 @@ export class Resume {
     );
 
     const lb = new loadbalancer.Loadbalancer();
-    lb.setKind(this.config.loadbalancer);
+    lb.setKind(this.config.loadbalancers.primary);
 
     const urls = lb.deploy(
       this.project,
@@ -48,6 +51,17 @@ export class Resume {
       this.config.domains,
       deployedProxy
     );
+
+    if (this.config.loadbalancers.backup) {
+      const backupLb = new loadbalancer.Loadbalancer();
+      backupLb.setKind(this.config.loadbalancers.backup);
+      backupLb.deploy(
+        this.project,
+        this.region,
+        this.config.domains,
+        deployedProxy
+      );
+    }
 
     frontend.Deploy(bucket);
 
