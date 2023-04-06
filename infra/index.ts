@@ -1,24 +1,15 @@
 import * as gcp from './gcp';
 import * as pulumi from '@pulumi/pulumi';
 
-type GCSConfig = {
-  proxy: {
-    image: string;
-  };
-};
-
-type Config = {
-  gcp: {
-    domains: string[];
-    gcs: GCSConfig;
-  };
+export type Config = {
+  gcp: gcp.GCP;
 };
 
 const config = new pulumi.Config();
 
 const resume = config.requireObject<Config>('resume');
 
-const gr = new gcp.Resume(resume.gcp.domains, resume.gcp.gcs.proxy.image);
+const gr = new gcp.Resume(resume.gcp);
 
 // Export urls as secrets.
 export const url = gr.Deploy()[0];

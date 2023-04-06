@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "bin",
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "stripInternal": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  },
+  "files": [
+    "index.ts",
+    "provider.ts",
+    "traefik/index.ts",
+    "traefik/v1alpha1/index.ts",
+    "traefik/v1alpha1/ingressRoute.ts",
+    "traefik/v1alpha1/middleware.ts",
+    "types/index.ts",
+    "types/input.ts",
+    "types/output.ts",
+    "utilities.ts"
+  ]
+}

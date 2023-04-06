@@ -2,46 +2,66 @@ import * as pulumi from '@pulumi/pulumi';
 import * as storage from './storage';
 import * as loadbalancer from './loadbalancer';
 import * as proxy from './gcs-proxy';
-import * as dns from './dns';
 import * as frontend from './frontend';
 
 const config = new pulumi.Config('gcp');
 const project = config.require('project');
 const region = config.require('region');
 
-export class Resume {
+export type GCP = {
+  loadbalancers: {
+    primary: string;
+    backup: string;
+  };
   domains: string[];
-  gcs_proxy_image: string;
+  gcs: GCSConfig;
+};
+
+type GCSConfig = {
+  proxy: {
+    image: string;
+  };
+};
+
+export class Resume {
+  config: GCP;
   readonly project: string;
   readonly region: string;
 
-  constructor(domains: string[], gcs_proxy: string) {
-    this.domains = domains;
-    this.gcs_proxy_image = gcs_proxy;
+  constructor(config: GCP) {
+    this.config = config;
     this.project = project;
     this.region = region;
   }
   Deploy() {
     const bucket = storage.Deploy(`${this.project}`, this.region);
 
-    const proxyName = proxy.Deploy(
+    const deployedProxy = proxy.Deploy(
       this.project,
       this.region,
-      this.gcs_proxy_image
+      this.config.gcs.proxy.image
     );
 
-    const { lb, urls } = loadbalancer.Deploy(
+    const lb = new loadbalancer.Loadbalancer();
+    lb.setKind(this.config.loadbalancers.primary);
+
+    const urls = lb.deploy(
       this.project,
       this.region,
-      this.domains,
-      proxyName
+      this.config.domains,
+      deployedProxy
     );
 
-    dns.Deploy(
-      new Map(
-        this.domains.map((d) => [d, lb.get('ip') as pulumi.Output<string>])
-      )
-    );
+    if (this.config.loadbalancers.backup) {
+      const backupLb = new loadbalancer.Loadbalancer();
+      backupLb.setKind(this.config.loadbalancers.backup);
+      backupLb.deploy(
+        this.project,
+        this.region,
+        this.config.domains,
+        deployedProxy
+      );
+    }
 
     frontend.Deploy(bucket);
 
