@@ -8,6 +8,11 @@ export type Params = {
   proxy: pulumi.Output<string>;
   resumePath: string;
   startPath: string;
+  config: K8sTraefikConfig;
+};
+
+export type K8sTraefikConfig = {
+  basicAuth: boolean;
 };
 
 export class Traefik {
@@ -65,6 +70,48 @@ export class Traefik {
       },
     });
 
+    const middlewares = [
+      {
+        name: 'rewrite-host',
+        namespace: this.params.name,
+      },
+    ];
+
+    if (this.params.config.basicAuth) {
+      const basicAuthMiddlewareName = 'basic-auth';
+
+      // Create a Secret with basic auth credentials.
+      // Encoded with htpasswd tool
+      const basicAuthMiddlewareSecret = new kubernetes.core.v1.Secret(
+        basicAuthMiddlewareName,
+        {
+          metadata: {
+            name: basicAuthMiddlewareName,
+            namespace: this.params.name,
+          },
+          data: {
+            users: 'c3BpZ2VsbDp7U0hBfWNSRHRwTkNlQmlxbDVLT1FzS1Z5ckEwc0FpQT0K',
+          },
+        }
+      );
+      new traefik.v1alpha1.Middleware(basicAuthMiddlewareName, {
+        metadata: {
+          name: basicAuthMiddlewareName,
+          namespace: this.params.name,
+        },
+        spec: {
+          basicAuth: {
+            secret: basicAuthMiddlewareSecret.metadata.name,
+          },
+        },
+      });
+
+      middlewares.push({
+        name: basicAuthMiddlewareName,
+        namespace: this.params.name,
+      });
+    }
+
     const domainsRule = generateDomainsRule(this.params.domains);
 
     new traefik.v1alpha1.IngressRoute('ingress-route', {
@@ -85,12 +132,7 @@ export class Traefik {
                 port: 443,
               },
             ],
-            middlewares: [
-              {
-                name: 'rewrite-host',
-                namespace: this.params.name,
-              },
-            ],
+            middlewares: middlewares,
           },
           {
             match: domainsRule + ' && HeadersRegexp(`Referer`, `^.+.html$`)',
@@ -101,12 +143,7 @@ export class Traefik {
                 port: 443,
               },
             ],
-            middlewares: [
-              {
-                name: 'rewrite-host',
-                namespace: this.params.name,
-              },
-            ],
+            middlewares: middlewares,
           },
           {
             match: domainsRule,
@@ -117,16 +154,12 @@ export class Traefik {
                 port: 443,
               },
             ],
-            middlewares: [
-              {
-                name: 'rewrite-host',
-                namespace: this.params.name,
-              },
+            middlewares: middlewares.concat([
               {
                 name: 'redirect-to-start-page',
                 namespace: this.params.name,
               },
-            ],
+            ]),
           },
         ],
       },

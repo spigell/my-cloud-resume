@@ -13,3 +13,6 @@ config:
       loadbalancers:
         primary: gcp/classic
         backup: kubernetes/traefik
+        config:
+          traefik:
+            basicAuth: true

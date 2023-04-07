@@ -1,6 +1,7 @@
 import * as gcp from '@pulumi/gcp';
 import { GCPClassic } from './loadbalancer/gcp-classic';
 import { Traefik } from './loadbalancer/kubernetes-traefik';
+import { LBConfig } from './index';
 
 const resumePath = '/resume.html';
 const startPath = '/start.html';
@@ -17,6 +18,7 @@ export class Loadbalancer {
     name: string,
     region: string,
     domains: string[],
+    config: LBConfig,
     proxy: gcp.cloudrun.Service
   ) {
     switch (this.kind) {
@@ -27,6 +29,7 @@ export class Loadbalancer {
           proxy: proxy.statuses[0].url,
           resumePath: resumePath,
           startPath: startPath,
+          config: config.traefik,
         };
         return new Traefik(traefikParams).deploy();
       case 'gcp/classic':

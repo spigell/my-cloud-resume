@@ -3,6 +3,7 @@ import * as storage from './storage';
 import * as loadbalancer from './loadbalancer';
 import * as proxy from './gcs-proxy';
 import * as frontend from './frontend';
+import { K8sTraefikConfig } from './loadbalancer/kubernetes-traefik';
 
 const config = new pulumi.Config('gcp');
 const project = config.require('project');
@@ -10,6 +11,7 @@ const region = config.require('region');
 
 export type GCP = {
   loadbalancers: {
+    config: LBConfig;
     primary: string;
     backup: string;
   };
@@ -21,6 +23,10 @@ type GCSConfig = {
   proxy: {
     image: string;
   };
+};
+
+export type LBConfig = {
+  traefik: K8sTraefikConfig;
 };
 
 export class Resume {
@@ -49,6 +55,7 @@ export class Resume {
       this.project,
       this.region,
       this.config.domains,
+      this.config.loadbalancers.config,
       deployedProxy
     );
 
@@ -59,6 +66,7 @@ export class Resume {
         this.project,
         this.region,
         this.config.domains,
+        this.config.loadbalancers.config,
         deployedProxy
       );
     }
