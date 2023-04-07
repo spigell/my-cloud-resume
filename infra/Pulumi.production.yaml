@@ -11,8 +11,7 @@ config:
         proxy:
           image: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
       loadbalancers:
-        primary: gcp/classic
-        backup: kubernetes/traefik
+        primary: kubernetes/traefik
         config:
           traefik:
             basicAuth: true
