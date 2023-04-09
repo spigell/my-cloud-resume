@@ -6,8 +6,8 @@ config:
   my-cloud-resume:resume:
     gcp:
       domains:
-      - spigell-resume.infraunlimited.tech
-      - spigell-resume-dev.infraunlimited.tech
+      - dev.sergeichukh.cloud
+      - test.sergeichukh.cloud
       gcs:
         proxy:
           image: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
