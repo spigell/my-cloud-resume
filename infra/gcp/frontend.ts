@@ -19,6 +19,9 @@ export function Deploy(bucket: gcp.storage.Bucket) {
       case 'css':
         contentType = 'text/css';
         break;
+      case 'pdf':
+        contentType = 'application/pdf';
+        break;
       default:
         contentType = 'text/plain';
         break;
