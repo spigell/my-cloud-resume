@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="robots" content="noindex" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Resume - Start Bootstrap Theme</title>
+        <meta name="description" content="A simple resume site" />
+        <meta name="author" content="Sergei Chukh" />
+        <title>Sergei Chukh</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -35,8 +35,7 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Certifications</a></li>
                 </ul>
             </div>
         </nav>
@@ -50,11 +49,18 @@
                         <span class="text-primary">Chukh</span>
                     </h1>
                     <div class="subheading mb-5">
-                        Tel: (317) 585-8468 ·
                         <a href="mailto:spigelly@gmail.com">spigelly@gmail.com</a> ·
-                        <a href="tg:@schukh">@schukh (Telegram) </a>
+                        <a href="tg://resolve?domain=schukh">@schukh (Telegram) </a>
                     </div>
-                    <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+                    <p class="lead mb-5"><p>Hi there! My name is Sergei, and I'm a DevOps expert with 7 years of experience. With my expertise, I've built, deployed, and managed systems on public clouds like AWS, GCP, and Hetzner Cloud. I like to think of myself as a cloud whisperer - I can make it do whatever I want!</p>
+                    <p>When it comes to workload orchestrators, I'm a bit of a polyglot. I've worked with Kubernetes and Docker Swarm, and I'm always up for a challenge when it comes to orchestrating containers. I've also helped organizations implement robust continuous integration and continuous delivery pipelines using GitLab CI, Jenkins, TeamCity, and Github Actions. If you need someone to automate your deployment process, I'm the one for the job!</p>
+                    <p>I'm a big fan of configuration management tools, and Pulumi is one of my favorites. In fact, I've even written some code in Go and Typescript for Pulumi, which you can find on my GitHub profile.</p>
+                    <p>Of course, I've also got other configuration management tools in my arsenal, including Terraform, Ansible, Puppet, and Chef. These tools help me keep everything in check, so I can focus on the fun stuff - like monitoring and logging. I'm a big fan of Prometheus, Grafana and Loki, and I can help you set up a monitoring and logging solution that'll knock your socks off.</p>
+                    <p>When it comes to being a SRE, I've got you covered too. I know how to handle production issues and the necessity of on-call duties. I'm no stranger to late-night alerts and critical outages, and I'm always ready to spring into action to get things back on track.</p>
+                    <p>When I'm not busy automating all the things, you can find me tinkering with databases like PostgreSQL, MongoDB, and Redis, or writing code in languages like Go. And let's not forget about web servers - I've worked with Nginx and Traefik, and I know how to make them sing!</p>
+                    <p>So if you're looking for a DevOps expert or SRE who can make your cloud dreams come true, look no further than me. I'm the cloud whisperer you've been searching for!</p></p>
+                    <!-- Align text to right as signature -->
+                    <p class="lead mb-5" style="text-align: right;">Written with ChatGPT support :)</p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://linkedin.com/in/sergei-chukh"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://github.com/spigell"><i class="fab fa-github"></i></a>
@@ -69,35 +75,133 @@
                     <h2 class="mb-5">Experience</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Senior Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+                            <a class class="mb-0" href="https://gaijin.net/en">
+                                <img class="logo-gaijin-ent"></img>
+                            </a>
+                            <h3 class="mb-0">Administrator Linux</h3>
+                            <p> Working in a team supporting the primary games of Gaijin: Warthunder, Enlisted. Main duties:</p>
+                            <ul>
+                                <li>Successfully optimized infrastructure costs by implementing new tools and services that reduced expenses</li>
+                                <li>Minimized downtime and raised user happiness by implementing monitoring and alerting systems that proactively identified and addressed potential issues before they impacted users</li>
+                                <li>Troubleshot production and test environments, quickly resolving issues and minimizing disruptions to business operations</li>
+                                <li>Regularly participated in on-call duty, responding to and resolving incidents outside of regular business hours</li>
+                            </ul>
+
+                            Production Stack:
+                            <ul>
+                                <li> Linux (Centos7) </li>
+                                <li> Redis </li>
+                                <li> AWS (RDS, EC2, VPC, Route53) </li>
+                                <li> Graphite+telegraf </li>
+                                <li> Kubernetes on bare metal servers</li>
+                                <li> Docker as image builder and container runtime</li>
+                            </ul>
+
+                            IaC tools:
+                            <ul>
+                                <li> Puppet </li>
+                                <li> Ansible </li>
+                                <li> Terraform </li>
+                            </ul>
+
+                            Ci/CD:
+                            <ul>
+                                <li> Jenkins </li>
+                            </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">April 2022 - April 2023</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Developer</h3>
-                            <div class="subheading mb-3">Intelitec Solutions</div>
-                            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+                            <a class="mb-0" href="https://cloud.yandex.ru/">
+                                <img class="logo-yandex-cloud" width="150" height="40"></img>
+                                <br>
+                                <br>
+                            </a>
+                            <h3 class="mb-0">Support L2 Specialist</h3>
+                            <p>There is Level 2 (Premium) support in Yandex Cloud. As part of the team was responsible for the following:
+                            <ul>
+                                <li> Provided comprehensive support to high-value clients, resolving complex technical issues and managing customer expectations to increase customer satisfaction and retention. </li>
+                                <li> Collaborated with cross-functional teams, including product development and account management, to deliver exceptional support and identify opportunities for improvement </li>
+                                <li> Provided valuable feedback to the product development team by identifying areas of improvement based on direct client feedback </li>
+                                <li> Managed and resolved customer escalations </li>
+                                <li> Resolved tricky customer's issues </li>
+                            </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">December 2011 - March 2013</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2021 - March 2022</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Junior Web Designer</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
+                            <a class="mb-0" href="https://rtk-it.ru/">
+                                <img class="logo-rtk" width="150" height="60"></img>
+                                <br>
+                                <br>
+                            </a>
+                            <h3 class="mb-0">Devops engineer</h3>
+                            <p>Has worked in the streaming service "Wink"
+                                (https://wink.ru). Areas of responsibility:</p>
+                                <ul>
+                                  <li>Stable work of production and test environments (includes monitoring and troubleshooting)</li>
+                                  <li>Prepare new releases for production (stress testing, review migrations and code)</li>
+                                  <li>Supporting dev teams (CI/CD integrations, internal services)</li>
+                                </ul>
+                                Production stack:
+                                <ul>
+                                  <li>Linux (Centos 7)</li>
+                                  <li>PostgreSQL (+Pgbouncer)</li>
+                                  <li>NSQ</li>
+                                  <li>ClickHouse</li>
+                                  <li>Nginx</li>
+                                  <li>Reindexer (<a href="https://github.com/Restream/reindexer">https://github.com/Restream/reindexer</a>)</li>
+                                  <li>Prometheus Stack (+Victoria Metrics)</li>
+                                </ul>
+                                IaC:
+                                <ul>
+                                  <li>Opscode Chef</li>
+                                </ul>
+                                CI/CD:
+                                <ul>
+                                  <li>Gitlab</li>
+                                </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">July 2010 - December 2011</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">May 2019 - October 2021</span></div>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">Web Design Intern</h3>
-                            <div class="subheading mb-3">Shout! Media Productions</div>
-                            <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
+                            <div class="subheading mb-3"><a href="https://equilibrium.io/">Equilibrium.io</a></div>
+                            <h3 class="mb-0">Devops Engineer</h3>
+                            <p> EQ is a crypto FinTech startup (EOS and ETH blockchains). Some achievements: </p>
+                            <ul>
+                              <li>Implemented feature branch strategy for development at EQ, a crypto FinTech startup utilizing EOS and ETH blockchains</li>
+                              <li>Utilized docker swarm and TeamCity to streamline the development workflow</li>
+                              <li>Brought in and supported a robust monitoring system based on the Prometheus stack</li>
+                              <li>Contributed significantly to the success of the organization through these achievements, enabling more efficient development processes and better monitoring of key performance metrics</li>
+                            </ul>
+                            Used toolset:
+                            <ul>
+                                <li> Linux (Ubuntu) </li>
+                                <li> AWS (RDS, EC2, VPC, Route53) </li>
+                                <li> Docker (swarm mode) </li>
+                                <li> Prometheus Stack </li>
+                                <li> HashiCorp Vault </li>
+                                <li> TeamCity </li>
+                            </ul>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">October 2018 - May 2019</span></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <a class="mb-0" href="https://rtk-it.ru/">
+                                <img class="logo-rtk" width="150" height="60"></img>
+                                <br>
+                                <br>
+                            </a>
+                            <h3 class="mb-0">Technical Support Specialist</h3>
+                            <p>The central part of my work was troubleshooting our Linux platform</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2015 - September 2018</span></div>
                     </div>
                 </div>
             </section>
@@ -108,20 +212,11 @@
                     <h2 class="mb-5">Education</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h3 class="mb-0">University of Colorado Boulder</h3>
-                            <div class="subheading mb-3">Bachelor of Science</div>
-                            <div>Computer Science - Web Development Track</div>
-                            <p>GPA: 3.23</p>
+                            <h3 class="mb-0">Ukhta State Technical University </h3>
+                            <div class="subheading mb-3">Specialist</div>
+                            <div>Oil and Gas Technology</div>
                         </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">James Buchanan High School</h3>
-                            <div class="subheading mb-3">Technology Magnet Program</div>
-                            <p>GPA: 3.56</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
+                        <div class="flex-shrink-0"><span class="text-primary">2009 - 2014</span></div>
                     </div>
                 </div>
             </section>
@@ -130,96 +225,60 @@
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
-                    <div class="subheading mb-3">Programming Languages & Tools</div>
-                    <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="fa-brands fa-golang"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-docker"></i></li>
-                        
-                        <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+                    <div class="subheading mb-5">Skills & Tools</div>
+                    <ul>
+                        <li>
+                            Public Cloud: AWS, GCP, Hetzner Cloud
+                        </li>
+                        <li>
+                            Workload orchestrator: Kubernetes, docker swarm
+                        </li>
+                        <li>
+                            CI/CD: Gitlab CI, Jenkins, TeamCity, Github Actions
+                        </li>
+                        <li>
+                            Configuration management: Terraform, Pulumi, Ansible Puppet, Chef
+                        </li>
+                        <li>
+                            Monitoring: Prometheus, Grafana, Zabbix, Telegraf
+                        </li>
+                        <li>
+                            Logging: ELK, Loki
+                        </li>
+                        <li>
+                            Containerization: Docker
+                        </li>
+                        <li>
+                            Databases: PostgreSQL, MongoDB, Redis
+                        </li>
+                        <li>
+                            Programming Languages: Go,
+                        </li>
+                        <li>
+                            Scripting: Bash, Python
+                        </li>
+                        <li>
+                            Web Servers: Nginx, Traefik
+                        </li>
+                        <li>
+                            Operating Systems: Linux
+                        </li>
                     </ul>
-                    <div class="subheading mb-3">Workflow</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Mobile-First, Responsive Design
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Browser Testing & Debugging
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Cross Functional Teams
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            Agile Development & Scrum
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Interests</h2>
-                    <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                    <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
                 </div>
             </section>
             <hr class="m-0" />
             <!-- Awards-->
             <section class="resume-section" id="awards">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <h2 class="mb-5">Certifications</h2>
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Google Analytics Certified Developer
+                            <a href="https://rhtapps.redhat.com/verify?certId=170-296-552">
+                                Red Hat Certified Engineer
+                            </a>
                         </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            Mobile Web Specialist - Google Certification
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            2
-                            <sup>nd</sup>
-                            Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            1
-                            <sup>st</sup>
-                            Place - James Buchanan High School - Hackathon 2006
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                            3
-                            <sup>rd</sup>
-                            Place - James Buchanan High School - Hackathon 2005
-                        </li>
+                        <li>Coming more soon...</li>
                     </ul>
                 </div>
             </section>
