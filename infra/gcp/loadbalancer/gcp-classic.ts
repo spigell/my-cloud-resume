@@ -11,6 +11,7 @@ export type Params = {
   proxy: pulumi.Output<string>;
   resumePath: string;
   startPath: string;
+  pdfPath: string;
 };
 
 export class GCPClassic {
@@ -111,6 +112,21 @@ export class GCPClassic {
               matchRules: [
                 {
                   fullPathMatch: this.params.startPath,
+                },
+              ],
+            },
+            {
+              priority: 4,
+              service: service.selfLink,
+              matchRules: [
+                {
+                  fullPathMatch: this.params.pdfPath,
+                  queryParameterMatches: [
+                    {
+                      name: tokenParam,
+                      exactMatch: rand.result,
+                    },
+                  ],
                 },
               ],
             },

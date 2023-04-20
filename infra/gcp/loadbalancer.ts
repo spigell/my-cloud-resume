@@ -5,6 +5,7 @@ import { LBConfig } from './index';
 
 const resumePath = '/resume.html';
 const startPath = '/start.html';
+const pdfPath = '/resume.pdf';
 
 export class Loadbalancer {
   kind: string = 'gcp/classic';
@@ -29,6 +30,7 @@ export class Loadbalancer {
           proxy: proxy.statuses[0].url,
           resumePath: resumePath,
           startPath: startPath,
+          pdfPath: pdfPath,
           config: config.traefik,
         };
         return new Traefik(traefikParams).deploy();
@@ -39,6 +41,7 @@ export class Loadbalancer {
           domains: domains,
           proxy: proxy.name,
           resumePath: resumePath,
+          pdfPath: pdfPath,
           startPath: startPath,
         };
         return new GCPClassic(params).deploy();
