@@ -125,7 +125,7 @@ export class Traefik {
           {
             match:
               domainsRule +
-              ' && (Path(`/resume.html`) || Path(`/start.html`)) || Path(`/resume.pdf`)',
+              ' && (Path(`/resume.html`) || Path(`/start.html`) || Path(`/resume.pdf`))',
             kind: 'Rule',
             services: [
               {
