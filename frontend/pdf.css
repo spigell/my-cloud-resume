@@ -1,6 +1,3 @@
-.mb-3 .mb-5 .mb-0 .m-0 {
-  display: none;
-}
 
 hr {
   display: none;
@@ -13,5 +10,5 @@ section.resume-section {
 }
 
 h2 {
-  font-size: 36px !important;
+  font-size: 48px !important;
 }
