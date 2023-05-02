@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "mrm": "^4.1.14",
+    "prettier": "^2.8.8"
+  },
+  "dependencies": {},
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": "prettier --write"
+  }
+}
