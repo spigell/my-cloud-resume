@@ -14,6 +14,7 @@ export function Deploy(project: string, region: string, image: string) {
           'run.googleapis.com/ingress': 'all',
         },
       },
+      autogenerateRevisionName: true,
       template: {
         metadata: {
           annotations: {
