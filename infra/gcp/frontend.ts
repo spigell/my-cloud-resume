@@ -32,6 +32,7 @@ export function Deploy(bucket: gcp.storage.Bucket) {
         bucket: pulumi.interpolate`${bucket.name}`,
         name: file,
         contentType: contentType,
+        cacheControl: 'max-age=3600',
         source: new pulumi.asset.FileAsset(`../frontend/${file}`),
       },
       { deleteBeforeReplace: true, dependsOn: [bucket] }
