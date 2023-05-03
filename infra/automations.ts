@@ -1,13 +1,12 @@
-// Discription: This file is used to purge Cloudflare cache for files that was been updated.
-// It is assume that all domains in configuration are using Cloudflare DNS and belongs to the same zone.
-// Additional work needed.
+// Discription: This file contains automations after pulumi operations:
+// - purge Cloudflare cache for files that was been updated in GCS/S3.
 import {
   LocalProgramArgs,
   LocalWorkspace,
   EngineEvent,
 } from '@pulumi/pulumi/automation';
 import * as path from 'path';
-import * as cloudflare from 'cloudflare';
+import cloudflare from 'cloudflare';
 import { Domain, CFConfig } from './gcp';
 
 declare var process: {
