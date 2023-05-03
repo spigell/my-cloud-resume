@@ -34,16 +34,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Installing dependencies
+      - name: Install dependencies
         run: yarn install
-      - uses: pulumi/actions@v4
-        id: pulumi
-        with:
-          command: preview
-          stack-name: ${{ github.ref_name }}
-          diff: true
-          work-dir: infra
+      - name: Install pulumi cli
+        uses: pulumi/actions@v4
+      - name: Run pulumi preview via automation API
+        run: ts-node automation.ts
         env:
+          DRY_RUN: true
+          STACK: ${{ github.ref_name }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
   up:
     needs:
@@ -51,7 +50,7 @@ jobs:
     name: Deploy
     environment:
       name: ${{ github.ref_name }}
-      url: ${{ steps.pulumi.outputs.url }}
+      url: ${{ steps.get-env-url.outputs.url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -70,12 +69,16 @@ jobs:
           node-version: 18
       - name: Installing dependencies
         run: yarn install
-        working-directory: infra
-      - uses: pulumi/actions@v4
-        id: pulumi
-        with:
-          command: up
-          stack-name: ${{ github.ref_name }}
-          work-dir: infra
+      - name: Install pulumi cli
+        uses: pulumi/actions@v4
+      - name: Run pulumi preview via automation API
+        run: ts-node automation.ts
+        env:
+          DRY_RUN: true
+          STACK: ${{ github.ref_name }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      - name: Get env url from pulumi output
+        id: get-env-url
+        run: echo URL=$(pulumi stack ouputs url) >> $GITHUB_OUTPUT
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
