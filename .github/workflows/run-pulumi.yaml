@@ -42,7 +42,7 @@ jobs:
         run: npx ts-node ./automations.ts
         env:
           DRY_RUN: true
-          STACK: ${{ github.ref_name }}
+          STACK_NAME: ${{ github.ref_name }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
   up:
     needs:
@@ -71,10 +71,10 @@ jobs:
         run: yarn install
       - name: Install pulumi cli
         uses: pulumi/actions@v4
-      - name: Run pulumi preview via automation API
+      - name: Run pulumi update via automation API
         run: npx ts-node ./automations.ts
         env:
-          STACK: ${{ github.ref_name }}
+          STACK_NAME: ${{ github.ref_name }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
       - name: Get env url from pulumi output
         id: get-env-url

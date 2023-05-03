@@ -14,6 +14,7 @@ declare var process: {
     STACK_NAME: string;
     DRY_RUN: string;
   };
+  exit: (code?: number) => void;
 };
 
 // Custom logger for better UX
@@ -114,4 +115,5 @@ function purgeCFFiles(cf: CFConfig[], files: string[]) {
 
 main().catch((err) => {
   console.error(err);
+  process.exit(1);
 });
