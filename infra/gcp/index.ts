@@ -15,8 +15,19 @@ export type GCP = {
     primary: string;
     backup: string;
   };
-  domains: string[];
+  domains: Domain[];
   gcs: GCSConfig;
+};
+
+export type Domain = {
+  type: string;
+  config: CFConfig;
+};
+
+export type CFConfig = {
+  record: string;
+  zoneId: string;
+  token: string;
 };
 
 type GCSConfig = {
@@ -40,6 +51,7 @@ export class Resume {
     this.region = region;
   }
   Deploy() {
+    const domains = this.config.domains.map((domain) => domain.config.record);
     const bucket = storage.Deploy(`${this.project}`, this.region);
 
     const deployedProxy = proxy.Deploy(
@@ -54,7 +66,7 @@ export class Resume {
     const urls = lb.deploy(
       this.project,
       this.region,
-      this.config.domains,
+      domains,
       this.config.loadbalancers.config,
       deployedProxy
     );
@@ -65,7 +77,7 @@ export class Resume {
       backupLb.deploy(
         this.project,
         this.region,
-        this.config.domains,
+        domains,
         this.config.loadbalancers.config,
         deployedProxy
       );

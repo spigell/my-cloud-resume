@@ -6,13 +6,17 @@ config:
   my-cloud-resume:resume:
     gcp:
       domains:
-      - dev.sergeichukh.cloud
-      - test.sergeichukh.cloud
+        - config:
+            record: dev.sergeichukh.cloud
+            zoneId: 42aa355ee597a9aa3ea2f3ebbc1f6190
+            token:
+              secure: v1:iqMSmJZ58DZ0kqsz:f9aZwty0K0nuTakdalFaVnfs5ODYXcIOgub5BSOJcEYbitcuS/ftRIAWFY8cBFdfPaFSt2/0UFs=
+          type: cloudflare
       gcs:
         proxy:
           image: us-central1-docker.pkg.dev/spigell-resume-production/resume-images/gcp-proxy:2bee0b
       loadbalancers:
-        primary: kubernetes/traefik
         config:
           traefik:
             basicAuth: true
+        primary: kubernetes/traefik
