@@ -39,7 +39,7 @@ jobs:
       - name: Install pulumi cli
         uses: pulumi/actions@v4
       - name: Run pulumi preview via automation API
-        run: ts-node automation.ts
+        run: npx ts-node ./automations.ts
         env:
           DRY_RUN: true
           STACK: ${{ github.ref_name }}
@@ -72,7 +72,7 @@ jobs:
       - name: Install pulumi cli
         uses: pulumi/actions@v4
       - name: Run pulumi preview via automation API
-        run: ts-node automation.ts
+        run: npx ts-node ./automations.ts
         env:
           DRY_RUN: true
           STACK: ${{ github.ref_name }}
