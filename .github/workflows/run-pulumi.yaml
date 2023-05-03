@@ -78,6 +78,6 @@ jobs:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
       - name: Get env url from pulumi output
         id: get-env-url
-        run: echo URL=$(pulumi stack ouputs url) >> $GITHUB_OUTPUT
+        run: echo URL=$(pulumi stack output url -s ${{ github.ref_name }}) >> $GITHUB_OUTPUT
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}

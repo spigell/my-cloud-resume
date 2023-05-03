@@ -6,16 +6,9 @@ import {
   EngineEvent,
 } from '@pulumi/pulumi/automation';
 import * as path from 'path';
+import * as process from 'process';
 import cloudflare from 'cloudflare';
 import { Domain, CFConfig } from './gcp';
-
-declare var process: {
-  env: {
-    STACK_NAME: string;
-    DRY_RUN: string;
-  };
-  exit: (code?: number) => void;
-};
 
 // Custom logger for better UX
 const log = (function () {
@@ -33,7 +26,7 @@ const cloudProviders: string[] = ['gcp'];
 async function main() {
   // Create a workspace with pulumi unattended login using an inline pulumi program
   const args: LocalProgramArgs = {
-    stackName: stackName,
+    stackName: stackName as string,
     workDir: '.',
   };
 
