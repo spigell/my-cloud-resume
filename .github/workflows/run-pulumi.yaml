@@ -4,6 +4,7 @@ on:
     branches:
       - production
       - dev
+      - feature/build-and-deploy-pdf
     paths:
       - 'infra/**'
       - 'frontend/**'
@@ -21,6 +22,10 @@ jobs:
       name: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v3
+      - uses: benjlevesque/short-sha@v2.2
+        id: short-sha
+        with:
+          length: 6
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
@@ -38,6 +43,17 @@ jobs:
         run: yarn install
       - name: Install pulumi cli
         uses: pulumi/actions@v4
+      - name: Wait for builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: "Build and save html and pdf"
+          repo-token: ${{ github.token }}
+          wait-interval: 10
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts-${{ steps.short-sha.outputs.sha }}
+          path: ../frontend
       - name: Run pulumi preview via automation API
         run: npx ts-node ./automations.ts
         env:
