@@ -9,6 +9,7 @@ defaults:
 
 jobs:
   build:
+    name: Build and save html and pdf
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,4 +22,4 @@ jobs:
         with:
           name: build-artifacts-${{ steps.short-sha.outputs.sha }}
           path: |
-            *.pdf
+            ./*.pdf
