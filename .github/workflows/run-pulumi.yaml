@@ -7,6 +7,7 @@ on:
     paths:
       - 'infra/**'
       - 'frontend/**'
+      - '.github/**'
 
 defaults:
   run:
@@ -21,6 +22,10 @@ jobs:
       name: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v3
+      - uses: benjlevesque/short-sha@v2.2
+        id: short-sha
+        with:
+          length: 6
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
@@ -38,6 +43,21 @@ jobs:
         run: yarn install
       - name: Install pulumi cli
         uses: pulumi/actions@v4
+      - name: Wait for builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: "Build and save html and pdf"
+          repo-token: ${{ github.token }}
+          wait-interval: 10
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: all-build-site-and-pdf.yaml
+          workflow_conclusion: success
+      - name: Copy pdf to frontend
+        run: mv -v ../build-artifacts-*/*.pdf ../frontend
       - name: Run pulumi preview via automation API
         run: npx ts-node ./automations.ts
         env:
@@ -54,6 +74,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: benjlevesque/short-sha@v2.2
+        id: short-sha
+        with:
+          length: 6
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
@@ -71,6 +95,21 @@ jobs:
         run: yarn install
       - name: Install pulumi cli
         uses: pulumi/actions@v4
+      - name: Wait for builds
+        uses: lewagon/wait-on-check-action@v1.3.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: "Build and save html and pdf"
+          repo-token: ${{ github.token }}
+          wait-interval: 10
+      - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: all-build-site-and-pdf.yaml
+          workflow_conclusion: success
+      - name: Copy pdf to frontend
+        run: mv -v ../build-artifacts-*/*.pdf ../frontend
       - name: Run pulumi update via automation API
         run: npx ts-node ./automations.ts
         env:

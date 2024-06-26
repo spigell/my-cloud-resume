@@ -3,3 +3,7 @@
 *.sublime-workspace
 node_modules
 .husky
+
+*.pdf
+
+resume/jsonresume-theme-relaxed
