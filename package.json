@@ -1,13 +1,13 @@
 {
   "devDependencies": {
-    "@types/node": "^20.14.8",
-    "husky": "^8.0.3",
-    "mrm": "^4.1.14",
-    "prettier": "^2.8.8"
+    "@types/node": "^22.10.1",
+    "husky": "^9.1.7",
+    "mrm": "^4.1.22",
+    "prettier": "^3.4.2"
   },
   "dependencies": {
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.2"
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "prepare": "husky install"
