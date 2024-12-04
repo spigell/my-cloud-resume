@@ -1,4 +1,4 @@
-import * as ru from './src/ru';
+import * as ru from './src/json-resume-ru';
 
 ru.data.meta.version = 'v0.0.1';
 
@@ -17,7 +17,7 @@ const jsonData = JSON.stringify(
     certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
   },
   null,
-  2
+  2,
 );
 
 console.log(jsonData);
