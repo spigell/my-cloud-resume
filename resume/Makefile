@@ -7,7 +7,7 @@ clean:
 .build-pdf:
 	git clone https://github.com/ObserverOfTime/jsonresume-theme-relaxed
 	cd jsonresume-theme-relaxed &&\
-	npm install &&\
+	npm install && npm add ts-node@v9.1 &&\
 	cp ../i18n-ru.json ./i18n/ru.json -v &&\
 	sed 's/Lato/Roboto/g' -i ./src/resume.css &&\
     for a in $(RESUME_PDF_LIST); do \
