@@ -1,4 +1,5 @@
 RESUME_PDF_LIST := devops-sre-pdf-ru
+RESUME_HH_LIST := devops-sre-hh-ru
 
 clean:
 	rm -rfv jsonresume-theme-relaxed
@@ -13,5 +14,11 @@ clean:
         npx ts-node ../$${a}.ts > resume.json &&\
 		npm run build -- ../resume-$${a}.pdf; \
     done
+
+.build-hh-data:
+	for a in $(RESUME_HH_LIST); do \
+        	yarn -s ts-node resume/$${a}.ts > $${a}.json ;\
+	done
+
 
 build: clean .build-pdf

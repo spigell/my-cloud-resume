@@ -7,3 +7,4 @@ node_modules
 *.pdf
 
 resume/jsonresume-theme-relaxed
+resume/*.json
