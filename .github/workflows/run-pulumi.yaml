@@ -36,13 +36,15 @@ jobs:
           cluster_name: 'main'
           location: 'us-central1-c'
       - name: Setup Node LTS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
       - name: Install dependencies
         run: yarn install
       - name: Install pulumi cli
         uses: pulumi/actions@v4
+        with:
+          pulumi-version: 3.142.0
       - name: Wait for builds
         uses: lewagon/wait-on-check-action@v1.3.1
         with:

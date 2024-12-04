@@ -38,7 +38,7 @@ async function main() {
   // Iterate over cloudProviders and get info from pulumi config
   cloudProviders.forEach((provider: string) => {
     const cf = decoded[provider].domains.filter(
-      (domain: Domain) => domain.type === 'cloudflare'
+      (domain: Domain) => domain.type === 'cloudflare',
     );
     const cfg = cf.map((domain: Domain) => domain.config);
     cfDomains.push(cfg);
@@ -94,15 +94,13 @@ function purgeCFFiles(cf: CFConfig[], files: string[]) {
   const filesToPurge: string[] = [];
   cf.forEach((cfg) => {
     const c = new cloudflare({
-      token: cfg.token,
+      apiToken: cfg.token,
     });
     files.forEach((file) => {
       filesToPurge.push(`https://${cfg.record}/${file}`);
     });
     log(`puring cache for files: ${filesToPurge}`);
-    c.zones.purgeCache(cfg.zoneId, {
-      files: filesToPurge,
-    });
+    c.cache.purge({ zone_id: cfg.zoneId, files: filesToPurge });
   });
 }
 
