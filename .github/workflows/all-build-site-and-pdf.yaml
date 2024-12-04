@@ -17,6 +17,9 @@ jobs:
         id: short-sha
         with:
           length: 6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16.x
       - run: make build
       - uses: actions/upload-artifact@v4
         with:
