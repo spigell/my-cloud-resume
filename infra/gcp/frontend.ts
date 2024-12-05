@@ -35,7 +35,7 @@ export function Deploy(bucket: gcp.storage.Bucket) {
         cacheControl: 'max-age=7200',
         source: new pulumi.asset.FileAsset(`../frontend/${file}`),
       },
-      { deleteBeforeReplace: true, dependsOn: [bucket] }
+      { deleteBeforeReplace: true, dependsOn: [bucket] },
     );
   });
 }

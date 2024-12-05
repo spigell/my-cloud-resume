@@ -13,6 +13,7 @@ const jsonData = JSON.stringify(
       ru.data.work.rostelecom,
       ru.data.work.restream,
     ],
+    skills: ru.data.skills,
     languages: [ru.data.languages.russian, ru.data.languages.english],
     certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
   },

@@ -13,8 +13,7 @@ export const data: Data = {
     email: 'spigelly@gmail.com',
     website: 'https://sergeichukh.cloud',
     summary: `Привет! Ищу продуктовую компанию в сферах:
-    - Облачные провайдеры (paas)
-    - Игровые студии
+    - Блокчейн
     - Биржи и финтех компании
     Развиваюсь в сторону SRE с уклоном в безопасность.
     Ничего не имею против "legacy" проектов, которые приносят деньги.
@@ -37,17 +36,19 @@ export const data: Data = {
   },
   work: {
     nda: {
-      company: 'NDA (финансовая компания)',
+      name: 'NDA (финансовая компания)',
       position: 'DevOps инженер',
       startDate: '2023-06',
-      summary: `- Поддержка работоспособности, настройка мониторинга для сервисов, аудит безопасности.
+      endDate: '2024-12',
+      summary: `Компания предоставляет услуги для клиентов на рынке Forex.
 - Прорабатывание архитектуры взаимодействия приложений.
-- Перенос сервисов в kubernetes (k8s), написание helm чартов.
-      
-Стек: git, AWS, ansible, kubernetes, k8s (deckhouse), helm, werf, Golang, Pulumi, PostgreSQL, Sentry, Gitlab, MySQL, Redis, Prometheus stack.`,
+- Перенос сервисов в kubernetes (k8s), написание helm чартов.`,
+      highlights: [
+        'Стек: git, AWS, ansible, kubernetes, k8s (deckhouse), helm, werf, Golang, Pulumi, PostgreSQL, Sentry, Gitlab, MySQL, Redis, Prometheus stack.',
+      ],
     },
     gaijin: {
-      company: 'Gaijin Entertainment',
+      name: 'Gaijin Entertainment',
       position: 'DevOps Engineer / SRE',
       location: 'Кипр',
       startDate: '2022-04',
@@ -58,29 +59,27 @@ export const data: Data = {
 - Обновление платформ, стандартизация процесса, описывание в вики в виде SOP
 - Улучшение платформы для раздачи игровых клиентов как через собственную сеть CDN (p2p и http трафик), так и через провайдеров (GCORE, Cloudflare, AWS Cloudfront)
 - Улучшение devEx для локальной разработки: контейнеризация сервисов со встроенными средствами дебага (delve)
-- Внедрение kubernetes на тестовых стендах для запуска серверной части игр
-
-Стек: GIT, Linux (Centos7), Redis, AWS (RDS, EC2, VPC, Route53), Graphite+telegraf, Kubernetes на железе, Docker как окружение сборки, Golang, Puppet/Ansible/Terraform, Jenkins, Gerrit.`,
+- Внедрение kubernetes на тестовых стендах для запуска серверной части игр`,
       highlights: [
+        'Стек: GIT, Linux (Centos7), Redis, AWS (RDS, EC2, VPC, Route53), Graphite+telegraf, Kubernetes на железе, Docker как окружение сборки, Golang, Puppet/Ansible/Terraform, Jenkins, Gerrit.',
         'Сделал кастомный service discovery через, использую нативные механизмы etcd. Клиент был ввиде сайдкара, который жил рядом с сервисами. Мог проверять состояние "живости" сервиса.',
         'Описал весь стек серверной части раздачи игровых клиентов в виде docker-compose стека. Контейнеризовал большое количество C++ и Golang сервисов.',
       ],
       website: 'https://gaijin.net',
     },
     yandex: {
-      company: 'Яндекс',
+      name: 'Яндекс',
       position: 'Инженер L2 поддержки Яндекс.Облака',
       location: 'Москва',
       startDate: '2021-12',
       endDate: '2022-03',
       summary: `Был частью команды второй линии поддержки Яндекс Облака:
 - Поддержка клиентов в тикетах.
-- Troubleshooting сервиса на стороне Облака (MDB, Compute, Kubernetes).
-- Проработка решений для задач клиента.`,
+- Troubleshooting сервиса на стороне Облака (MDB, Compute, Kubernetes).`,
       website: 'https://www.yandex.ru',
     },
     rostelecom: {
-      company: 'Ростетелеком ИТ',
+      name: 'Ростетелеком ИТ',
       position: 'DevOps Engineer / SRE',
       location: 'Россия',
       startDate: '2019-05',
@@ -92,13 +91,14 @@ export const data: Data = {
 - Обслуживание баз данных PostgreSQL (бекап, репликация, оценка производительности).
 - Автоматизация задач и процесса CI/CD (Gitlab CI).
 - Поддержка продуктовой команды, предоставление и создание инструментов as a service.
-Также, занимался нетехническими задачами: обучение дежурной смены новой платформе, работой с бизнес аналитиками, планированием и заказами нового оборудования для платформы.
-
-Стек: Git, Linux (Centos 7), PostgreSQL (+Pgbouncer), NSQ, ClickHouse, Nginx, Reindexer (https://github.com/Restream/reindexer), Prometheus Stack (+Victoria Metrics), Opscode Chef, Gitlab, Golang.`,
+Также, занимался нетехническими задачами: обучение дежурной смены новой платформе, работой с бизнес аналитиками, планированием и заказами нового оборудования для платформы`,
+      highlights: [
+        'Стек: Git, Linux (Centos 7), PostgreSQL (+Pgbouncer), NSQ, ClickHouse, Nginx, Reindexer (https://github.com/Restream/reindexer), Prometheus Stack (+Victoria Metrics), Opscode Chef, Gitlab, Golang.',
+      ],
       website: 'https://rtkit.ru',
     },
     equilibrium: {
-      company: 'Equilibrium',
+      name: 'Equilibrium',
       position: 'DevOps Engineer',
       location: 'equilibrium.io',
       startDate: '2018-10',
@@ -107,26 +107,22 @@ export const data: Data = {
 - Создание и настройка ресурсов в публичном облаке (AWS).
 - Поддержка публичных нод для блокчейнов (Parity для ETH, nodeos для EOS).
 - Тушение пожаров и анализ при чрезвычайных ситуаций.
-- Добавил feature branch подход для разработки через docker swarm на тестовом стенде. У команды был на это запрос.
-
-Стек: Linux (Ubuntu), AWS (RDS, EC2, VPC, Route53), Docker swarm, Prometheus Stack, HashiCorp Vault, Teamcity.`,
+- Добавил feature branch подход для разработки через docker swarm на тестовом стенде. У команды был на это запрос`,
+      highlights: [
+        'Стек: Linux (Ubuntu), AWS (RDS, EC2, VPC, Route53), Docker swarm, Prometheus Stack, HashiCorp Vault, Teamcity.',
+      ],
       website: 'https://equilibrium.io',
     },
     restream: {
-      company: 'Рестрим',
+      name: 'Рестрим',
       position: 'Инженер отдела мониторинга',
       location: 'Москва',
       startDate: '2016-02',
       endDate: '2018-10',
       summary: `Проект "Интерактивное ТВ" от Ростелеком. Работал в отделе мониторинга.
 Основные обязанности:
-- Мониторинг сервисов и серверов (Zabbix).
-- Устранение неисправностей в работе ПО на серверах Linux и абонентских устройствах (iptv STB).
 - Обработка заявок в трекерной системе (Jira).
-- Работы по начальной настройке ОС (CentOS) на серверах и инвенторизация через IaC (puppet).
-- Работа с GIT (gitlab-CI и gerrit).
-- Написание скриптов на sh/bash для автоматизации работы.
-- Проведение работ в ночное время.`,
+- Работы по начальной настройке ОС (CentOS) на серверах и инвенторизация через IaC (puppet).`,
       website: 'http://restream.rt.ru',
     },
   },
@@ -144,4 +140,36 @@ export const data: Data = {
       issuer: 'The Linux Foundation',
     },
   },
+  skills: [
+    {
+      name: 'Kubernetes',
+      level: 'advanced',
+      keywords: ['k8s', 'helm'],
+    },
+    {
+      name: 'IaC',
+      level: 'advanced',
+      keywords: ['pulumi', 'terraform', 'ansible', 'chef', 'puppet'],
+    },
+    {
+      name: 'Linux',
+      level: 'advanced',
+      keywords: ['Debian', 'Talos', 'RHEL'],
+    },
+    {
+      name: 'Cloud',
+      level: 'advanced',
+      keywords: ['AWS', 'GCP', 'Hetzner Cloud'],
+    },
+    {
+      name: 'Databases',
+      level: 'advanced',
+      keywords: ['PostgreSQL', 'MySQL', 'MongoDB'],
+    },
+    {
+      name: 'Golang',
+      level: 'intermediate',
+      keywords: ['go', 'golang'],
+    },
+  ],
 };

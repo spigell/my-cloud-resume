@@ -33,7 +33,7 @@ export class Traefik {
       },
       spec: {
         externalName: this.params.proxy.apply((proxy) =>
-          proxy.slice('https://'.length)
+          proxy.slice('https://'.length),
         ),
         type: 'ExternalName',
       },
@@ -49,7 +49,7 @@ export class Traefik {
         headers: {
           customRequestHeaders: {
             Host: this.params.proxy.apply((proxy) =>
-              proxy.slice('https://'.length)
+              proxy.slice('https://'.length),
             ),
           },
         },
@@ -92,7 +92,7 @@ export class Traefik {
           data: {
             users: 'c3BpZ2VsbDp7U0hBfWNSRHRwTkNlQmlxbDVLT1FzS1Z5ckEwc0FpQT0K',
           },
-        }
+        },
       );
       new traefik.v1alpha1.Middleware(basicAuthMiddlewareName, {
         metadata: {
@@ -168,8 +168,8 @@ export class Traefik {
     const urls = new Array<pulumi.Output<string>>();
     this.params.domains.forEach((d) =>
       urls.push(
-        pulumi.interpolate`https://${d}${this.params.resumePath}` as pulumi.Output<string>
-      )
+        pulumi.interpolate`https://${d}${this.params.resumePath}` as pulumi.Output<string>,
+      ),
     );
 
     return urls;

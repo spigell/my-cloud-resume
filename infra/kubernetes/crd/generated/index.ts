@@ -20,7 +20,7 @@ pulumi.runtime.registerResourcePackage('crds', {
   constructProvider: (
     name: string,
     type: string,
-    urn: string
+    urn: string,
   ): pulumi.ProviderResource => {
     if (type !== 'pulumi:providers:crds') {
       throw new Error(`unknown provider type ${type}`);

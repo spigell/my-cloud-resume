@@ -57,7 +57,7 @@ export class Resume {
     const deployedProxy = proxy.Deploy(
       this.project,
       this.region,
-      this.config.gcs.proxy.image
+      this.config.gcs.proxy.image,
     );
 
     const lb = new loadbalancer.Loadbalancer();
@@ -68,7 +68,7 @@ export class Resume {
       this.region,
       domains,
       this.config.loadbalancers.config,
-      deployedProxy
+      deployedProxy,
     );
 
     if (this.config.loadbalancers.backup) {
@@ -79,7 +79,7 @@ export class Resume {
         this.region,
         domains,
         this.config.loadbalancers.config,
-        deployedProxy
+        deployedProxy,
       );
     }
 

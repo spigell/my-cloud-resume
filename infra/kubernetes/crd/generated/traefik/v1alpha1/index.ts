@@ -28,5 +28,5 @@ const _module = {
 pulumi.runtime.registerResourceModule(
   'crds',
   'traefik.containo.us/v1alpha1',
-  _module
+  _module,
 );

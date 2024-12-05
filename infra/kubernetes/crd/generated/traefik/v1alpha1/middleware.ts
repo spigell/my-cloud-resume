@@ -22,7 +22,7 @@ export class Middleware extends pulumi.CustomResource {
   public static get(
     name: string,
     id: pulumi.Input<pulumi.ID>,
-    opts?: pulumi.CustomResourceOptions
+    opts?: pulumi.CustomResourceOptions,
   ): Middleware {
     return new Middleware(name, undefined as any, { ...opts, id: id });
   }
@@ -62,7 +62,7 @@ export class Middleware extends pulumi.CustomResource {
   constructor(
     name: string,
     args?: MiddlewareArgs,
-    opts?: pulumi.CustomResourceOptions
+    opts?: pulumi.CustomResourceOptions,
   ) {
     let inputs: pulumi.Inputs = {};
     opts = opts || {};

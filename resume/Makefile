@@ -17,7 +17,7 @@ clean:
 
 .build-hh-data:
 	for a in $(RESUME_HH_LIST); do \
-        	yarn -s ts-node resume/$${a}.ts > $${a}.json ;\
+		yarn -s ts-node resume/$${a}.ts > $${a}.json ;\
 	done
 
 

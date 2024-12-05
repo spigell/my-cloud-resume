@@ -22,7 +22,7 @@ export class IngressRoute extends pulumi.CustomResource {
   public static get(
     name: string,
     id: pulumi.Input<pulumi.ID>,
-    opts?: pulumi.CustomResourceOptions
+    opts?: pulumi.CustomResourceOptions,
   ): IngressRoute {
     return new IngressRoute(name, undefined as any, { ...opts, id: id });
   }
@@ -62,7 +62,7 @@ export class IngressRoute extends pulumi.CustomResource {
   constructor(
     name: string,
     args?: IngressRouteArgs,
-    opts?: pulumi.CustomResourceOptions
+    opts?: pulumi.CustomResourceOptions,
   ) {
     let inputs: pulumi.Inputs = {};
     opts = opts || {};

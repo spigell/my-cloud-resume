@@ -50,7 +50,7 @@ export function Deploy(project: string, region: string, image: string) {
         },
       },
     },
-    { ignoreChanges: ['metadata.annotations'] }
+    { ignoreChanges: ['metadata.annotations'] },
   );
 
   new gcp.cloudrun.IamMember('allowAll', {

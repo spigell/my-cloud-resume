@@ -3,6 +3,7 @@ export interface Data {
   basics: Basics;
   languages: { [key: string]: Language };
   work: { [key: string]: Work };
+  skills: Skill[];
   certificates: { [key: string]: Certificate };
 }
 
@@ -18,7 +19,7 @@ interface Language {
 }
 
 interface Work {
-  company: string;
+  name: string;
   position: string;
   location?: string;
   startDate: string;
@@ -49,3 +50,9 @@ interface Basics {
   summary: string;
   profiles: Profile[];
 }
+
+type Skill = {
+  name: string;
+  level: string;
+  keywords: string[];
+};

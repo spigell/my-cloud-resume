@@ -20,7 +20,7 @@ export class Loadbalancer {
     region: string,
     domains: string[],
     config: LBConfig,
-    proxy: gcp.cloudrun.Service
+    proxy: gcp.cloudrun.Service,
   ) {
     switch (this.kind) {
       case 'kubernetes/traefik':

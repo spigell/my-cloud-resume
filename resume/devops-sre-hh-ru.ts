@@ -19,7 +19,7 @@ const jsonData = JSON.stringify(
     certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
   },
   null,
-  2
+  2,
 );
 
 console.log(jsonData);

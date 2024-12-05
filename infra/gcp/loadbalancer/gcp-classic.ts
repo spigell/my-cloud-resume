@@ -26,7 +26,7 @@ export class GCPClassic {
       {
         length: 8,
         special: false,
-      }
+      },
     );
 
     const ipaddress = new gcp.compute.GlobalAddress(this.params.name, {
@@ -160,12 +160,12 @@ export class GCPClassic {
           domains: this.params.domains,
           dnsAuthorizations: dnsAuth,
         },
-      }
+      },
     );
 
     const certificateMap = new gcp.certificatemanager.CertificateMap(
       this.params.name,
-      {}
+      {},
     );
 
     this.params.domains.forEach((domain) => {
@@ -184,7 +184,7 @@ export class GCPClassic {
         urlMap: httpsUmap.selfLink,
         certificateMap: pulumi.interpolate`//certificatemanager.googleapis.com/${certificateMap.id}`,
       },
-      { dependsOn: [httpsUmap] }
+      { dependsOn: [httpsUmap] },
     );
 
     const httpTarget = new gcp.compute.TargetHttpProxy(
@@ -193,7 +193,7 @@ export class GCPClassic {
         name: `${this.params.name}-http`,
         urlMap: httpUmap.selfLink,
       },
-      { dependsOn: [httpUmap] }
+      { dependsOn: [httpUmap] },
     );
 
     new gcp.compute.GlobalForwardingRule(`${this.params.name}-https`, {
@@ -215,8 +215,8 @@ export class GCPClassic {
     let urls = new Array<pulumi.Output<string>>();
     this.params.domains.forEach((d) =>
       urls.push(
-        pulumi.interpolate`https://${d}${this.params.resumePath}?${tokenParam}=${rand.result}` as pulumi.Output<string>
-      )
+        pulumi.interpolate`https://${d}${this.params.resumePath}?${tokenParam}=${rand.result}` as pulumi.Output<string>,
+      ),
     );
 
     return urls;
