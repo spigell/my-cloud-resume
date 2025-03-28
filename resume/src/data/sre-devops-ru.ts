@@ -152,7 +152,7 @@ export const data: Data = {
     {
       name: 'IaC',
       level: 'advanced',
-      keywords: ['Pulumi', 'Terraform', 'Ansible', 'Opscode Chef', 'Puppet'],
+      keywords: ['Pulumi', 'Terraform', 'Ansible', 'Chef'],
     },
     {
       name: 'Linux',
