@@ -12,12 +12,12 @@ clean:
 	sed 's/Lato/Roboto/g' -i ./src/resume.css &&\
     for a in $(RESUME_PDF_LIST); do \
         npx ts-node ../$${a}.ts > resume.json &&\
-		npm run build -- ../resume-$${a}.pdf; \
+		npm run build -- ../sergei-chukh-resume-$${a}.pdf; \
     done
 
-.build-hh-data:
+.update-hh-resumes:
 	for a in $(RESUME_HH_LIST); do \
-		yarn -s ts-node resume/$${a}.ts > $${a}.json ;\
+		yarn ts-node ./resume/$${a}.ts;\
 	done
 
 

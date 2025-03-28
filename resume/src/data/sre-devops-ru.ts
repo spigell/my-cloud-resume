@@ -2,16 +2,11 @@ import { Data } from './types';
 import * as common from './common';
 
 export const data: Data = {
-  meta: {
-    lastModified: common.meta.lastModified,
-    version: common.meta.version,
-    'x-lang': 'ru',
-  },
   basics: {
     name: 'Сергей Чух',
     label: 'SRE / DevOps',
-    email: 'spigelly@gmail.com',
-    website: 'https://sergeichukh.cloud',
+    email: common.email,
+    website: common.website,
     summary: `Привет! Ищу продуктовую компанию в сферах:
     - Блокчейн
     - Биржи и финтех компании
@@ -23,6 +18,14 @@ export const data: Data = {
       common.profiles.telegram,
       common.profiles.github,
     ],
+  },
+  education: {
+    institution: 'УГТУ',
+    url: 'https://www.ugtu.net',
+    area: 'Разработка нефтяных и газовых скважин',
+    studyType: 'Completed',
+    startDate: '2009-09-01',
+    endDate: '2014-05-01',
   },
   languages: {
     russian: {
@@ -129,13 +132,13 @@ export const data: Data = {
   certificates: {
     cka: {
       name: 'CKA (Certified Kubernetes Administrator)',
-      date: '2023-12',
+      date: '2023-12-12',
       url: 'https://www.credly.com/badges/07d6aa91-ced5-4c56-8025-2e5477446b6d',
       issuer: 'The Linux Foundation',
     },
     cks: {
       name: 'CKS (Certified Kubernetes Security Specialist)',
-      date: '2024-02',
+      date: '2024-02-12',
       url: 'https://www.credly.com/badges/339ce290-68f1-435e-a40d-88fd385165c8',
       issuer: 'The Linux Foundation',
     },
@@ -144,12 +147,12 @@ export const data: Data = {
     {
       name: 'Kubernetes',
       level: 'advanced',
-      keywords: ['k8s', 'helm'],
+      keywords: ['K8S', 'Helm'],
     },
     {
       name: 'IaC',
       level: 'advanced',
-      keywords: ['pulumi', 'terraform', 'ansible', 'chef', 'puppet'],
+      keywords: ['Pulumi', 'Terraform', 'Ansible', 'Opscode Chef', 'Puppet'],
     },
     {
       name: 'Linux',
@@ -169,7 +172,7 @@ export const data: Data = {
     {
       name: 'Golang',
       level: 'intermediate',
-      keywords: ['go', 'golang'],
+      keywords: ['GO', 'Golang'],
     },
   ],
 };

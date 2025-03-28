@@ -1,9 +1,9 @@
 import { Profile } from './types';
 
-export const meta = {
-  version: 'v1.0.0',
-  lastModified: new Date(),
-};
+export type Name = 'Sergei Chukh' | 'Сергей Чух';
+
+export const website = 'https://sergeichukh.cloud';
+export const email = 'spigelly@gmail.com';
 
 export const profiles: { [key: string]: Profile } = {
   linkedin: {

@@ -1,10 +1,13 @@
-import * as ru from './src/json-resume-ru';
+import * as ru from './src/data/sre-devops-ru';
 
-ru.data.meta.version = 'v0.0.1';
+const version = 'v0.0.1';
 
 const jsonData = JSON.stringify(
   {
-    meta: ru.data.meta,
+    meta: {
+      version: version,
+      'x-lang': 'ru',
+    },
     basics: ru.data.basics,
     work: [
       ru.data.work.nda,

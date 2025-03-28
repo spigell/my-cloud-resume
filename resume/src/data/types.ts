@@ -1,11 +1,24 @@
+import { Name } from './common';
+
 export interface Data {
-  meta: Meta;
   basics: Basics;
   languages: { [key: string]: Language };
   work: { [key: string]: Work };
   skills: Skill[];
+  education: Education;
   certificates: { [key: string]: Certificate };
 }
+
+export type Education = {
+  institution: string;
+  url: string;
+  area: string;
+  studyType: string;
+  startDate: string; // ISO date string
+  endDate: string; // ISO date string
+  score?: string;
+  courses?: string[];
+};
 
 export interface Profile {
   network: string;
@@ -36,14 +49,8 @@ interface Certificate {
   issuer: string;
 }
 
-interface Meta {
-  version: string;
-  lastModified: Date;
-  'x-lang': string;
-}
-
 interface Basics {
-  name: string;
+  name: Name;
   label: string;
   email: string;
   website: string;
