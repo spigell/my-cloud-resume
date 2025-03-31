@@ -1,0 +1,30 @@
+name: Update resumes on Headhunter
+
+on:
+  push:
+    branches:
+      - production
+  schedule:
+    - cron: '0 */5 * * *'
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: resume
+
+env:
+  HH_TOKEN: ${{ secrets.HH_TOKEN }}
+
+jobs:
+  update:
+    name: Update resumes
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: yarn install
+      - run: make update-hh-resumes
+
