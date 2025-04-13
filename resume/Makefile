@@ -15,10 +15,6 @@ clean:
 		npm run build -- ../sergei-chukh-resume-$${a}.pdf; \
     done
 
-update-hh-resumes:
-	for a in $(RESUME_HH_LIST); do \
-		yarn ts-node ./resume/$${a}.ts;\
-	done
 
 
 build: clean .build-pdf

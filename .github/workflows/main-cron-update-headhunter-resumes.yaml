@@ -26,5 +26,4 @@ jobs:
         with:
           node-version: 22
       - run: yarn install
-      - run: make update-hh-resumes
-
+      - run: yarn update-hh-resumes

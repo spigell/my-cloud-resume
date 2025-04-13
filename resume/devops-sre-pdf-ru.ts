@@ -1,4 +1,4 @@
-import * as ru from './src/data/sre-devops-ru';
+import * as ru from './src/data/common/sre-devops-ru';
 
 const version = 'v0.0.1';
 

@@ -1,12 +1,12 @@
 import { Data } from './types';
-import * as common from './common';
+import * as personal from './personal';
 
 export const data: Data = {
   basics: {
     name: 'Сергей Чух',
     label: 'SRE / DevOps',
-    email: common.email,
-    website: common.website,
+    email: personal.email,
+    website: personal.website,
     summary: `Привет! Ищу продуктовую компанию в сферах:
     - Блокчейн
     - Биржи и финтех компании
@@ -14,9 +14,9 @@ export const data: Data = {
     Ничего не имею против "legacy" проектов, которые приносят деньги.
     Сейчас нахожусь в Таиланде. Начало дня может приходиться в диапозоне от +2 UTC до +7 UTC.`,
     profiles: [
-      common.profiles.linkedin,
-      common.profiles.telegram,
-      common.profiles.github,
+      personal.profiles.linkedin,
+      personal.profiles.telegram,
+      personal.profiles.github,
     ],
   },
   education: {
@@ -40,9 +40,9 @@ export const data: Data = {
   work: {
     nda: {
       name: 'NDA (финансовая компания)',
-      position: 'DevOps инженер',
-      startDate: '2023-06',
-      endDate: '2024-12',
+      position: 'DevOps инженер / SRE',
+      startDate: personal.experience.nda.startDate,
+      endDate: personal.experience.nda.endDate,
       summary: `Компания предоставляет услуги для клиентов на рынке Forex.
 - Прорабатывание архитектуры взаимодействия приложений.
 - Перенос сервисов в kubernetes (k8s), написание helm чартов.`,
@@ -54,8 +54,8 @@ export const data: Data = {
       name: 'Gaijin Entertainment',
       position: 'DevOps Engineer / SRE',
       location: 'Кипр',
-      startDate: '2022-04',
-      endDate: '2023-04',
+      startDate: personal.experience.gaijin.startDate,
+      endDate: personal.experience.gaijin.endDate,
       summary: `Поддержка и развитие инфраструктуры для таких игр как Warthunder, Enlisted.
 Основные обязанности:
 - Поддержка работоспособности серверной части высоконагруженных игровых платформ, траблшутинг, участие в on-call дежурствах
@@ -74,8 +74,8 @@ export const data: Data = {
       name: 'Яндекс',
       position: 'Инженер L2 поддержки Яндекс.Облака',
       location: 'Москва',
-      startDate: '2021-12',
-      endDate: '2022-03',
+      startDate: personal.experience.yandex.startDate,
+      endDate: personal.experience.yandex.endDate,
       summary: `Был частью команды второй линии поддержки Яндекс Облака:
 - Поддержка клиентов в тикетах.
 - Troubleshooting сервиса на стороне Облака (MDB, Compute, Kubernetes).`,
@@ -84,9 +84,9 @@ export const data: Data = {
     rostelecom: {
       name: 'Ростетелеком ИТ',
       position: 'DevOps Engineer / SRE',
-      location: 'Россия',
-      startDate: '2019-05',
-      endDate: '2021-10',
+      location: 'Москва',
+      startDate: personal.experience.rostelecom.startDate,
+      endDate: personal.experience.rostelecom.endDate,
       summary: `Поддерживал и развивал проект WINK (бывшее Интерактивное ТВ от Ростелеком).
 Основные обязанности:
 - Обновление, настройка и траблшутинг продуктового ПО (api сервисы проекта Wink).
@@ -104,8 +104,8 @@ export const data: Data = {
       name: 'Equilibrium',
       position: 'DevOps Engineer',
       location: 'equilibrium.io',
-      startDate: '2018-10',
-      endDate: '2019-05',
+      startDate: personal.experience.equilibrium.startDate,
+      endDate: personal.experience.equilibrium.endDate,
       summary: `Помогал делать крипто финтех проект в небольшой команде энтузиастов.
 - Создание и настройка ресурсов в публичном облаке (AWS).
 - Поддержка публичных нод для блокчейнов (Parity для ETH, nodeos для EOS).
@@ -120,8 +120,8 @@ export const data: Data = {
       name: 'Рестрим',
       position: 'Инженер отдела мониторинга',
       location: 'Москва',
-      startDate: '2016-02',
-      endDate: '2018-10',
+      startDate: personal.experience.restream.startDate,
+      endDate: personal.experience.restream.endDate,
       summary: `Проект "Интерактивное ТВ" от Ростелеком. Работал в отделе мониторинга.
 Основные обязанности:
 - Обработка заявок в трекерной системе (Jira).
@@ -129,50 +129,6 @@ export const data: Data = {
       website: 'http://restream.rt.ru',
     },
   },
-  certificates: {
-    cka: {
-      name: 'CKA (Certified Kubernetes Administrator)',
-      date: '2023-12-12',
-      url: 'https://www.credly.com/badges/07d6aa91-ced5-4c56-8025-2e5477446b6d',
-      issuer: 'The Linux Foundation',
-    },
-    cks: {
-      name: 'CKS (Certified Kubernetes Security Specialist)',
-      date: '2024-02-12',
-      url: 'https://www.credly.com/badges/339ce290-68f1-435e-a40d-88fd385165c8',
-      issuer: 'The Linux Foundation',
-    },
-  },
-  skills: [
-    {
-      name: 'Kubernetes',
-      level: 'advanced',
-      keywords: ['K8S', 'Helm'],
-    },
-    {
-      name: 'IaC',
-      level: 'advanced',
-      keywords: ['Pulumi', 'Terraform', 'Ansible', 'Chef'],
-    },
-    {
-      name: 'Linux',
-      level: 'advanced',
-      keywords: ['Debian', 'Talos', 'RHEL'],
-    },
-    {
-      name: 'Cloud',
-      level: 'advanced',
-      keywords: ['AWS', 'GCP', 'Hetzner Cloud'],
-    },
-    {
-      name: 'Databases',
-      level: 'advanced',
-      keywords: ['PostgreSQL', 'MySQL', 'MongoDB'],
-    },
-    {
-      name: 'Golang',
-      level: 'intermediate',
-      keywords: ['GO', 'Golang'],
-    },
-  ],
+  certificates: personal.certificates,
+  skills: personal.skills,
 };

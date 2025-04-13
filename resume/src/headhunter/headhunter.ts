@@ -1,11 +1,14 @@
 import axios, { AxiosInstance } from 'axios';
 
+const DEFAULT_HH_USER_AGENT =
+  'my-cloud-resume (https://github.com/spigell/my-cloud-resume)';
+
 export class HeadHunterAPI {
   private axiosInstance: AxiosInstance;
 
   constructor(
     private token: string,
-    private userAgent: string = 'private-app (spigelly@gmail.com)',
+    private userAgent: string = DEFAULT_HH_USER_AGENT,
   ) {
     this.axiosInstance = axios.create({
       baseURL: 'https://api.hh.ru',
