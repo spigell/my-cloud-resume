@@ -23,7 +23,7 @@ The most important topic about this project is the price. It costs about ~5$ per
 
 - **CRC**:
 
-  - [ ] Gain certificate
+  - [ ] Gain the certificate
   - [x] Make a resume
   - [x] Deploy
   - [x] Deploy Loadbalancer
@@ -36,15 +36,7 @@ The most important topic about this project is the price. It costs about ~5$ per
   - [ ] Make an article for challenge
 
 - **autogeneration**:
-
-  - [ ] Add a pdf generation
-
-- **GKE**:
-  - [ ] spot instance usage
-
-## Contributing
-
-If you'd like to contribute to this repository, feel free to create a pull request or open an issue. All contributions are welcome!
+  - [x] Add a pdf generation
 
 ## License
 
