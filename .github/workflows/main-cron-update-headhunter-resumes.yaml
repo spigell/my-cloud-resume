@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - production
-  schedule:
-    - cron: '0 */5 * * *'
+  #schedule:
+  #  - cron: '0 */5 * * *'
   workflow_dispatch:
 
 defaults:
