@@ -38,6 +38,15 @@ export const data: Data = {
     },
   },
   work: {
+    freelance: {
+      name: 'Фрилансер',
+      position: 'DevOps Engineer / SRE / Developer',
+      startDate: personal.experience.selfemployed.startDate,
+      summary: `Крипто стартап`,
+      highlights: [
+        `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
+      ],
+    },
     nda: {
       name: 'NDA (финансовая компания)',
       position: 'DevOps инженер / SRE',

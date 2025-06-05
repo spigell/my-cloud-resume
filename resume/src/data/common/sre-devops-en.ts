@@ -43,6 +43,15 @@ export const data: Data = {
     },
   },
   work: {
+    freelance: {
+      name: 'Freelancer',
+      position: 'DevOps Engineer / SRE / Developer',
+      startDate: personal.experience.selfemployed.startDate,
+      summary: `Crypto startup`,
+      highlights: [
+        `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
+      ],
+    },
     nda: {
       name: 'NDA',
       position: 'DevOps Engineer / SRE',

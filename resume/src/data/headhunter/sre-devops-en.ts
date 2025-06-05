@@ -25,6 +25,13 @@ export const resume: HeadhunterResumeInfo = {
       ],
       experience: [
         {
+          start: en.data.work.freelance.startDate + '-01',
+          company: en.data.work.freelance.name,
+          position: en.data.work.freelance.position,
+          industries: [],
+          description: en.data.work.freelance.summary,
+        },
+        {
           start: en.data.work.nda.startDate + '-01',
           end: en.data.work.nda.endDate + '-01',
           company: en.data.work.nda.name,

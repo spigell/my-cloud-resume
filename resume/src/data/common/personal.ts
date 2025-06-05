@@ -12,6 +12,10 @@ export const education = {
 };
 
 export const experience = {
+  selfemployed: {
+    startDate: '2024-12',
+    stack: ['git', 'GCP (GKE)', 'Talos', 'web3.js', 'VictoriaMetrics'],
+  },
   nda: {
     startDate: '2023-06',
     endDate: '2024-12',
@@ -134,8 +138,8 @@ export const profiles: { [key: string]: Profile } = {
   },
   telegram: {
     network: 'Telegram',
-    username: 'schukh',
-    url: 'https://t.me/schukh',
+    username: 'sergei_chukh',
+    url: 'https://t.me/sergei_chukh',
   },
   github: {
     network: 'GitHub',
