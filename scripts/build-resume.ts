@@ -15,13 +15,38 @@ const data: any = require(path.join(
 
 const templateSource = fs.readFileSync('frontend/resume.hbs', 'utf8');
 
+Handlebars.registerHelper('nl2br', (text: string) => {
+  return new Handlebars.SafeString(
+    Handlebars.escapeExpression(text).replace(/\n/g, '<br />')
+  );
+});
+
 Handlebars.registerHelper('formatDateRange', (start: string, end?: string) => {
   return end ? `${start} - ${end}` : start;
 });
 
 Handlebars.registerHelper('join', (arr: any[], sep: string) => arr.join(sep));
 
-Handlebars.registerHelper('join', (items: any[], separator = ', ') => {
+const summaryHtml = data.basics.summary
+  .split('\n')
+  .map((l: string) => l.trim())
+  .filter(Boolean)
+  .join('<br />');
+
+const logoMap: Record<string, string> = {
+  gaijin: 'logo-gaijin-ent',
+  yandex: 'logo-yandex-cloud',
+  rostelecom: 'logo-rtk',
+  restream: 'logo-rtk',
+};
+
+const workArray = Object.entries(data.work).map(([key, value]) => ({
+  ...(value as any),
+  logoClass: logoMap[key] || undefined,
+}));
+
+  workArray,
+  summaryHtml,
   if (Array.isArray(items)) {
     return items.join(separator);
   }
