@@ -1,8 +1,9 @@
-name: Destroy a environment via pulumi
+name: Destroy an environment via pulumi
 on:
   delete:
     branches:
       - dev
+  workflow_dispatch:
 
 defaults:
   run:
