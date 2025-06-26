@@ -19,6 +19,13 @@ Handlebars.registerHelper('formatDateRange', (start: string, end?: string) => {
   return end ? `${start} - ${end}` : start;
 });
 
+Handlebars.registerHelper('join', (items: any[], separator = ', ') => {
+  if (Array.isArray(items)) {
+    return items.join(separator);
+  }
+  return items;
+});
+
 const template = Handlebars.compile(templateSource);
 
 const [firstName, ...rest] = data.basics.name.split(' ');
