@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{basics.name}}</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="additional.css" />
+  </head>
+  <body id="page-top">
+    <div class="container-fluid p-0">
+      <section class="resume-section" id="about">
+        <div class="resume-section-content">
+          <h1 class="mb-0 html-only">
+            {{firstName}} <span class="text-primary">{{lastName}}</span>
+          </h1>
+          <h3 class="mb-0 html-only">{{basics.label}}</h3>
+          <div class="subheading mb-5 html-only">
+            <a href="mailto:{{basics.email}}">{{basics.email}}</a>
+            ·
+            {{#each basics.profiles}}
+            <a href="{{this.url}}">{{this.username}}</a>{{#unless @last}} · {{/unless}}
+            {{/each}}
+          </div>
+          <p>{{{basics.summary}}}</p>
+        </div>
+      </section>
+      <hr class="m-0" />
+      <section class="resume-section" id="experience">
+        <div class="resume-section-content">
+          <h2 class="mb-0">Experience</h2>
+          <br />
+          {{#each workArray}}
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h4 class="mb-0">{{name}}</h4>
+              <h2 class="mb-0">{{position}}</h2>
+              <h6 class="mb-0">{{formatDateRange startDate endDate}}</h6>
+              <p>{{summary}}</p>
+              {{#if highlights}}
+              <ul>
+                {{#each highlights}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </section>
+      <hr class="m-0" />
+      <section class="resume-section" id="education">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Education</h2>
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">{{education.institution}}</h3>
+              <h5 class="mb-0">{{education.startDate}} - {{education.endDate}}</h5>
+              <div class="subheading mb-3">{{education.studyType}}</div>
+              <div>{{education.area}}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="m-0" />
+      <section class="resume-section" id="skills">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Skills</h2>
+          <ul>
+            {{#each skills}}
+            <li>{{name}}: {{keywords.join(', ')}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+      <hr class="m-0" />
+      <section class="resume-section" id="awards">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Certifications</h2>
+          <ul>
+            {{#each certificatesArray}}
+            <li><a href="{{url}}">{{name}}</a> - {{issuer}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
