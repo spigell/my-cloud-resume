@@ -19,6 +19,8 @@ Handlebars.registerHelper('formatDateRange', (start: string, end?: string) => {
   return end ? `${start} - ${end}` : start;
 });
 
+Handlebars.registerHelper('join', (arr: any[], sep: string) => arr.join(sep));
+
 Handlebars.registerHelper('join', (items: any[], separator = ', ') => {
   if (Array.isArray(items)) {
     return items.join(separator);
