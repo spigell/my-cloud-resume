@@ -16,7 +16,16 @@ const jsonData = JSON.stringify(
       ru.data.work.rostelecom,
       ru.data.work.restream,
     ],
-    skills: ru.data.skills,
+    skills: ru.data.skills.filter((skill) => {
+      return [
+        'Kubernetes',
+        'IaC',
+        'Linux',
+        'Cloud',
+        'Databases',
+        'CI/CD',
+      ].includes(skill.name);
+    }),
     languages: [ru.data.languages.russian, ru.data.languages.english],
     certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
   },

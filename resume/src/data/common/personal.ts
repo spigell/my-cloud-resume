@@ -126,7 +126,32 @@ export const skills: Skill[] = [
   {
     name: 'Golang',
     level: 'intermediate',
-    keywords: ['GO', 'Golang'],
+    keywords: ['Golang'],
+  },
+  {
+    name: 'Workload Orchestrator',
+    level: 'advanced',
+    keywords: ['Kubernetes', 'Docker Swarm'],
+  },
+  {
+    name: 'CI/CD',
+    level: 'advanced',
+    keywords: ['GitLab CI', 'TeamCity', 'GitHub Actions'],
+  },
+  {
+    name: 'Monitoring',
+    level: 'advanced',
+    keywords: ['Prometheus', 'Grafana', 'Zabbix', 'Telegraf'],
+  },
+  {
+    name: 'Logging',
+    level: 'advanced',
+    keywords: ['ELK', 'Loki', 'Datadog'],
+  },
+  {
+    name: 'Web Servers',
+    level: 'advanced',
+    keywords: ['Nginx', 'Traefik'],
   },
 ];
 
@@ -149,6 +174,12 @@ export const profiles: { [key: string]: Profile } = {
 };
 
 export const certificates: { [key: string]: Certificate } = {
+  rhce: {
+    name: 'RHCE (Red Hat Certified Engineer)',
+    date: '2020-12-01',
+    issuer: 'Unknown',
+    url: '',
+  },
   cka: {
     name: 'CKA (Certified Kubernetes Administrator)',
     date: '2023-12-12',

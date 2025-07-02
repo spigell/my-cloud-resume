@@ -8,16 +8,16 @@
   },
   "dependencies": {
     "axios": "^1.8.4",
-    "ts-node": "^9.1"
+    "handlebars": "^4.7.8",
+    "ts-node": "^10.9.2"
   },
   "scripts": {
     "prepare": "husky install",
-    "update-hh-resumes": "ts-node ./resume/update-hh-resumes.ts"
+    "update:hh-resumes": "ts-node ./resume/update-hh-resumes.ts",
+    "build:pdf": "cd resume && make build-pdf",
+    "build:website-resume": "ts-node ./resume/build-website-resume.ts"
   },
   "lint-staged": {
-    "*.ts": "prettier --write"
-  },
-  "resume-build-pdf": {
     "*.ts": "prettier --write"
   }
 }
