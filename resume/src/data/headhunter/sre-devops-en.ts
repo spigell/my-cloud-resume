@@ -95,7 +95,7 @@ export const resume: HeadhunterResumeInfo = {
         primary: [
           {
             name: en.data.education.institution,
-            organization: 'Oli and Gas Fields',
+            organization: 'Oil and Gas Fields',
             result: en.data.education.area,
             year: en.data.education.endDate.split('-')[0],
             education_level: {
@@ -104,18 +104,13 @@ export const resume: HeadhunterResumeInfo = {
             },
           },
         ],
-        additional: [
-          {
-            name: en.data.certificates.cks.name,
-            organization: en.data.certificates.cks.issuer,
-            year: en.data.certificates.cks.date.split('-')[0],
-          },
-          {
-            name: en.data.certificates.cka.name,
-            organization: en.data.certificates.cka.issuer,
-            year: en.data.certificates.cka.date.split('-')[0],
-          },
-        ],
+        additional: Object.entries(en.data.certificates).map((v) => {
+          return {
+            name: v[1].name,
+            organization: v[1].issuer,
+            year: v[1].date.split('-')[0],
+          };
+        }),
       },
       skills: en.data.basics.summary,
       skill_set: en.data.skills.flatMap((v) => [v.name, ...v.keywords]),

@@ -90,16 +90,15 @@
             <span class='text-primary'>{{lastName}}</span>
           </h1>
           <h3 class='mb-0 html-only'>{{basics.label}}</h3>
-          <div class='subheading mb-5 html-only'>
+          <div class='subheading mb-5'>
             <a href='mailto:{{basics.email}}'>{{basics.email}}</a>
             ·
-            {{#each basics.profiles}}<a href='{{url}}'>{{username}}</a>{{#unless
+            {{#each basics.profiles}}<a href='{{url}}'>{{username}} ({{network}})</a>{{#unless
                 @last
               }} · {{/unless}}{{/each}}
           </div>
-          <div class='html-only'>
-            {{{summaryHtml}}}
-          </div>
+          {{{summaryHtml}}}
+          <br />
           <br />
           <!-- Align text to right as signature -->
           <div class='social-icons'>
@@ -132,7 +131,6 @@
                 {{/if}}
                 <h4 class='mb-0'>{{name}}</h4>
                 <h2 class='mb-0'>{{position}}</h2>
-                <h6 class='mb-0'>{{formatDateRange startDate endDate}}</h6>
                 {{#if summary}}
                   <p>{{summary}}</p>
                 {{/if}}
@@ -143,6 +141,9 @@
                     {{/each}}
                   </ul>
                 {{/if}}
+              </div>
+              <div class='flex-shrink-0'>
+                <span class='text-primary'>{{formatDateRange startDate endDate}}</span>
               </div>
             </div>
           {{/each}}
@@ -186,7 +187,13 @@
           <h2 class='mb-5'>Certifications</h2>
           <ul>
             {{#each certificatesArray}}
-              <li><a href='{{url}}'>{{name}}</a> - {{issuer}}</li>
+              <a href='{{url}}' title='{{name}}'>
+                {{#if logoClass}}
+                  <img class='{{logoClass}}' class='resume-cert-img'/>
+                {{else}}
+                  {{name}}
+                {{/if}}
+              </a>
             {{/each}}
           </ul>
         </div>

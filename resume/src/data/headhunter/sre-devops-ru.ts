@@ -104,18 +104,13 @@ export const resume: HeadhunterResumeInfo = {
             },
           },
         ],
-        additional: [
-          {
-            name: ru.data.certificates.cks.name,
-            organization: ru.data.certificates.cks.issuer,
-            year: ru.data.certificates.cks.date.split('-')[0],
-          },
-          {
-            name: ru.data.certificates.cka.name,
-            organization: ru.data.certificates.cka.issuer,
-            year: ru.data.certificates.cka.date.split('-')[0],
-          },
-        ],
+        additional: Object.entries(ru.data.certificates).map((v) => {
+          return {
+            name: v[1].name,
+            organization: v[1].issuer,
+            year: v[1].date.split('-')[0],
+          };
+        }),
       },
       skills: ru.data.basics.summary,
       skill_set: ru.data.skills.flatMap((v) => [v.name, ...v.keywords]),

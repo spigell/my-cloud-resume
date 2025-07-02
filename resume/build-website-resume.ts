@@ -2,20 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import Handlebars from 'handlebars';
 
-const lang = process.argv[2] === 'ru' ? 'ru' : 'en';
 const data: any = require(
-  path.join(
-    __dirname,
-    '..',
-    'resume',
-    'src',
-    'data',
-    'common',
-    lang === 'ru' ? 'sre-devops-ru.ts' : 'sre-devops-en.ts',
-  ),
+  path.join(__dirname, 'src', 'data', 'common', 'sre-devops-en.ts'),
 ).data;
 
-const templateSource = fs.readFileSync('frontend/resume.hbs', 'utf8');
+const templateSource = fs.readFileSync('src/website/resume.hbs', 'utf8');
 
 Handlebars.registerHelper('nl2br', (text: string) => {
   return new Handlebars.SafeString(
@@ -47,6 +38,19 @@ const logoMap: Record<string, string> = {
   restream: 'logo-rtk',
 };
 
+const certificateLogoMap: Record<string, string> = {
+  cka: 'logo-cka',
+  cks: 'logo-cks',
+  rhce: 'logo-rhce',
+};
+
+const certificatesArray = Object.entries(data.certificates).map(
+  ([key, value]) => ({
+    ...(value as any),
+    logoClass: certificateLogoMap[key] || undefined,
+  }),
+);
+
 const workArray = Object.entries(data.work).map(([key, value]) => ({
   ...(value as any),
   logoClass: logoMap[key] || undefined,
@@ -58,7 +62,7 @@ const html = template({
   lastName,
   workArray,
   summaryHtml,
-  certificatesArray: Object.values(data.certificates),
+  certificatesArray,
 });
 
 fs.writeFileSync('frontend/resume.html', html);
