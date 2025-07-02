@@ -60,7 +60,7 @@ jobs:
           workflow: all-build-site-and-pdf.yaml
           workflow_conclusion: success
       - name: Copy pdf to frontend
-        run: mv -v ../build-artifacts-*/*.pdf ../frontend
+        run: mv -v ../build-artifacts-*/* ../frontend
       - name: Run pulumi preview via automation API
         run: npx ts-node ./automations.ts
         env:

@@ -3,10 +3,14 @@ import path from 'path';
 import Handlebars from 'handlebars';
 
 const data: any = require(
-  path.join(__dirname, 'src', 'data', 'common', 'sre-devops-en.ts'),
+  path.join(__dirname, 'src/data/common/sre-devops-en.ts'),
 ).data;
 
-const templateSource = fs.readFileSync('src/website/resume.hbs', 'utf8');
+const templateSource = fs.readFileSync(
+  path.join(__dirname, 'src/website/resume.hbs'),
+  'utf8',
+);
+const outputFilePath = path.join(__dirname, 'artifacts/resume.html');
 
 Handlebars.registerHelper('nl2br', (text: string) => {
   return new Handlebars.SafeString(
@@ -65,5 +69,5 @@ const html = template({
   certificatesArray,
 });
 
-fs.writeFileSync('frontend/resume.html', html);
-console.log('Generated frontend/resume.html');
+fs.writeFileSync(outputFilePath, html);
+console.log(`Generated ${outputFilePath}`);

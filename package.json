@@ -14,7 +14,7 @@
   "scripts": {
     "prepare": "husky install",
     "update:hh-resumes": "ts-node ./resume/update-hh-resumes.ts",
-    "build:pdf": "cd resume && make build",
+    "build:pdf": "cd resume && make build-pdf",
     "build:website-resume": "ts-node ./resume/build-website-resume.ts"
   },
   "lint-staged": {

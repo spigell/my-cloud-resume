@@ -27,4 +27,4 @@ jobs:
           name: build-artifacts-${{ steps.short-sha.outputs.sha }}
           if-no-files-found: error
           path: |
-            resume/*.pdf
+            resume/artifacts/*
