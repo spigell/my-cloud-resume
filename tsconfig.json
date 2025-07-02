@@ -7,7 +7,11 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "lib": ["es2020", "dom"]
   },
-  "exclude:": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "infra"
+  ]
 }

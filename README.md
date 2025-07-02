@@ -4,6 +4,14 @@ This repository contains the source code and files for my cloud resume, started 
 
 To view my cloud resume, simply visit the URL https://sergeichukh.cloud/resume.html.
 
+### Building the resume
+
+The resume HTML is generated from the data located under `resume/src`. Run the following command to rebuild `frontend/resume.html`:
+
+```bash
+yarn build:resume # or npm run build:resume
+```
+
 ## Architecture
 
 This cloud resume is hosted on GCS, served via Cloudflare CDN and routing is managed via Traefik. All non-GCP infrastructure is managed by the GKE cluster. The deployment process is automated using GitHub Actions, which builds and deploys the code to the GCS bucket whenever changes are pushed to the production branch. Deployment is made via Pulumi.
