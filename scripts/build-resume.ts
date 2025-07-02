@@ -3,21 +3,23 @@ import path from 'path';
 import Handlebars from 'handlebars';
 
 const lang = process.argv[2] === 'ru' ? 'ru' : 'en';
-const data: any = require(path.join(
-  __dirname,
-  '..',
-  'resume',
-  'src',
-  'data',
-  'common',
-  lang === 'ru' ? 'sre-devops-ru.ts' : 'sre-devops-en.ts'
-)).data;
+const data: any = require(
+  path.join(
+    __dirname,
+    '..',
+    'resume',
+    'src',
+    'data',
+    'common',
+    lang === 'ru' ? 'sre-devops-ru.ts' : 'sre-devops-en.ts',
+  ),
+).data;
 
 const templateSource = fs.readFileSync('frontend/resume.hbs', 'utf8');
 
 Handlebars.registerHelper('nl2br', (text: string) => {
   return new Handlebars.SafeString(
-    Handlebars.escapeExpression(text).replace(/\n/g, '<br />')
+    Handlebars.escapeExpression(text).replace(/\n/g, '<br />'),
   );
 });
 
@@ -26,6 +28,11 @@ Handlebars.registerHelper('formatDateRange', (start: string, end?: string) => {
 });
 
 Handlebars.registerHelper('join', (arr: any[], sep: string) => arr.join(sep));
+
+const template = Handlebars.compile(templateSource);
+
+const [firstName, ...rest] = data.basics.name.split(' ');
+const lastName = rest.join(' ');
 
 const summaryHtml = data.basics.summary
   .split('\n')
@@ -45,27 +52,14 @@ const workArray = Object.entries(data.work).map(([key, value]) => ({
   logoClass: logoMap[key] || undefined,
 }));
 
-  workArray,
-  summaryHtml,
-  if (Array.isArray(items)) {
-    return items.join(separator);
-  }
-  return items;
-});
-
-const template = Handlebars.compile(templateSource);
-
-const [firstName, ...rest] = data.basics.name.split(' ');
-const lastName = rest.join(' ');
-
 const html = template({
   ...data,
   firstName,
   lastName,
-  workArray: Object.values(data.work),
+  workArray,
+  summaryHtml,
   certificatesArray: Object.values(data.certificates),
 });
 
 fs.writeFileSync('frontend/resume.html', html);
 console.log('Generated frontend/resume.html');
-

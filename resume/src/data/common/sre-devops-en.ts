@@ -96,7 +96,7 @@ Primary Responsibilities:
       website: 'https://www.yandex.ru',
     },
     rostelecom: {
-      name: 'Ростетелеком ИТ',
+      name: 'Rostelecom IT',
       position: 'DevOps Engineer / SRE',
       location: 'Moscow',
       startDate: personal.experience.rostelecom.startDate,

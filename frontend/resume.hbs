@@ -97,29 +97,6 @@
                 @last
               }} · {{/unless}}{{/each}}
           </div>
-          <div class='pdf-only'>
-            <h1 style='font-size: 72px; padding-bottom: 0'>{{firstName}}
-              {{lastName}}</h1>
-            <h2 style='font-size: 44px !important; padding-bottom: 0'>
-              DevOps Engineer / SRE
-            </h2>
-            <br />
-            <div style='font-size: 20px'>
-              <a href='mailto:{{basics.email}}'>EMAIL:
-                {{basics.email}}<br /></a>
-              {{#each basics.profiles}}
-                <a href='{{url}}'>{{network}}: {{username}}<br /></a>
-              {{/each}}
-            </div>
-          </div>
-          <div class='pdf-only'>
-            <br />
-            <p style='font-size: 20px'>
-              I'm a DevOps / SRE professional with 5 years of experience.
-              <br />
-              A big fan of IaC, troubleshooting and the SRE methodology.
-            </p>
-          </div>
           <div class='html-only'>
             {{{summaryHtml}}}
           </div>
@@ -202,13 +179,6 @@
           </ul>
         </div>
       </section>
-      <div class='pdf-only'>
-        <!-- Ugly hack -->
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
       <hr class='m-0' />
       <!-- Awards-->
       <section class='resume-section' id='awards'>
