@@ -52,17 +52,18 @@ export const data: Data = {
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
-    nda: {
-      name: 'NDA',
+    amarkets: {
+      name: 'Amarkets',
       position: 'DevOps Engineer / SRE',
-      startDate: personal.experience.nda.startDate,
-      endDate: personal.experience.nda.endDate,
+      startDate: personal.experience.amarkets.startDate,
+      endDate: personal.experience.amarkets.endDate,
       summary: `FinTech.
 Primary Responsibilities:
 - Stable Work of Stage/Prod Environments: Ensure the smooth and uninterrupted operation of both staging and production environments, including monitoring, troubleshooting, and debugging issues to prevent downtime.
 - Database Improvements: Continuously enhance the performance, reliability, and scalability of databases. This involves optimizing queries, managing database configurations, and implementing best practices for data management.
 - AWS Infrastructure Cost Optimization: Analyze and optimize the use of AWS services to reduce costs while maintaining or improving performance. Implement cost-effective strategies, such as right-sizing instances, using reserved instances, and leveraging spot instances.`,
-      highlights: [`Stack: ${personal.experience.nda.stack.join(', ')}`],
+      highlights: [`Stack: ${personal.experience.amarkets.stack.join(', ')}`],
+      website: 'https://amarkets.com',
     },
     gaijin: {
       name: 'Gaijin Entertainment',

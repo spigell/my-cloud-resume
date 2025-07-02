@@ -10,7 +10,8 @@ const jsonData = JSON.stringify(
     },
     basics: ru.data.basics,
     work: [
-      ru.data.work.nda,
+      ru.data.work.freelance,
+      ru.data.work.amarkets,
       ru.data.work.gaijin,
       ru.data.work.yandex,
       ru.data.work.rostelecom,

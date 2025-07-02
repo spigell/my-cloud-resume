@@ -14,9 +14,16 @@ export const education = {
 export const experience = {
   selfemployed: {
     startDate: '2024-12',
-    stack: ['git', 'GCP (GKE)', 'Talos', 'web3.js', 'VictoriaMetrics'],
+    stack: [
+      'git',
+      'GCP (GKE)',
+      'Talos',
+      'web3.js',
+      'VictoriaMetrics',
+      'Typescript',
+    ],
   },
-  nda: {
+  amarkets: {
     startDate: '2023-06',
     endDate: '2024-12',
     stack: [

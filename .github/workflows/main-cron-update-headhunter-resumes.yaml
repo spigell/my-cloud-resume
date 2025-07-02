@@ -1,9 +1,9 @@
 name: Update resumes on Headhunter
 
 on:
-  push:
-    branches:
-      - production
+  #push:
+  #  branches:
+  #    - production
   #schedule:
   #  - cron: '0 */5 * * *'
   workflow_dispatch:

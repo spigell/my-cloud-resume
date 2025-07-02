@@ -32,12 +32,12 @@ export const resume: HeadhunterResumeInfo = {
           description: en.data.work.freelance.summary,
         },
         {
-          start: en.data.work.nda.startDate + '-01',
-          end: en.data.work.nda.endDate + '-01',
-          company: en.data.work.nda.name,
-          position: en.data.work.nda.position,
+          start: en.data.work.amarkets.startDate + '-01',
+          end: en.data.work.amarkets.endDate + '-01',
+          company: en.data.work.amarkets.name,
+          position: en.data.work.amarkets.position,
           industries: [],
-          description: en.data.work.nda.summary,
+          description: en.data.work.amarkets.summary,
         },
         {
           company_url: en.data.work.gaijin.website,

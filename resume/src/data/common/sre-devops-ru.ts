@@ -47,17 +47,18 @@ export const data: Data = {
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
-    nda: {
-      name: 'NDA (финансовая компания)',
+    amarkets: {
+      name: 'Amarkets',
       position: 'DevOps инженер / SRE',
-      startDate: personal.experience.nda.startDate,
-      endDate: personal.experience.nda.endDate,
+      startDate: personal.experience.amarkets.startDate,
+      endDate: personal.experience.amarkets.endDate,
       summary: `Компания предоставляет услуги для клиентов на рынке Forex.
 - Прорабатывание архитектуры взаимодействия приложений.
 - Перенос сервисов в kubernetes (k8s), написание helm чартов.`,
       highlights: [
         'Стек: git, AWS, ansible, kubernetes, k8s (deckhouse), helm, werf, Golang, Pulumi, PostgreSQL, Sentry, Gitlab, MySQL, Redis, Prometheus stack.',
       ],
+      website: 'https://amarkets.com',
     },
     gaijin: {
       name: 'Gaijin Entertainment',

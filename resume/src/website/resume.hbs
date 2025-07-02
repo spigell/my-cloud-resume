@@ -131,8 +131,10 @@
                 {{/if}}
                 <h4 class='mb-0'>{{name}}</h4>
                 <h2 class='mb-0'>{{position}}</h2>
-                {{#if summary}}
-                  <p>{{summary}}</p>
+                {{#if summaryHtml}}
+                  {{{summaryHtml}}}
+                  <br />
+                  <br />
                 {{/if}}
                 {{#if highlights}}
                   <ul>

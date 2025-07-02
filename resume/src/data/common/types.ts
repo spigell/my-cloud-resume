@@ -31,7 +31,7 @@ interface Language {
   fluency: string;
 }
 
-interface Work {
+export interface Work {
   name: string;
   position: string;
   location?: string;
