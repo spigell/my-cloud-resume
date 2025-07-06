@@ -1,5 +1,4 @@
-RESUME_PDF_LIST := devops-sre-pdf-ru
-RESUME_HH_LIST := devops-sre-hh-ru
+RESUME_PDF_LIST := devops-sre-pdf-ru devops-sre-pdf-en
 
 clean:
 	rm -rfv frontend/resume.html
@@ -9,10 +8,10 @@ clean:
 	git clone https://github.com/ObserverOfTime/jsonresume-theme-relaxed
 	cd jsonresume-theme-relaxed && git checkout 9bf686c4239a05c85fe3ac18615918462c5729f4 &&\
 	npm install && npm add ts-node@v9.1 &&\
-	cp ../i18n-ru.json ./i18n/ru.json -v &&\
+	cp ../src/pdf/i18n-ru.json ./i18n/ru.json -v &&\
 	sed 's/Lato/Roboto/g' -i ./src/resume.css &&\
     for a in $(RESUME_PDF_LIST); do \
-        npx ts-node ../$${a}.ts > resume.json &&\
+        npx ts-node ../src/pdf/$${a}.ts > resume.json &&\
 		npm run build -- ../artifacts/sergei-chukh-resume-$${a}.pdf; \
     done
 

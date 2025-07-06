@@ -7,13 +7,9 @@ export const data: Data = {
     label: 'SRE / DevOps engineer',
     email: personal.email,
     website: personal.website,
-    summary: `
-      Hi there!
-    I'm currently looking for opportunities in the following areas:
-
+    summary: `Hi there! I'm currently looking for opportunities in the following areas:
     - Blockchain
     - Exchanges and fintech companies
-
     I'm growing in the direction of SRE with a focus on security.
     I have nothing against "legacy" projects, as long as they generate revenue.
 
