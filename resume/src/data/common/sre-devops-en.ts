@@ -70,7 +70,7 @@ Key responsibilities:
     gaijin: {
       name: 'Gaijin Entertainment',
       position: 'DevOps Engineer / SRE',
-      location: 'Ciprus',
+      location: 'Cyprus',
       startDate: personal.experience.gaijin.startDate,
       endDate: personal.experience.gaijin.endDate,
       summary: `Working in a team supporting the primary games of Gaijin: Warthunder, Enlisted. Main duties:
@@ -127,7 +127,7 @@ Key responsibilities:
     },
     restream: {
       name: 'Restream',
-      position: 'Techical support engineer',
+      position: 'Technical Support Engineer',
       location: 'Moscow',
       startDate: personal.experience.restream.startDate,
       endDate: personal.experience.restream.endDate,

@@ -1,8 +1,8 @@
 # My Cloud Resume
 
-This repository contains the source code and files for my cloud resume, started as part of the Cloud Resume Challenge. My cloud resume is a web-based representation of my professional experience, skills, projects.
+This repository contains the source code and files for my cloud resume. The project was started as part of the Cloud Resume Challenge and is a web-based representation of my professional experience, skills and projects.
 
-To view my cloud resume, simply visit the URL https://sergeichukh.cloud/resume.html.
+To view my cloud resume, visit <https://sergeichukh.cloud/resume.html>.
 
 ### Building the resume
 
@@ -14,9 +14,9 @@ yarn build:resume # or npm run build:resume
 
 ## Architecture
 
-This cloud resume is hosted on GCS, served via Cloudflare CDN and routing is managed via Traefik. All non-GCP infrastructure is managed by the GKE cluster. The deployment process is automated using GitHub Actions, which builds and deploys the code to the GCS bucket whenever changes are pushed to the production branch. Deployment is made via Pulumi.
+This cloud resume is hosted on GCS, served through Cloudflare CDN and the routing is handled by Traefik. All non-GCP infrastructure is deployed in the GKE cluster. The deployment process is automated using GitHub Actions, which builds and deploys the code to the GCS bucket whenever changes are pushed to the production branch. Deployment is handled via Pulumi.
 
-Used instruments
+Tools used
 
 - **Frontend**: HTML, CSS, JS.
 - **Infrastructure**: GKE, Cloud Run, Traefik
@@ -25,12 +25,12 @@ Used instruments
 The brief diagram of the current infrastructure:
 ![infrastructure](img/infra.png)
 
-The most important topic about this project is the price. It costs about ~5$ per month (mostly for the GKE node's storage) and relies on the free tier. The architecture is not considered to be HA, but it aims to provide the SLA ~99,9% of availability.
+The main consideration for this project is the cost. It runs for about ≈$5 per month (mostly for the GKE node storage) and relies on the free tier. The architecture is not designed for high availability but aims to provide approximately 99.9% uptime.
 
 ### To do list
 
 - **CRC**:
-  - [ ] Gain the certificate
+  - [ ] Obtain the certificate
   - [x] Make a resume
   - [x] Deploy
   - [x] Deploy Loadbalancer
@@ -38,7 +38,7 @@ The most important topic about this project is the price. It costs about ~5$ per
   - [x] Use caching (Cloudflare)
   - [ ] Make an api service with the cloud functions
   - [ ] Store data in storage (cloud database/firestore)
-  - [x] CI/CD (Github actions)
+  - [x] CI/CD (GitHub Actions)
   - [x] IAC (Pulumi)
   - [ ] Make an article for challenge
 
