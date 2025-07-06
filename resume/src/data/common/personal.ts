@@ -14,13 +14,21 @@ export const education = {
 export const experience = {
   selfemployed: {
     startDate: '2024-12',
-    stack: ['git', 'GCP (GKE)', 'Talos', 'web3.js', 'VictoriaMetrics'],
+    stack: [
+      'GCP (GKE)',
+      'Talos',
+      'web3.js',
+      'VictoriaMetrics',
+      'Typescript',
+      'Nodejs',
+      'Pulumi',
+      'Hetzner',
+    ],
   },
-  nda: {
+  amarkets: {
     startDate: '2023-06',
     endDate: '2024-12',
     stack: [
-      'git',
       'AWS',
       'ansible',
       'kubernetes',
@@ -28,6 +36,7 @@ export const experience = {
       'helm',
       'werf',
       'Golang',
+      'Metatrader 5',
       'Pulumi',
       'PostgreSQL',
       'Sentry',
@@ -41,7 +50,6 @@ export const experience = {
     startDate: '2022-04',
     endDate: '2023-04',
     stack: [
-      'Git',
       'Linux (CentOS 7)',
       'Redis',
       'AWS (RDS, EC2, VPC, Route53)',
@@ -65,7 +73,6 @@ export const experience = {
     startDate: '2019-05',
     endDate: '2021-10',
     stack: [
-      'Git',
       'Linux (Centos 7)',
       'PostgreSQL (+Pgbouncer)',
       'NSQ',

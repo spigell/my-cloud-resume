@@ -10,8 +10,5 @@
     "baseUrl": ".",
     "lib": ["es2020", "dom"]
   },
-  "exclude": [
-    "node_modules",
-    "infra"
-  ]
+  "exclude": ["node_modules", "infra"]
 }

@@ -93,9 +93,8 @@
           <div class='subheading mb-5'>
             <a href='mailto:{{basics.email}}'>{{basics.email}}</a>
             ·
-            {{#each basics.profiles}}<a href='{{url}}'>{{username}} ({{network}})</a>{{#unless
-                @last
-              }} · {{/unless}}{{/each}}
+            {{#each basics.profiles}}<a href='{{url}}'>{{username}}
+                ({{network}})</a>{{#unless @last}} · {{/unless}}{{/each}}
           </div>
           {{{summaryHtml}}}
           <br />
@@ -131,8 +130,10 @@
                 {{/if}}
                 <h4 class='mb-0'>{{name}}</h4>
                 <h2 class='mb-0'>{{position}}</h2>
-                {{#if summary}}
-                  <p>{{summary}}</p>
+                {{#if summaryHtml}}
+                  {{{summaryHtml}}}
+                  <br />
+                  <br />
                 {{/if}}
                 {{#if highlights}}
                   <ul>
@@ -143,7 +144,10 @@
                 {{/if}}
               </div>
               <div class='flex-shrink-0'>
-                <span class='text-primary'>{{formatDateRange startDate endDate}}</span>
+                <span class='text-primary'>{{formatDateRange
+                    startDate
+                    endDate
+                  }}</span>
               </div>
             </div>
           {{/each}}
@@ -189,7 +193,7 @@
             {{#each certificatesArray}}
               <a href='{{url}}' title='{{name}}'>
                 {{#if logoClass}}
-                  <img class='{{logoClass}}' class='resume-cert-img'/>
+                  <img class='{{logoClass}}' class='resume-cert-img' />
                 {{else}}
                   {{name}}
                 {{/if}}

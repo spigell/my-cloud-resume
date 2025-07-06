@@ -8,5 +8,6 @@ node_modules
 
 resume/jsonresume-theme-relaxed
 resume/*.json
+resume/artifacts/*
 
 frontend/resume.html

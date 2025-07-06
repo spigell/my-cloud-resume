@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import Handlebars from 'handlebars';
+import { Data, Work } from './src/data/common/types';
 
 const data: any = require(
   path.join(__dirname, 'src/data/common/sre-devops-en.ts'),
-).data;
+).data as Data;
 
 const templateSource = fs.readFileSync(
   path.join(__dirname, 'src/website/resume.hbs'),
@@ -35,14 +36,15 @@ const summaryHtml = data.basics.summary
   .filter(Boolean)
   .join('<br />');
 
-const logoMap: Record<string, string> = {
+const workLogos: Record<string, string> = {
+  amarkets: 'logo-amarkets',
   gaijin: 'logo-gaijin-ent',
   yandex: 'logo-yandex-cloud',
   rostelecom: 'logo-rtk',
   restream: 'logo-rtk',
 };
 
-const certificateLogoMap: Record<string, string> = {
+const certificateLogos: Record<string, string> = {
   cka: 'logo-cka',
   cks: 'logo-cks',
   rhce: 'logo-rhce',
@@ -51,13 +53,18 @@ const certificateLogoMap: Record<string, string> = {
 const certificatesArray = Object.entries(data.certificates).map(
   ([key, value]) => ({
     ...(value as any),
-    logoClass: certificateLogoMap[key] || undefined,
+    logoClass: certificateLogos[key] || undefined,
   }),
 );
 
 const workArray = Object.entries(data.work).map(([key, value]) => ({
   ...(value as any),
-  logoClass: logoMap[key] || undefined,
+  summaryHtml: (value as Work).summary
+    .split('\n')
+    .map((l: string) => l.trim())
+    .filter(Boolean)
+    .join('<br />'),
+  logoClass: workLogos[key] || undefined,
 }));
 
 const html = template({
