@@ -4,7 +4,7 @@ import * as personal from './personal';
 export const data: Data = {
   basics: {
     name: 'Sergei Chukh',
-    label: 'SRE / DevOps',
+    label: 'SRE / DevOps engineer',
     email: personal.email,
     website: personal.website,
     summary: `
@@ -47,7 +47,10 @@ export const data: Data = {
       name: 'Freelancer',
       position: 'DevOps Engineer / SRE / Developer',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Crypto startup`,
+      summary: `Working as a freelance engineer on a trading bot platform that interacts with centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.
+Primary stack includes TypeScript/Node.js, GCP, and Kubernetes-based infrastructure.
+Key responsibilities:
+- Designing and maintaining Kubernetes infrastructure based on GKE and Hetzner (Talos), using an Infrastructure as Code approach with Pulumi and Helm`,
       highlights: [
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
@@ -55,20 +58,23 @@ export const data: Data = {
     amarkets: {
       name: 'Amarkets',
       position: 'DevOps Engineer / SRE',
+      location: 'Montenegro',
       startDate: personal.experience.amarkets.startDate,
       endDate: personal.experience.amarkets.endDate,
-      summary: `FinTech.
-Primary Responsibilities:
-- Stable Work of Stage/Prod Environments: Ensure the smooth and uninterrupted operation of both staging and production environments, including monitoring, troubleshooting, and debugging issues to prevent downtime.
-- Database Improvements: Continuously enhance the performance, reliability, and scalability of databases. This involves optimizing queries, managing database configurations, and implementing best practices for data management.
-- AWS Infrastructure Cost Optimization: Analyze and optimize the use of AWS services to reduce costs while maintaining or improving performance. Implement cost-effective strategies, such as right-sizing instances, using reserved instances, and leveraging spot instances.`,
+      summary: `A company providing brokerage services for clients in the Forex market.
+Key responsibilities:
+- Designing the architecture for service and application interactions
+- Migrating services (including monoliths) to Kubernetes, writing and maintaining Helm charts
+- Automating CI/CD processes, ensuring infrastructure monitoring and security
+- Optimizing AWS costs: implementing Reserved Instances and Savings Plans, conducting infrastructure audits, setting up cost monitoring and budget alerts, automating cost reporting using tagging
+- Debugging complex performance issues in databases and applications`,
       highlights: [`Stack: ${personal.experience.amarkets.stack.join(', ')}`],
       website: 'https://amarkets.com',
     },
     gaijin: {
       name: 'Gaijin Entertainment',
       position: 'DevOps Engineer / SRE',
-      location: 'Кипр',
+      location: 'Ciprus',
       startDate: personal.experience.gaijin.startDate,
       endDate: personal.experience.gaijin.endDate,
       summary: `Working in a team supporting the primary games of Gaijin: Warthunder, Enlisted. Main duties:

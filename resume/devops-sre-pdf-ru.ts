@@ -12,10 +12,16 @@ const jsonData = JSON.stringify(
     work: [
       ru.data.work.freelance,
       ru.data.work.amarkets,
-      ru.data.work.gaijin,
+      {
+        ...ru.data.work.gaijin,
+        summary: ru.data.work.gaijin.summary.slice(0, 298),
+      },
       ru.data.work.yandex,
-      ru.data.work.rostelecom,
-      ru.data.work.restream,
+      {
+        ...ru.data.work.rostelecom,
+        summary: ru.data.work.rostelecom.summary.slice(0, 265),
+      },
+      // ru.data.work.restream,
     ],
     skills: ru.data.skills.filter((skill) => {
       return [
@@ -27,8 +33,8 @@ const jsonData = JSON.stringify(
         'CI/CD',
       ].includes(skill.name);
     }),
-    languages: [ru.data.languages.russian, ru.data.languages.english],
     certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
+    languages: [ru.data.languages.russian, ru.data.languages.english],
   },
   null,
   2,

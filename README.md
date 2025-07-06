@@ -30,7 +30,6 @@ The most important topic about this project is the price. It costs about ~5$ per
 ### To do list
 
 - **CRC**:
-
   - [ ] Gain the certificate
   - [x] Make a resume
   - [x] Deploy

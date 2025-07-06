@@ -1,2 +1,3 @@
 *.yaml
 backend/gcs-proxy
+frontend/*

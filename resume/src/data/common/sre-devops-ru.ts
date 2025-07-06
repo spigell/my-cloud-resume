@@ -4,7 +4,7 @@ import * as personal from './personal';
 export const data: Data = {
   basics: {
     name: 'Сергей Чух',
-    label: 'SRE / DevOps',
+    label: 'SRE / DevOps инженер',
     email: personal.email,
     website: personal.website,
     summary: `Привет! Ищу продуктовую компанию в сферах:
@@ -40,29 +40,37 @@ export const data: Data = {
   work: {
     freelance: {
       name: 'Фрилансер',
-      position: 'DevOps Engineer / SRE / Developer',
+      position: 'DevOps Engineer / SRE / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Крипто стартап`,
+      summary: `Работаю фриланс-инженером для платформы торговых ботов, взаимодействующих с CEX (Bybit, Mexc) и DEX (Uniswap, Mira) через REST и WebSocket API.
+Основной стек — TypeScript/Nodejs, GCP и Kubernetes-инфраструктура
+Основные обязанности:
+- Проектирование и сопровождение Kubernetes-инфраструктуры на базе GKE + (Hetzner+Talos) с IaC-подходом (Pulumi/Helm)
+`,
       highlights: [
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
     amarkets: {
       name: 'Amarkets',
-      position: 'DevOps инженер / SRE',
+      position: 'SRE / DevOps инженер',
+      location: 'Черногория',
       startDate: personal.experience.amarkets.startDate,
       endDate: personal.experience.amarkets.endDate,
       summary: `Компания предоставляет услуги для клиентов на рынке Forex.
-- Прорабатывание архитектуры взаимодействия приложений.
-- Перенос сервисов в kubernetes (k8s), написание helm чартов.`,
-      highlights: [
-        'Стек: git, AWS, ansible, kubernetes, k8s (deckhouse), helm, werf, Golang, Pulumi, PostgreSQL, Sentry, Gitlab, MySQL, Redis, Prometheus stack.',
-      ],
+Основные обязанности:
+- Прорабатывание архитектуры взаимодействия приложений
+- Перенос сервисов в k8s (в том числе и монолитов), написание helm чартов
+- Работал над автоматизацией CI/CD процессов, мониторингом и обеспечением безопасности систем
+- Оптимизация затрат на AWS: внедрение Reserved Instances и Savings Plans, аудит инфраструктуры, настройка мониторинга и алертов по бюджету, автоматизация отчётности по тэгам
+- Дебаг сложных проблем производительности баз данных и приложений
+      `,
+      highlights: [`Stack: ${personal.experience.amarkets.stack.join(', ')}`],
       website: 'https://amarkets.com',
     },
     gaijin: {
       name: 'Gaijin Entertainment',
-      position: 'DevOps Engineer / SRE',
+      position: 'SRE / DevOps инженер',
       location: 'Кипр',
       startDate: personal.experience.gaijin.startDate,
       endDate: personal.experience.gaijin.endDate,
@@ -93,7 +101,7 @@ export const data: Data = {
     },
     rostelecom: {
       name: 'Ростетелеком ИТ',
-      position: 'DevOps Engineer / SRE',
+      position: 'SRE / DevOps инженер',
       location: 'Москва',
       startDate: personal.experience.rostelecom.startDate,
       endDate: personal.experience.rostelecom.endDate,
@@ -112,7 +120,7 @@ export const data: Data = {
     },
     equilibrium: {
       name: 'Equilibrium',
-      position: 'DevOps Engineer',
+      position: 'DevOps инженер',
       location: 'equilibrium.io',
       startDate: personal.experience.equilibrium.startDate,
       endDate: personal.experience.equilibrium.endDate,
