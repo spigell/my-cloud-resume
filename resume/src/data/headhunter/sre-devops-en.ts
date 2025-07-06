@@ -113,7 +113,9 @@ export const resume: HeadhunterResumeInfo = {
         }),
       },
       skills: en.data.basics.summary,
-      skill_set: en.data.skills.flatMap((v) => [v.name, ...v.keywords]),
+      skill_set: en.data.skills
+        .flatMap((v) => [v.name, ...v.keywords])
+        .slice(0, 30),
     },
     null,
     2,
