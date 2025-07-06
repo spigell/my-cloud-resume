@@ -7,13 +7,10 @@ export const data: Data = {
     label: 'SRE / DevOps инженер',
     email: personal.email,
     website: personal.website,
-    summary: `Привет! Ищу продуктовую компанию в сферах:
-    - Блокчейн
-    - Биржи и финтех компании
-    Развиваюсь в сторону SRE с уклоном в безопасность.
-    Ничего не имею против "legacy" проектов, которые приносят деньги.
-
-    Сейчас нахожусь в Таиланде. Начало дня может приходиться в диапазоне от +2 UTC до +7 UTC.`,
+    summary: `Привет!
+В настоящий момент нахожусь в Таиланде и рассматриваю предложения на позицию DevOps / SRE инженера с оформлением рабочей визы и разрешения на работу.
+Обладаю глубокими знаниями в области DevOps и SRE: от автоматизации инфраструктуры до обеспечения надёжности и масштабируемости систем.
+Ничего не имею против "legacy" проектов, которые приносят деньги`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
@@ -41,7 +38,7 @@ export const data: Data = {
   work: {
     freelance: {
       name: 'Фрилансер',
-      position: 'DevOps Engineer / SRE / Разработчик',
+      position: 'SRE / DevOps инженер / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
       summary: `Работаю фриланс-инженером для платформы торговых ботов, взаимодействующих с CEX (Bybit, Mexc) и DEX (Uniswap, Mira) через REST и WebSocket API.
 Основной стек — TypeScript/Nodejs, GCP и Kubernetes-инфраструктура

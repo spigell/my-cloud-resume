@@ -7,13 +7,10 @@ export const data: Data = {
     label: 'SRE / DevOps engineer',
     email: personal.email,
     website: personal.website,
-    summary: `Hi there! I'm currently looking for opportunities in the following areas:
-    - Blockchain
-    - Exchanges and fintech companies
-    I'm growing in the direction of SRE with a focus on security.
-    I have nothing against "legacy" projects, as long as they generate revenue.
-
-    I'm currently based in Thailand, and my workday can start anywhere between UTC+2 and UTC+7.`,
+    summary: `Hi there!
+I'm currently based in Thailand and open to DevOps / SRE opportunities that include visa and work permit sponsorship.
+I have hands-on experience with Kubernetes, GCP, AWS, CI/CD, and infrastructure as code.
+I have nothing against "legacy" projects, as long as they generate revenue`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
