@@ -38,13 +38,25 @@ export function Deploy(project: string, region: string, image: string) {
                   name: 'http1',
                 },
               ],
+              livenessProbe: {
+                httpGet: {
+                  path: '/resume.html',
+                  port: 8080,
+                },
+              },
+              readinessProbe: {
+                httpGet: {
+                  path: '/resume.html',
+                  port: 8080,
+                },
+              },
               resources: {
                 limits: {
                   cpu: '1',
                   memory: '128Mi',
                 },
               },
-            },
+            } as gcp.types.input.cloudrun.ServiceTemplateSpecContainer,
           ],
           timeoutSeconds: 300,
         },
