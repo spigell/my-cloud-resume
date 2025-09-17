@@ -38,6 +38,22 @@ export function Deploy(project: string, region: string, image: string) {
                   name: 'http1',
                 },
               ],
+              livenessProbe: {
+                httpGet: {
+                  path: '/resume.html',
+                  port: 8080,
+                },
+                timeoutSeconds: 1,
+                failureThreshold: 1,
+              },
+              startupProbe: {
+                httpGet: {
+                  path: '/resume.html',
+                  port: 8080,
+                },
+                timeoutSeconds: 2,
+                failureThreshold: 3,
+              },
               resources: {
                 limits: {
                   cpu: '1',

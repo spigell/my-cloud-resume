@@ -48,7 +48,7 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       ],
     },
     amarkets: {
-      name: 'Amarkets',
+      name: 'AMarkets',
       position: 'DevOps Engineer / SRE',
       location: 'Montenegro',
       startDate: personal.experience.amarkets.startDate,

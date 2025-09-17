@@ -7,7 +7,7 @@ export const data: Data = {
     label: 'SRE / DevOps инженер',
     email: personal.email,
     website: personal.website,
-    summary: `Инженер DevOps/SRE, нахожусь в Таиланде; открыт к предложениям со стабильную долгосрочную занятостью. Часовой пояс +7GMT. Практический опыт с Kubernetes, публичными облаками, CI/CD и инфраструктурой как кодом.`,
+    summary: `Инженер DevOps/SRE, нахожусь в Таиланде; открыт к предложениям со стабильную долгосрочную занятостью. Часовой пояс GMT+7. Практический опыт с Kubernetes, публичными облаками, CI/CD и инфраструктурой как кодом.`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
