@@ -7,10 +7,8 @@ export const data: Data = {
     label: 'SRE / DevOps engineer',
     email: personal.email,
     website: personal.website,
-    summary: `Hi there!
-I'm currently based in Thailand and open to DevOps / SRE opportunities that include visa and work permit sponsorship.
-I have hands-on experience with Kubernetes, GCP, AWS, CI/CD, and infrastructure as code.
-I have nothing against "legacy" projects, as long as they generate revenue`,
+    summary: `DevOps / SRE engineer based in Thailand, open to roles aligned with GMT+7 and offering stable, long-term employment.
+Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
@@ -39,12 +37,13 @@ I have nothing against "legacy" projects, as long as they generate revenue`,
     freelance: {
       name: 'Freelancer',
       position: 'DevOps Engineer / SRE / Developer',
+      location: 'Remote',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Working as a freelance engineer on a trading bot platform that interacts with centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.
-Primary stack includes TypeScript/Node.js, GCP, and Kubernetes-based infrastructure.
-Key responsibilities:
-- Designing and maintaining Kubernetes infrastructure based on GKE and Hetzner (Talos), using an Infrastructure as Code approach with Pulumi and Helm`,
+      summary: `Working in a startup environment as a freelance engineer on a trading bot platform that interacts with centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs`,
       highlights: [
+        'Created Kubernetes clusters on GKE and Hetzner (Talos) for reproducible and reliable deployments',
+        'Automating infrastructure with Pulumi and Helm to reduce configuration errors and simplify upgrades',
+        'Author and maintainer of the open-source project <a href="https://github.com/spigell/pulumi-talos-cluster" target="_blank" rel="noopener noreferrer">pulumi-talos-cluster</a>, enabling Pulumi workflows to manage Talos-based Kubernetes',
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },

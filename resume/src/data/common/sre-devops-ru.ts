@@ -7,10 +7,7 @@ export const data: Data = {
     label: 'SRE / DevOps инженер',
     email: personal.email,
     website: personal.website,
-    summary: `Привет!
-В настоящий момент нахожусь в Таиланде и рассматриваю предложения на позицию DevOps / SRE инженера с оформлением рабочей визы и разрешения на работу.
-Обладаю глубокими знаниями в области DevOps и SRE: от автоматизации инфраструктуры до обеспечения надёжности и масштабируемости систем.
-Ничего не имею против "legacy" проектов, которые приносят деньги`,
+    summary: `Инженер DevOps/SRE, нахожусь в Таиланде; открыт к предложениям со стабильную долгосрочную занятостью. Часовой пояс +7GMT. Практический опыт с Kubernetes, публичными облаками, CI/CD и инфраструктурой как кодом.`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
@@ -40,13 +37,12 @@ export const data: Data = {
       name: 'Фрилансер',
       position: 'SRE / DevOps инженер / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Работаю фриланс-инженером для платформы торговых ботов, взаимодействующих с CEX (Bybit, Mexc) и DEX (Uniswap, Mira) через REST и WebSocket API.
-Основной стек — TypeScript/Nodejs, GCP и Kubernetes-инфраструктура
-Основные обязанности:
-- Проектирование и сопровождение Kubernetes-инфраструктуры на базе GKE + (Hetzner+Talos) с IaC-подходом (Pulumi/Helm)
-`,
+      summary: `Работаю в условиях стартапа как фриланс-инженер над платформой торговых ботов, которая взаимодействует с централизованными (Bybit, Mexc) и децентрализованными (Uniswap, Mira) биржами через REST и WebSocket API`,
       highlights: [
-        `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
+        'Создал Kubernetes инфраструктуру на GKE и Hetzner (Talos) для воспроизводимых и надёжных развёртываний',
+        'Автоматизировал инфраструктуру с помощью Pulumi и Helm для снижения количества ошибок конфигурации и упрощения обновлений',
+        'Автор и мейнтейнер open-source проекта <a href="https://github.com/spigell/pulumi-talos-cluster" target="_blank" rel="noopener noreferrer">pulumi-talos-cluster</a>, упрощающего установку и управление кластеров Talos',
+        `Стек: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
     amarkets: {
