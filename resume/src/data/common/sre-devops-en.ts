@@ -53,14 +53,15 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Montenegro',
       startDate: personal.experience.amarkets.startDate,
       endDate: personal.experience.amarkets.endDate,
-      summary: `A company providing brokerage services for clients in the Forex market.
-Key responsibilities:
-- Designing the architecture for service and application interactions
-- Migrating services (including monoliths) to Kubernetes, writing and maintaining Helm charts
-- Automating CI/CD processes, ensuring infrastructure monitoring and security
-- Optimizing AWS costs: implementing Reserved Instances and Savings Plans, conducting infrastructure audits, setting up cost monitoring and budget alerts, automating cost reporting using tagging
-- Debugging complex performance issues in databases and applications`,
-      highlights: [`Stack: ${personal.experience.amarkets.stack.join(', ')}`],
+      summary: `Online brokerage (Forex/CFD). DevOps/SRE owning platform reliability and operations, mostly for databases.`,
+      highlights: [
+        'Investigated and resolved complex DB/app performance issues (PostgreSQL, MySQL, Redis)',
+        'Introduced PostgreSQL audit tooling to surface index gaps and query anti-patterns',
+        'Partnered with Go engineers on MetaTrader5 services—boosting reliability and cost efficiency',
+        'Designed service interaction patterns and rollout strategies during monolith → Kubernetes migration (Deckhouse)',
+        'Improved reliability and visibility with Prometheus stack dashboards/alerts and Sentry error tracking',
+        `Stack: ${personal.experience.amarkets.stack.join(', ')}`,
+      ],
       website: 'https://amarkets.com',
     },
     gaijin: {
