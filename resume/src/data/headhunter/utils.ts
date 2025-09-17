@@ -24,7 +24,7 @@ export const workToHeadhunterExperience = (
     industries: [],
     description: buildDescription(work),
     start: `${work.startDate}-01`,
-    ...(work.endDate ? { end: `${work.startDate}-01` } : {}),
+    ...(work.endDate ? { end: `${work.endDate}-01` } : {}),
     ...(work.website ? { company_url: work.website } : {}),
   };
 };
