@@ -37,11 +37,11 @@ export const data: Data = {
       name: 'Фрилансер',
       position: 'SRE / DevOps инженер / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Работаю в условиях стартапа как фриланс-инженер над платформой торговых ботов, которая взаимодействует с централизованными (Bybit, Mexc) и децентрализованными (Uniswap, Mira) биржами через REST и WebSocket API`,
+      summary: `Работаю в условиях стартапа как фриланс-инженер над платформой торговых ботов, которая взаимодействует с централизованными (Bybit, Mexc) и децентрализованными (Uniswap, Mira) биржами через REST и WebSocket API.`,
       highlights: [
         'Создал Kubernetes инфраструктуру на GKE и Hetzner (Talos) для воспроизводимых и надёжных развёртываний',
         'Автоматизировал инфраструктуру с помощью Pulumi и Helm для снижения количества ошибок конфигурации и упрощения обновлений',
-        'Автор и мейнтейнер open-source проекта <a href="https://github.com/spigell/pulumi-talos-cluster" target="_blank" rel="noopener noreferrer">pulumi-talos-cluster</a>, упрощающего установку и управление кластеров Talos',
+        'Автор и мейнтейнер open-source проекта pulumi-talos-cluster, упрощающего установку и управление кластеров Talos',
         `Стек: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },

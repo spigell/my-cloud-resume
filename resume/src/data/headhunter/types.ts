@@ -5,7 +5,7 @@ export type HeadhunterExperience = {
   company_url?: string;
   position: string;
   industries: unknown[];
-  description: string[];
+  description: string;
 };
 
 export type HeadhunterResumeInfo = {

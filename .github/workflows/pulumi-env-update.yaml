@@ -8,6 +8,7 @@ on:
       - 'infra/**'
       - 'frontend/**'
       - '.github/**'
+      - 'resume/**'
   workflow_dispatch:
 
 defaults:
