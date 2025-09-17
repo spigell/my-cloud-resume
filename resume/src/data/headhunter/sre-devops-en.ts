@@ -1,6 +1,7 @@
 import * as personal from '../common/personal';
 import * as en from '../common/sre-devops-en';
 import { HeadhunterResumeInfo } from './types';
+import { workToHeadhunterExperience } from './utils';
 
 export const resume: HeadhunterResumeInfo = {
   resumeId: '59b9dc79ff09cc48d80039ed1f7864386c7758',
@@ -24,66 +25,13 @@ export const resume: HeadhunterResumeInfo = {
         },
       ],
       experience: [
-        {
-          start: en.data.work.freelance.startDate + '-01',
-          company: en.data.work.freelance.name,
-          position: en.data.work.freelance.position,
-          industries: [],
-          description: en.data.work.freelance.summary,
-        },
-        {
-          start: en.data.work.amarkets.startDate + '-01',
-          end: en.data.work.amarkets.endDate + '-01',
-          company: en.data.work.amarkets.name,
-          position: en.data.work.amarkets.position,
-          industries: [],
-          description: en.data.work.amarkets.summary,
-        },
-        {
-          company_url: en.data.work.gaijin.website,
-          start: en.data.work.gaijin.startDate + '-01',
-          end: en.data.work.gaijin.endDate + '-01',
-          company: en.data.work.gaijin.name,
-          position: en.data.work.gaijin.position,
-          industries: [],
-          description: en.data.work.gaijin.summary,
-        },
-        {
-          company_url: en.data.work.yandex.website,
-          start: en.data.work.yandex.startDate + '-01',
-          end: en.data.work.yandex.endDate + '-01',
-          company: en.data.work.yandex.name,
-          position: en.data.work.yandex.position,
-          industries: [],
-          description: en.data.work.yandex.summary,
-        },
-        {
-          company_url: en.data.work.rostelecom.website,
-          start: en.data.work.rostelecom.startDate + '-01',
-          end: en.data.work.rostelecom.endDate + '-01',
-          company: en.data.work.rostelecom.name,
-          position: en.data.work.rostelecom.position,
-          industries: [],
-          description: en.data.work.rostelecom.summary,
-        },
-        {
-          company_url: en.data.work.equilibrium.website,
-          start: en.data.work.equilibrium.startDate + '-01',
-          end: en.data.work.equilibrium.endDate + '-01',
-          company: en.data.work.equilibrium.name,
-          position: en.data.work.equilibrium.position,
-          industries: [],
-          description: en.data.work.equilibrium.summary,
-        },
-        {
-          company_url: en.data.work.restream.website,
-          start: en.data.work.restream.startDate + '-01',
-          end: en.data.work.restream.endDate + '-01',
-          company: en.data.work.restream.name,
-          position: en.data.work.restream.position,
-          industries: [],
-          description: en.data.work.restream.summary,
-        },
+        workToHeadhunterExperience(en.data.work.freelance),
+        workToHeadhunterExperience(en.data.work.amarkets),
+        workToHeadhunterExperience(en.data.work.gaijin),
+        workToHeadhunterExperience(en.data.work.yandex),
+        workToHeadhunterExperience(en.data.work.rostelecom),
+        workToHeadhunterExperience(en.data.work.equilibrium),
+        workToHeadhunterExperience(en.data.work.restream),
       ],
       languages: [en.data.languages.russian, en.data.languages.english],
       certificate: [en.data.certificates.cka, en.data.certificates.cks],
