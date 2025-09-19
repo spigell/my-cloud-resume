@@ -21,7 +21,7 @@ const jsonData = JSON.stringify(
         ...en.data.work.rostelecom,
         summary: en.data.work.rostelecom.summary.slice(0, 261),
       },
-      // ru.data.work.restream,
+      //en.data.work.equilibrium,
     ],
     skills: en.data.skills.filter((skill) => {
       return [
