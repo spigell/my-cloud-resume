@@ -7,8 +7,8 @@ export const data: Data = {
     label: 'SRE / DevOps engineer',
     email: personal.email,
     website: personal.website,
-    summary: `DevOps / SRE engineer based in Thailand, open to roles aligned with GMT+7 and offering stable, long-term employment.
-Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
+    summary: `DevOps / SRE engineer based in Thailand; open to stable, long-term opportunities. Time zone GMT+7. Hands-on experience
+with Kubernetes, public clouds, CI/CD, and infrastructure as code.`,
     profiles: [
       personal.profiles.linkedin,
       personal.profiles.telegram,
@@ -26,7 +26,7 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
   languages: {
     russian: {
       language: 'Russian',
-      fluency: 'Fluent',
+      fluency: 'Native',
     },
     english: {
       language: 'English',
@@ -37,13 +37,13 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
     freelance: {
       name: 'Freelancer',
       position: 'DevOps Engineer / SRE / Developer',
-      location: 'Remote',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Working in a startup environment as a freelance engineer on a trading bot platform that interacts with centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.`,
+      summary: `Working as a freelance engineer in a startup environment on a trading bot platform that connects to centralized
+(Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.`,
       highlights: [
-        'Created Kubernetes clusters on GKE and Hetzner (Talos) for reproducible and reliable deployments',
-        'Automating infrastructure with Pulumi and Helm to reduce configuration errors and simplify upgrades',
-        'Built and keep maintain the open-source project pulumi-talos-cluster, enabling Pulumi workflows to manage Talos-based Kubernetes',
+        'Built Kubernetes infrastructure on GKE and Hetzner (Talos) for reproducible, reliable deployments',
+        'Automated infrastructure with Pulumi and Helm to reduce configuration errors and simplify updates',
+        'Created and maintain the open-source project pulumi-talos-cluster, streamlining installation and operations of Talos clusters',
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
@@ -53,13 +53,13 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Montenegro',
       startDate: personal.experience.amarkets.startDate,
       endDate: personal.experience.amarkets.endDate,
-      summary: `Online brokerage (Forex/CFD). DevOps/SRE owning platform reliability and operations, mostly for databases.`,
+      summary: `Online broker (Forex/CFD). SRE/DevOps responsible for platform reliability and operations, primarily around databases.`,
       highlights: [
-        'Investigated and resolved complex DB/app performance issues (PostgreSQL, MySQL, Redis)',
-        'Introduced PostgreSQL audit tooling to surface index gaps and query anti-patterns',
-        'Partnered with Go engineers on MetaTrader5 services—boosting reliability and cost efficiency',
-        'Designed service interaction patterns and rollout strategies during monolith → Kubernetes migration (Deckhouse)',
-        'Improved reliability and visibility with Prometheus stack dashboards/alerts and Sentry error tracking',
+        'Diagnosed and resolved complex database and application performance issues (PostgreSQL, MySQL, Redis)',
+        'Introduced PostgreSQL auditing tools to identify missing indexes and query anti-patterns',
+        'Partnered with Go engineers on MetaTrader 5 services, improving reliability and reducing costs',
+        'Designed service interaction patterns and rollout strategies for the monolith-to-Kubernetes migration (Deckhouse)',
+        'Improved reliability and observability with Prometheus stack dashboards/alerts and Sentry error tracking',
         `Stack: ${personal.experience.amarkets.stack.join(', ')}`,
       ],
       website: 'https://amarkets.com',
@@ -70,15 +70,11 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Cyprus',
       startDate: personal.experience.gaijin.startDate,
       endDate: personal.experience.gaijin.endDate,
-      summary: `Working in a team supporting the primary games of Gaijin: Warthunder, Enlisted. Main duties:
-- Optimize costs of infrastructure
-- Troubleshooting the production and test environments
-- Implement and support services for internal usage
-- Regular on-call duty
-- Minimize downtime and raise user happiness`,
+      summary: `Maintained and developed infrastructure for games such as Warthunder and Enlisted.`,
       highlights: [
-        'Implemented custom service discovery using native etcd mechanisms. The client was a sidecar living alongside services, capable of performing health checks',
-        'Defined the entire server-side stack for distributing game clients as a docker-compose stack. Containerized numerous C++ and Golang services',
+        'Ensured uptime of high-load game backends, handled troubleshooting, and took part in on-call rotations',
+        'Built custom service discovery using native etcd mechanisms',
+        'Documented the entire server-side distribution stack for game clients as a docker-compose setup, containerizing numerous C++ and Go services',
         `Stack: ${personal.experience.gaijin.stack.join(', ')}`,
       ],
       website: 'https://gaijin.net',
@@ -89,10 +85,11 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Moscow',
       startDate: personal.experience.yandex.startDate,
       endDate: personal.experience.yandex.endDate,
-      summary: `There is Level 2 (Premium) support in Yandex Cloud. As part of the team was responsible for the following:
-- Providing a full circle of support for premium clients
-- Managed and resolved customer escalations
-- Resolved tricky customer's issues`,
+      summary: `Served on the second-line support team for Yandex Cloud.`,
+      highlights: [
+        'Handled customer support tickets',
+        'Troubleshot cloud-side services (MDB, Compute, Kubernetes)',
+      ],
       website: 'https://www.yandex.ru',
     },
     rostelecom: {
@@ -101,11 +98,16 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Moscow',
       startDate: personal.experience.rostelecom.startDate,
       endDate: personal.experience.rostelecom.endDate,
-      summary: `Has worked in the streaming service "Wink" (https://wink.ru). Areas of responsibility:
-- Stable work of production and test environments (includes monitoring and troubleshooting)
-- Prepare new releases for production (stress testing, review migrations and code)
-- Supporting dev teams (CI/CD integrations, internal services)`,
-      highlights: [`Stack: ${personal.experience.rostelecom.stack.join(', ')}`],
+      summary: `Supported and developed the WINK project (formerly Rostelecom Interactive TV).`,
+      highlights: [
+        'Updated, configured, and troubleshot product software (Wink API services)',
+        'Set up monitoring for servers and services (Zabbix, Prometheus, VictoriaMetrics), participated in on-call duty, and responded to incidents',
+        'Administered PostgreSQL databases (backups, replication, performance assessments)',
+        'Automated tasks and CI/CD workflows (GitLab CI)',
+        'Supported the product team by providing and creating tools as a service',
+        'Handled non-technical work: training the duty shift on the new platform, working with business analysts, planning and ordering new hardware for the platform',
+        `Stack: ${personal.experience.rostelecom.stack.join(', ')}`,
+      ],
       website: 'https://rtkit.ru',
     },
     equilibrium: {
@@ -114,10 +116,10 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'equilibrium.io',
       startDate: personal.experience.equilibrium.startDate,
       endDate: personal.experience.equilibrium.endDate,
-      summary: `EQ is a crypto FinTech startup (EOS and ETH blockchains). Some achievements:
-- Implement feature branch strategy for development based on docker swarm and TeamCity
-- Bring and support monitoring based on the Prometheus stack`,
+      summary: `Helped build a crypto fintech product in a small team of enthusiasts.`,
       highlights: [
+        'Maintained public blockchain nodes (Parity for ETH, nodeos for EOS)',
+        'Introduced a feature-branch development approach using Docker Swarm on the staging environment to meet team needs',
         `Stack: ${personal.experience.equilibrium.stack.join(', ')}`,
       ],
       website: 'https://equilibrium.io',
@@ -128,7 +130,11 @@ Experienced with Kubernetes, Public clouds, CI/CD, and infrastructure as code.`,
       location: 'Moscow',
       startDate: personal.experience.restream.startDate,
       endDate: personal.experience.restream.endDate,
-      summary: `The central part of my work was troubleshooting our Linux platform`,
+      summary: `Rostelecom's "Interactive TV" project. Worked in the monitoring department.`,
+      highlights: [
+        'Processed requests in the ticketing system (Jira)',
+        'Performed initial OS setup (CentOS) on servers and handled inventory via IaC (Puppet)',
+      ],
       website: 'http://restream.rt.ru',
     },
   },
