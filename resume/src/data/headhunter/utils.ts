@@ -9,7 +9,7 @@ const buildDescription = (work: Work): string => {
     .filter((highlight) => highlight.length > 0);
 
   if (highlights && highlights.length > 0) {
-    description += `\n\nКлючевые достижения: \n - ${highlights.join('\n - ')}`;
+    description += `\n\nКлючевые моменты: \n - ${highlights.join('\n - ')}`;
   }
 
   return description;
