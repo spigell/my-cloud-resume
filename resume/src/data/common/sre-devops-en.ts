@@ -26,7 +26,7 @@ with Kubernetes, public clouds, CI/CD, and infrastructure as code.`,
   languages: {
     russian: {
       language: 'Russian',
-      fluency: 'Native',
+      fluency: 'Fluent',
     },
     english: {
       language: 'English',
