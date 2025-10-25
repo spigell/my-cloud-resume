@@ -14,12 +14,12 @@ const jsonData = JSON.stringify(
       ru.data.work.amarkets,
       {
         ...ru.data.work.gaijin,
-        summary: ru.data.work.gaijin.summary.slice(0, 298),
+        summary: ru.data.work.gaijin.summary,
       },
       ru.data.work.yandex,
       {
         ...ru.data.work.rostelecom,
-        summary: ru.data.work.rostelecom.summary.slice(0, 265),
+        summary: ru.data.work.rostelecom.summary,
       },
       //ru.data.work.equilibrium,
     ],

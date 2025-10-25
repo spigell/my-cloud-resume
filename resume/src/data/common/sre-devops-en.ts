@@ -58,7 +58,6 @@ export const data: Data = {
         'Introduced PostgreSQL query audit tools to identify missing indexes and query anti-patterns',
         'Partnered with Go engineers on MetaTrader 5 services to improve reliability and reduce costs',
         'Designed service interaction patterns and rollout strategies for a monolith-to-Kubernetes migration (Deckhouse platform)',
-        'Improved reliability and observability with Prometheus stack dashboards/alerts and Sentry error tracking',
         'Reduced MTTR by proactively diagnosing backend slowdowns and validating fixes before they impacted end-users',
         `Stack: ${personal.experience.amarkets.stack.join(', ')}`,
       ],
@@ -74,7 +73,6 @@ export const data: Data = {
       highlights: [
         'Ensured uptime of high-load game backends by quickly **troubleshooting critical incidents**, and participated in a 24/7 on-call rotation',
         'Built a custom service discovery mechanism using native etcd features',
-        'Documented the entire server-side content distribution stack as a Docker Compose configuration, containerizing numerous C++ and Go services',
         'Focused on uptime and rapid recovery in high-load multiplayer environments with live player traffic',
         `Stack: ${personal.experience.gaijin.stack.join(', ')}`,
       ],
@@ -88,7 +86,6 @@ export const data: Data = {
       endDate: personal.experience.yandex.endDate,
       summary: `Served on the second-line support team for Yandex Cloud.`,
       highlights: [
-        'Handled customer support tickets in the helpdesk system',
         'Troubleshot issues in Yandex Cloud services (Managed DB, Compute, Kubernetes)',
         'Specialized in deep-dive incident analysis and resolution in production Kubernetes clusters under pressure',
       ],
@@ -105,7 +102,6 @@ export const data: Data = {
         'Updated, configured, and **troubleshot** the Wink API services in production',
         'Set up monitoring for servers and services (Zabbix, Prometheus, VictoriaMetrics); participated in on-call duty and responded to incidents',
         'Administered PostgreSQL databases (backups, replication, performance tuning)',
-        'Automated tasks and CI/CD workflows (GitLab CI)',
         'Supported the product team by providing internal tools as a service to streamline development and releases',
         'Handled additional duties: trained the 24/7 operations staff on the new platform, coordinated with business analysts, and planned hardware procurements for the project',
         'Systematically eliminated SPOFs and improved service recoverability across critical TV infrastructure',
@@ -122,7 +118,6 @@ export const data: Data = {
       summary: `Helped build a crypto fintech product as part of a small startup team.`,
       highlights: [
         'Maintained public blockchain nodes (Parity for ETH, nodeos for EOS)',
-        'Introduced a feature-branch workflow using Docker Swarm in the staging environment to meet team testing needs',
         'Reinforced infrastructure against edge-case failures in blockchain node deployments and CI pipelines',
         `Stack: ${personal.experience.equilibrium.stack.join(', ')}`,
       ],
