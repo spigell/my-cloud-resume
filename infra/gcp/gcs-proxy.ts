@@ -23,7 +23,7 @@ export function Deploy(project: string, region: string, image: string) {
           },
         },
         spec: {
-          containerConcurrency: 1,
+          containerConcurrency: 10,
           containers: [
             {
               envs: [

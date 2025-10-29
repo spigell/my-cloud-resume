@@ -54,7 +54,7 @@ export const data: Data = {
       endDate: personal.experience.amarkets.endDate,
       summary: `Online broker (Forex/CFD). SRE/DevOps engineer responsible for platform reliability and operations, primarily around databases.`,
       highlights: [
-        'Diagnosed and resolved complex database and application performance issues **in production** (PostgreSQL, MySQL, Redis)',
+        'Diagnosed and resolved complex database and application performance issues in production (PostgreSQL, MySQL, Redis)',
         'Introduced PostgreSQL query audit tools to identify missing indexes and query anti-patterns',
         'Partnered with Go engineers on MetaTrader 5 services to improve reliability and reduce costs',
         'Designed service interaction patterns and rollout strategies for a monolith-to-Kubernetes migration (Deckhouse platform)',
@@ -71,7 +71,7 @@ export const data: Data = {
       endDate: personal.experience.gaijin.endDate,
       summary: `Maintained and developed infrastructure for online games such as War Thunder and Enlisted.`,
       highlights: [
-        'Ensured uptime of high-load game backends by quickly **troubleshooting critical incidents**, and participated in a 24/7 on-call rotation',
+        'Ensured uptime of high-load game backends by quickly troubleshooting critical incidents, and participated in a 24/7 on-call rotation',
         'Built a custom service discovery mechanism using native etcd features',
         'Focused on uptime and rapid recovery in high-load multiplayer environments with live player traffic',
         `Stack: ${personal.experience.gaijin.stack.join(', ')}`,
@@ -99,7 +99,7 @@ export const data: Data = {
       endDate: personal.experience.rostelecom.endDate,
       summary: `Supported and developed the WINK platform (formerly Rostelecom Interactive TV).`,
       highlights: [
-        'Updated, configured, and **troubleshot** the Wink API services in production',
+        'Updated, configured, and troubleshot the Wink API services in production',
         'Set up monitoring for servers and services (Zabbix, Prometheus, VictoriaMetrics); participated in on-call duty and responded to incidents',
         'Administered PostgreSQL databases (backups, replication, performance tuning)',
         'Supported the product team by providing internal tools as a service to streamline development and releases',
