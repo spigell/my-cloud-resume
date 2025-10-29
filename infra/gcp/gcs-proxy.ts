@@ -18,11 +18,12 @@ export function Deploy(project: string, region: string, image: string) {
       template: {
         metadata: {
           annotations: {
-            'autoscaling.knative.dev/maxScale': '3',
+            'autoscaling.knative.dev/maxScale': '1',
+            'autoscaling.knative.dev/minScale': '0',
           },
         },
         spec: {
-          containerConcurrency: 3,
+          containerConcurrency: 1,
           containers: [
             {
               envs: [
@@ -38,20 +39,13 @@ export function Deploy(project: string, region: string, image: string) {
                   name: 'http1',
                 },
               ],
-              livenessProbe: {
-                httpGet: {
-                  path: '/resume.html',
-                  port: 8080,
-                },
-                timeoutSeconds: 1,
-                failureThreshold: 1,
-              },
               startupProbe: {
                 httpGet: {
                   path: '/resume.html',
                   port: 8080,
                 },
-                timeoutSeconds: 2,
+                periodSeconds: 240,
+                timeoutSeconds: 10,
                 failureThreshold: 3,
               },
               resources: {
