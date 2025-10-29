@@ -44,9 +44,9 @@ export function Deploy(project: string, region: string, image: string) {
                   path: '/resume.html',
                   port: 8080,
                 },
-                periodSeconds: 240,
+                periodSeconds: 15,
                 timeoutSeconds: 10,
-                failureThreshold: 3,
+                failureThreshold: 2,
               },
               resources: {
                 limits: {
