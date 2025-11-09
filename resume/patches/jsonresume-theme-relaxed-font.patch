@@ -1,0 +1,13 @@
+diff --git a/src/resume.styl b/src/resume.styl
+index 20083aa..bbdd665 100644
+--- a/src/resume.styl
++++ b/src/resume.styl
+@@ -22,7 +22,7 @@ quote-mark(content)
+   color lightslategray
+ 
+ :root
+-  font-family "Lato", sans-serif
++  font-family "Roboto", sans-serif
+   text-rendering geometricPrecision // XXX: fixes kerning
+ 
+ @media not print
