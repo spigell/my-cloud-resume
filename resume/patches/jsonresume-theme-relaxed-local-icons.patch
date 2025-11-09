@@ -1,0 +1,62 @@
+diff --git a/index.js b/index.js
+index 5f1eeaa..9915abd 100644
+--- a/index.js
++++ b/index.js
+@@ -1,4 +1,5 @@
+ const {existsSync, readFileSync} = require('node:fs');
++const path = require('node:path');
+ const htmls = require('@chronobserver/htmls');
+ const {name, version} = require('./package.json');
+ 
+@@ -10,6 +11,23 @@ const {name, version} = require('./package.json');
+ /** @type {Intl.DateTimeFormatOptions} */
+ const dateFmt = {month: 'long', year: 'numeric'};
+ 
++const ICON_ROOT = path.resolve(__dirname, '..', 'src', 'assets', 'icons');
++const heroiconCache = new Map();
++const brandIconCache = new Map();
++
++const toDataUri = (cache, filePath) => {
++  if (cache.has(filePath)) {
++    return cache.get(filePath);
++  }
++  if (!existsSync(filePath)) {
++    throw Error(`Missing icon asset: ${filePath}`);
++  }
++  const svg = readFileSync(filePath, 'utf-8');
++  const dataUri = `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
++  cache.set(filePath, dataUri);
++  return dataUri;
++};
++
+ const lib = {
+   /**
+    * Strip the scheme & path from a URL.
+@@ -30,20 +48,19 @@ const lib = {
+    * @param {string} icon the icon name
+    * @returns {string}
+    */
+-  icon: (style, icon) => `https://cdn.statically.io/gh/tailwindlabs/heroicons/master/src/24/${style}/${icon}.svg`,
++  icon: (style, icon) => {
++    const filePath = path.join(ICON_ROOT, 'heroicons', '24', style, `${icon}.svg`);
++    return toDataUri(heroiconCache, filePath);
++  },
+   /**
+    * Get the URL of an icon from simple-icons.
+    * @param {string} name the icon name
+    * @returns {string}
+    */
+   brand: (name) => {
+-    const id = name.toLowerCase().replace(' ', '');
+-    switch (id) {
+-      case 'linkedin': // simple-icons/simple-icons#11380
+-        return 'https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg'
+-      default:
+-        return `https://cdn.simpleicons.org/${id}`
+-    }
++    const id = name.toLowerCase().replace(/\s+/g, '');
++    const filePath = path.join(ICON_ROOT, 'brands', `${id}.svg`);
++    return toDataUri(brandIconCache, filePath);
+   },
+   /**
+    * Guess the mime type of an image by its extension.
