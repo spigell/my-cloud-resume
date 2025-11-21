@@ -1,43 +1,9 @@
 import * as ru from '../data/common/sre-devops-ru';
+import { buildResumeJson } from './build-resume-json';
 
-const version = 'v0.0.1';
-
-const jsonData = JSON.stringify(
-  {
-    meta: {
-      version: version,
-      'x-lang': 'ru',
-    },
-    basics: ru.data.basics,
-    work: [
-      ru.data.work.freelance,
-      ru.data.work.amarkets,
-      {
-        ...ru.data.work.gaijin,
-        summary: ru.data.work.gaijin.summary,
-      },
-      ru.data.work.yandex,
-      {
-        ...ru.data.work.rostelecom,
-        summary: ru.data.work.rostelecom.summary,
-      },
-      //ru.data.work.equilibrium,
-    ],
-    skills: ru.data.skills.filter((skill) => {
-      return [
-        'Kubernetes',
-        'IaC',
-        'Linux',
-        'Cloud',
-        'Databases',
-        'CI/CD',
-      ].includes(skill.name);
-    }),
-    certificates: [ru.data.certificates.cka, ru.data.certificates.cks],
-    languages: [ru.data.languages.russian, ru.data.languages.english],
-  },
-  null,
-  2,
-);
+const jsonData = buildResumeJson({
+  data: ru.data,
+  lang: 'ru',
+});
 
 console.log(jsonData);

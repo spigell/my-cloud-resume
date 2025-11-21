@@ -1,5 +1,6 @@
 import { Data } from './types';
 import * as personal from './personal';
+import { commonEducation, commonLanguages } from './resume-common-data';
 
 export const data: Data = {
   basics: {
@@ -14,24 +15,8 @@ export const data: Data = {
       personal.profiles.github,
     ],
   },
-  education: {
-    institution: 'UGTU',
-    url: 'https://www.ugtu.net',
-    area: 'Development and Operation of Oil and Gas Fields',
-    studyType: personal.education.studyType,
-    startDate: personal.education.startDate,
-    endDate: personal.education.endDate,
-  },
-  languages: {
-    russian: {
-      language: 'Russian',
-      fluency: 'Fluent',
-    },
-    english: {
-      language: 'English',
-      fluency: 'B2',
-    },
-  },
+  education: commonEducation,
+  languages: commonLanguages,
   work: {
     freelance: {
       name: 'Freelancer',

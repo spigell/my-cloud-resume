@@ -1,8 +1,8 @@
-import * as en from '../data/common/sre-devops-en';
+import * as data from '../data/common/db-reliability-engineer-en';
 import { buildResumeJson } from './build-resume-json';
 
 const jsonData = buildResumeJson({
-  data: en.data,
+  data: data.data,
   lang: 'en',
 });
 

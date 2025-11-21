@@ -3,15 +3,46 @@ import path from 'path';
 import Handlebars from 'handlebars';
 import { Data, Work } from './src/data/common/types';
 
-const data: any = require(
-  path.join(__dirname, 'src/data/common/sre-devops-en.ts'),
-).data as Data;
+const getArgValue = (flags: string[]): string | undefined => {
+  let result: string | undefined;
+
+  for (let i = 0; i < process.argv.length; i += 1) {
+    if (flags.includes(process.argv[i])) {
+      const nextValue = process.argv[i + 1];
+      if (nextValue) {
+        result = nextValue;
+      }
+    }
+  }
+
+  return result;
+};
+
+const variantFlag = getArgValue(['--variant', '-v']);
+const variant = variantFlag ?? process.env.RESUME_VARIANT ?? 'sre-devops-en';
+
+if (!/^[a-z0-9-]+$/.test(variant)) {
+  throw new Error(`Invalid resume variant "${variant}"`);
+}
+
+const dataPath = path.join(__dirname, 'src/data/common', `${variant}.ts`);
+
+if (!fs.existsSync(dataPath)) {
+  throw new Error(`Resume data file not found for variant "${variant}"`);
+}
+
+const data: Data = require(dataPath).data as Data;
 
 const templateSource = fs.readFileSync(
   path.join(__dirname, 'src/website/resume.hbs'),
   'utf8',
 );
-const outputFilePath = path.join(__dirname, 'artifacts/resume.html');
+const artifactDir = path.join(__dirname, 'artifacts');
+const variantOutputFileName = `resume-${variant}.html`;
+const variantOutputPath = path.join(artifactDir, variantOutputFileName);
+const canonicalOutputPath = path.join(artifactDir, 'resume.html');
+
+fs.mkdirSync(artifactDir, { recursive: true });
 
 Handlebars.registerHelper('nl2br', (text: string) => {
   return new Handlebars.SafeString(
@@ -76,5 +107,10 @@ const html = template({
   certificatesArray,
 });
 
-fs.writeFileSync(outputFilePath, html);
-console.log(`Generated ${outputFilePath}`);
+fs.writeFileSync(variantOutputPath, html);
+console.log(`Generated ${variantOutputPath}`);
+
+if (variant === 'sre-devops-en') {
+  fs.writeFileSync(canonicalOutputPath, html);
+  console.log(`Generated ${canonicalOutputPath}`);
+}
