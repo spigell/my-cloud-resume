@@ -14,8 +14,7 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Developed Helm and Deckhouse scaffolding that automated configuration drift checks.',
     'Scripted reliability checks for Go services so platform deployments matched operational expectations.',
     'Orchestrated automation for the monolith-to-Kubernetes migration, packaging service interaction patterns into reusable flows.',
-    // Fix spelling below,
-    'Added a automaticall reports for checking Postgresql state (long queries, spaces, etc)',
+    'Added automated reports for monitoring PostgreSQL health (long queries, slow queries, disk usage, etc).',
   ]),
   gaijin: withStack('gaijin', [
     'Automated high-load backend deployments and formalized IaC practices for game infrastructure.',
@@ -29,15 +28,13 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   rostelecom: withStack('rostelecom', [
     'Provisioned monitoring and alerting automation for Wink APIs to keep observability pipelines reliable.',
     'Built tooling that let product and operations teams self-serve internal environments and releases.',
-    // Fix spelling below,
-    'Built a custom upgrading framework based on go and lua scripts.',
+    'Built a custom upgrade framework based on Go and Lua scripts.',
     'Coordinated platform planning with automation that tied hardware procurement to deployment pipelines.',
   ]),
   equilibrium: withStack('equilibrium', [
     'Automated blockchain node deployments and CI/CD pipelines for the crypto-fintech product.',
     'Reinforced CI flows with scripts that recovered from edge-case failures and infrastructure flakiness.',
-    // Fix spelling below
-    'Added feature branching support for developers',
+    'Added feature-branching support for developers.',
   ]),
   restream: withStack('restream', [
     'Provisioned CentOS hosts and managed configuration via Puppet to keep monitoring collectors consistent.',

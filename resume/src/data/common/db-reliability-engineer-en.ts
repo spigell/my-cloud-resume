@@ -5,10 +5,10 @@ import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   freelance: withStack('freelance', [
-    'Diagnosed PostgreSQL/MySQL degradations within Kubernetes workloads before they impacted the trading platform.',
-    'Automated Pulumi and Helm provisioning to include database replication checks and configuration validation.',
-    'Captured telemetry from pulumi-talos-cluster deployments to surface storage health trends early.',
-    'Implemented retry/backoff layers so downstream data services stayed reliable despite unstable APIs.',
+    'Monitored the health and latency of a crypto trading bot platform integrated with centralized and decentralized exchanges.',
+    'Set up metrics, logs, and alerts around exchange API calls, order execution flow, and error rates.',
+    'Improved incident response by tuning alert thresholds and runbooks for failed API calls and degraded platform performance.',
+    'Implemented retry/backoff and circuit-breaker logic so downstream services stayed reliable despite unstable exchange APIs.',
   ]),
   amarkets: withStack('amarkets', [
     'Triaged PostgreSQL, MySQL, and Redis performance incidents, tuning query patterns and resource allocations.',
@@ -16,20 +16,21 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Partnered with Go teams on MetaTrader 5 services to align application and database health signals.',
     'Architected service interaction patterns for the Deckhouse migration, isolating database tiers within Kubernetes.',
     'Reduced MTTR by proactively diagnosing backend slowdowns and validating fixes off-line.',
+    'Planned and executed PostgreSQL and MySQL version upgrades and schema changes in production using replication, phased rollouts, and rollback strategies to avoid downtime.',
   ]),
   gaijin: withStack('gaijin', [
-    'Sustained high-load game backends by analyzing storage performance and implementing rapid recovery playbooks.',
-    'Built etcd-backed service discovery to prevent propagation of database pressure across services.',
-    'Maintained uptime in live multiplayer environments by combining telemetry with on-call readiness.',
+    'Sustained high-load game backends by analyzing storage and service performance and refining rapid recovery playbooks.',
+    'Built an etcd-backed service discovery layer that reduced cascading failures across services during incidents.',
+    'Enhanced monitoring for critical game components so on-call engineers could quickly isolate performance bottlenecks.',
+    'Maintained uptime in live multiplayer environments by combining telemetry, targeted rollbacks, and on-call readiness.',
   ]),
   yandex: withStack('yandex', [
     'Resolved Managed DB, Compute, and Kubernetes incidents, documenting diagnostics for future response.',
-    'Specialized in deep-dive analyses that shortened MTTR for production Kubernetes clusters.',
   ]),
   rostelecom: withStack('rostelecom', [
     'Monitored PostgreSQL clusters (backups, replication, performance) and responded to alerts before user impact.',
     'Configured Zabbix/Prometheus/VictoriaMetrics dashboards to surface database anomalies rapidly.',
-    'Delivered internal tooling so teams could self-serve database operations with predictable outcomes.',
+    'Delivered internal tooling so teams could observe and operate the underlying infrastructure more independently.',
     'Systematically eliminated SPOFs and baked recoverability into database-heavy APIs.',
   ]),
   equilibrium: withStack('equilibrium', [
@@ -38,7 +39,6 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   ]),
   restream: withStack('restream', [
     'Processed Jira incidents with an eye toward monitoring database and node anomalies.',
-    'Provisioned CentOS hosts and managed IaC (Puppet) so monitoring collectors remained consistent.',
     'Improved observability thresholds and RCA practices to speed recovery of monitoring nodes.',
   ]),
 };

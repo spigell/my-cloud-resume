@@ -4,8 +4,6 @@ import { buildResumeJson } from './build-resume-json';
 const skillNames = [
   'Kubernetes',
   'IaC',
-  'Cloud',
-  'Databases',
   'CI/CD',
   'Monitoring',
   'Logging',
