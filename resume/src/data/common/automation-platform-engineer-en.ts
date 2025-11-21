@@ -11,10 +11,11 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Designed automation to isolate flaky APIs and recover workloads with retry/backoff policies.',
   ]),
   amarkets: withStack('amarkets', [
-    'Codified broker infrastructure with Pulumi to enable repeatable builds and safe rollouts.',
     'Developed Helm and Deckhouse scaffolding that automated configuration drift checks.',
     'Scripted reliability checks for Go services so platform deployments matched operational expectations.',
     'Orchestrated automation for the monolith-to-Kubernetes migration, packaging service interaction patterns into reusable flows.',
+    // Fix spelling below,
+    'Added a automaticall reports for checking Postgresql state (long queries, spaces, etc)',
   ]),
   gaijin: withStack('gaijin', [
     'Automated high-load backend deployments and formalized IaC practices for game infrastructure.',
@@ -22,17 +23,21 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Documented platform tooling to support on-call teams with repeatable recovery steps.',
   ]),
   yandex: withStack('yandex', [
-    'Automated diagnostics and remediation playbooks for Kubernetes clusters, Managed DB, and Compute incidents.',
-    'Standardized response scripts so second-line support could execute consistent fixes under pressure.',
+    'Resolved Yandex Cloud incidents spanning Managed DB, Compute, and Kubernetes while capturing lessons for cloud hygiene.',
+    'Documented production Kubernetes failure modes and shared runbooks to speed recovery of critical clusters.',
   ]),
   rostelecom: withStack('rostelecom', [
     'Provisioned monitoring and alerting automation for Wink APIs to keep observability pipelines reliable.',
     'Built tooling that let product and operations teams self-serve internal environments and releases.',
+    // Fix spelling below,
+    'Built a custom upgrading framework based on go and lua scripts.',
     'Coordinated platform planning with automation that tied hardware procurement to deployment pipelines.',
   ]),
   equilibrium: withStack('equilibrium', [
     'Automated blockchain node deployments and CI/CD pipelines for the crypto-fintech product.',
     'Reinforced CI flows with scripts that recovered from edge-case failures and infrastructure flakiness.',
+    // Fix spelling below
+    'Added feature branching support for developers',
   ]),
   restream: withStack('restream', [
     'Provisioned CentOS hosts and managed configuration via Puppet to keep monitoring collectors consistent.',

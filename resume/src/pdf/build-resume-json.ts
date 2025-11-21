@@ -17,6 +17,7 @@ const defaultWorkKeys: WorkKey[] = [
   'amarkets',
   'gaijin',
   'yandex',
+  'equilibrium',
   'rostelecom',
 ];
 
