@@ -25,3 +25,8 @@ Ensure Husky/prettier hooks pass, rerun GitHub Actions when artifacts change, an
 
 ## Security & Configuration Tips
 Store temporary secrets in local `.env` files excluded by `.gitignore`. Keep Pulumi state backends consistent with the values referenced in `infra/` docs before running `pulumi up`. Images and PDFs contain personal information; verify sharing permissions before uploading generated artifacts outside this repository.
+
+## Translation Preferences
+
+- **Russian Technical Terminology:**
+    - Prefer **"работа приложений"** instead of "рабочие нагрузки" when translating "workloads".

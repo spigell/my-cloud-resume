@@ -7,18 +7,17 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   freelance: withStack('freelance', [
     'Provided consulting on Kubernetes, cloud, and platform reliability for a crypto trading bot platform integrating with CEX and DEX APIs.',
     'Designed and implemented Pulumi- and Helm-based automation for clusters and services, working mostly independently and handing over clear runbooks to clients.',
-    'Maintained the pulumi-talos-cluster OSS project and used it as a foundation for client environments, incorporating lessons from real-world incidents.',
+    'Maintain the pulumi-talos-cluster OSS project and used it as a foundation for client environments, incorporating lessons from real-world incidents.',
   ]),
   amarkets: withStack('amarkets', [
     'Acted as a senior engineer for broker reliability, aligning Go engineers, SRE, and product around shared incident and SLA goals.',
     'Instituted PostgreSQL/MySQL diagnostic playbooks and coached engineers on performance tuning and safe rollouts.',
-    'Owned the monolith-to-Kubernetes migration strategy, facilitating design discussions and communicating rollout priorities across stakeholders.',
+    'Supported the monolith-to-Kubernetes migration strategy, facilitating design discussions and communicating rollout priorities across stakeholders.',
     'Improved MTTR via structured incident reviews, tracking action items, and pushing automation into orchestration layers.',
   ]),
   gaijin: withStack('gaijin', [
     'Grew into a reliability owner for high-load multiplayer operations, mentoring on-call engineers and broadcasting incident learnings.',
-    'Coordinated service discovery and reliability work across AWS and bare-metal Kubernetes deployments as the environment scaled.',
-    'Led initiatives that prioritized uptime and recovery for player-facing systems, influencing how new services were shipped.',
+    'Proposed on-call rotations for the web team to improve system visibility and ownership.',
   ]),
   yandex: withStack('yandex', [
     'Served as an escalation point for Managed DB, Compute, and Kubernetes incidents and documented diagnostics for the team.',
@@ -46,7 +45,7 @@ export const data: Data = {
   basics: {
     ...baseData.basics,
     label: 'Senior DevOps Engineer',
-    summary: `Senior DevOps engineer who has grown from a support role in monitoring through progressively larger SRE/DevOps responsibilities into leading reliability, migrations, and automation initiatives. Combines hands-on expertise with mentoring, cross-team coordination, and ownership of production outcomes.`,
+    summary: `Senior DevOps Engineer who has grown from monitoring and support to leading SRE roles. Responsible for the reliability of high-load systems, cloud and Kubernetes migrations, and internal platform development. Specialized in automation (IaC), observability, and building processes that minimize downtime. Experienced in mentoring, incident management, and coordinating cross-functional teams.`,
   },
   education: commonEducation,
   languages: commonLanguages,

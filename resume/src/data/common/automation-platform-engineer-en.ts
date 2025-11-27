@@ -17,7 +17,7 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Added automated reports for monitoring PostgreSQL health (long queries, slow queries, disk usage, etc).',
   ]),
   gaijin: withStack('gaijin', [
-    'Automated high-load backend deployments and formalized IaC practices for game infrastructure.',
+    'Improved deployments for cloud-based dedicated services in AWS with Terraform and Packer to respond faster to demand.',
     'Built etcd-powered service discovery that let Kubernetes workloads self-configure without manual intervention.',
     'Documented platform tooling to support on-call teams with repeatable recovery steps.',
   ]),

@@ -4,6 +4,11 @@ import { data as baseData } from './sre-devops-en';
 
 export type WorkKey = keyof typeof baseData.work;
 
+export enum StackLabel {
+  English = 'Stack',
+  Russian = 'Стек',
+}
+
 const experienceKeyMap: Record<WorkKey, keyof typeof personal.experience> = {
   freelance: 'selfemployed',
   amarkets: 'amarkets',
@@ -14,25 +19,33 @@ const experienceKeyMap: Record<WorkKey, keyof typeof personal.experience> = {
   restream: 'restream',
 };
 
-const stackLine = (key: WorkKey): string | undefined => {
+const stackLine = (
+  key: WorkKey,
+  label: StackLabel | string,
+): string | undefined => {
   const experience = personal.experience[experienceKeyMap[key]];
   const stack = experience?.stack ?? [];
   if (!stack.length) {
     return undefined;
   }
-  return `Stack: ${stack.join(', ')}`;
+  return `${label}: ${stack.join(', ')}`;
 };
 
-export const withStack = (key: WorkKey, highlights: string[]): string[] => {
-  const stack = stackLine(key);
+export const withStack = (
+  key: WorkKey,
+  highlights: string[],
+  label: StackLabel | string = StackLabel.English,
+): string[] => {
+  const stack = stackLine(key, label);
   return stack ? [...highlights, stack] : highlights;
 };
 
 export const createVariantWork = (
   variantHighlights: Partial<Record<WorkKey, string[]>>,
+  baseWork: Data['work'] = baseData.work,
 ): Data['work'] =>
   Object.fromEntries(
-    Object.entries(baseData.work).map(([key, entry]) => [
+    Object.entries(baseWork).map(([key, entry]) => [
       key,
       {
         ...entry,
