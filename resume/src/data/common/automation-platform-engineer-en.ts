@@ -7,7 +7,6 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   freelance: withStack('freelance', [
     'Automated Kubernetes infrastructure provisioning with Pulumi and Helm to accelerate multi-cloud deployments.',
     'Templated stacks for GKE and Hetzner/Talos to make infrastructure reproducible and scriptable.',
-    'Maintained pulumi-talos-cluster OSS tooling so Talos bootstraps now fit seamlessly into CI workflows.',
     'Designed automation to isolate flaky APIs and recover workloads with retry/backoff policies.',
   ]),
   amarkets: withStack('amarkets', [

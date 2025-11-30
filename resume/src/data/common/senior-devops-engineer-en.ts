@@ -6,12 +6,12 @@ import { commonEducation, commonLanguages } from './resume-common-data';
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   freelance: withStack('freelance', [
     'Provided consulting on Kubernetes, cloud, and platform reliability for a crypto trading bot platform integrating with CEX and DEX APIs.',
-    'Designed and implemented Pulumi- and Helm-based automation for clusters and services, working mostly independently and handing over clear runbooks to clients.',
+    'Designed and implemented cluster and service deployment automation using GitLab, Pulumi, and Helm, working primarily autonomously and documenting instructions in SOPs and READMEs.',
     'Maintain the pulumi-talos-cluster OSS project and used it as a foundation for client environments, incorporating lessons from real-world incidents.',
   ]),
   amarkets: withStack('amarkets', [
     'Acted as a senior engineer for broker reliability, aligning Go engineers, SRE, and product around shared incident and SLA goals.',
-    'Instituted PostgreSQL/MySQL diagnostic playbooks and coached engineers on performance tuning and safe rollouts.',
+    'Implemented PostgreSQL/MySQL diagnostic playbooks and trained developers on working with databases.',
     'Supported the monolith-to-Kubernetes migration strategy, facilitating design discussions and communicating rollout priorities across stakeholders.',
     'Improved MTTR via structured incident reviews, tracking action items, and pushing automation into orchestration layers.',
   ]),

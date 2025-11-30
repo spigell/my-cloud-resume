@@ -26,7 +26,6 @@ export const data: Data = {
       highlights: [
         'Built Kubernetes infrastructure on GKE and Hetzner (Talos) for reproducible, reliable deployments',
         'Automated infrastructure with Pulumi and Helm to reduce configuration errors and simplify updates',
-        'Created and maintain the open-source project pulumi-talos-cluster, streamlining installation and operations of Talos clusters',
         'Improved platform resilience by isolating unstable external APIs and adding retry/backoff mechanisms',
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
