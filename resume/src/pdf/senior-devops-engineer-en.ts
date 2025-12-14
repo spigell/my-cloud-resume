@@ -1,17 +1,17 @@
-import * as en from '../data/common/sre-devops-en';
+import * as data from '../data/common/senior-devops-engineer-en';
 import { buildResumeJson } from './build-resume-json';
 
 const skillNames = [
   'Kubernetes',
   'IaC',
-  'Linux',
-  'Cloud',
-  'Databases',
   'CI/CD',
+  'Monitoring',
+  'Logging',
+  'Workload Orchestrator',
 ];
 
 const jsonData = buildResumeJson({
-  data: en.data,
+  data: data.data,
   lang: 'en',
   skillNames,
 });

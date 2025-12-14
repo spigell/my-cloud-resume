@@ -23,6 +23,7 @@ export const experience = {
       'Nodejs',
       'Pulumi',
       'Hetzner',
+      'Github',
     ],
   },
   amarkets: {
@@ -30,7 +31,7 @@ export const experience = {
     endDate: '2024-12',
     stack: [
       'AWS',
-      'ansible',
+      'Ansible',
       'kubernetes',
       'k8s (deckhouse)',
       'helm',
@@ -44,6 +45,7 @@ export const experience = {
       'MySQL',
       'Redis',
       'Prometheus stack',
+      'RabbitMQ',
     ],
   },
   gaijin: {
@@ -129,6 +131,11 @@ export const skills: Skill[] = [
     name: 'Databases',
     level: 'advanced',
     keywords: ['PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    name: 'Messaging',
+    level: 'intermediate',
+    keywords: ['RabbitMQ'],
   },
   {
     name: 'Golang',

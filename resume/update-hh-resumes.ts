@@ -1,10 +1,57 @@
+import fs from 'fs';
+import path from 'path';
 import { AxiosError } from 'axios';
-import { resume as sreDevopsRu } from './src/data/headhunter/sre-devops-ru';
-import { resume as sreDevopsEn } from './src/data/headhunter/sre-devops-en';
 import { HeadHunterAPI } from './src/headhunter/headhunter';
 import { HeadhunterResumeInfo } from './src/data/headhunter/types';
 
-const resumes: HeadhunterResumeInfo[] = [sreDevopsRu, sreDevopsEn];
+const getArgValue = (flags: string[]): string | undefined => {
+  let result: string | undefined;
+
+  for (let i = 0; i < process.argv.length; i += 1) {
+    if (flags.includes(process.argv[i])) {
+      const nextValue = process.argv[i + 1];
+      if (nextValue) {
+        result = nextValue;
+      }
+    }
+  }
+
+  return result;
+};
+
+const defaultVariants = ['sre-devops-ru', 'sre-devops-en'];
+const variantsArg = getArgValue(['--variants', '-v']);
+const variantsSource = variantsArg ?? process.env.HH_VARIANTS;
+const variants = (
+  variantsSource
+    ? variantsSource.split(',').map((variant) => variant.trim())
+    : defaultVariants
+).filter(Boolean);
+
+if (!variants.length) {
+  throw new Error('No resume variants specified for HH upload');
+}
+
+const resumes: HeadhunterResumeInfo[] = variants.map((variant) => {
+  if (!/^[a-z0-9-]+$/.test(variant)) {
+    throw new Error(`Invalid headhunter resume variant "${variant}"`);
+  }
+
+  const filePath = path.join(__dirname, 'src/data/headhunter', `${variant}.ts`);
+
+  if (!fs.existsSync(filePath)) {
+    throw new Error(
+      `HeadHunter resume data not found for variant "${variant}" at ${filePath}`,
+    );
+  }
+
+  const module = require(filePath);
+  if (!module?.resume) {
+    throw new Error(`Module ${filePath} does not export a \`resume\` object`);
+  }
+
+  return module.resume as HeadhunterResumeInfo;
+});
 
 const token = process.env.HH_TOKEN;
 if (token === undefined) {

@@ -1,14 +1,7 @@
-import * as ru from '../data/common/sre-devops-ru';
+import * as ru from '../data/common/automation-platform-engineer-ru';
 import { buildResumeJson } from './build-resume-json';
 
-const skillNames = [
-  'Kubernetes',
-  'IaC',
-  'Linux',
-  'Cloud',
-  'Databases',
-  'CI/CD',
-];
+const skillNames = ['IaC', 'CI/CD', 'Cloud', 'Golang', 'Workload Orchestrator'];
 
 const jsonData = buildResumeJson({
   data: ru.data,

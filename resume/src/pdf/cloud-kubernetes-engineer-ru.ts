@@ -1,4 +1,4 @@
-import * as en from '../data/common/sre-devops-en';
+import * as ru from '../data/common/cloud-kubernetes-engineer-ru';
 import { buildResumeJson } from './build-resume-json';
 
 const skillNames = [
@@ -11,8 +11,8 @@ const skillNames = [
 ];
 
 const jsonData = buildResumeJson({
-  data: en.data,
-  lang: 'en',
+  data: ru.data,
+  lang: 'ru',
   skillNames,
 });
 
