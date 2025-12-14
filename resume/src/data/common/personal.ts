@@ -23,6 +23,7 @@ export const experience = {
       'Nodejs',
       'Pulumi',
       'Hetzner',
+      'Github',
     ],
   },
   amarkets: {

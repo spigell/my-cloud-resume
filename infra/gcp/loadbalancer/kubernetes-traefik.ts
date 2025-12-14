@@ -114,22 +114,6 @@ export class Traefik {
 
     const domainsRule = generateDomainsRule(this.params.domains);
 
-    const allowedPaths = [
-      '/resume.html',
-      '/start.html',
-      '/sergei-chukh-resume-devops-sre-pdf-ru.pdf',
-      '/sergei-chukh-resume-devops-sre-pdf-en.pdf',
-      '/sergei-chukh-resume-cloud-kubernetes-engineer-en.pdf',
-      '/sergei-chukh-resume-db-reliability-engineer-en.pdf',
-      '/sergei-chukh-resume-automation-platform-engineer-en.pdf',
-      '/sergei-chukh-resume-cloud-infrastructure-architect-en.pdf',
-      '/sergei-chukh-resume-senior-devops-engineer-en.pdf',
-    ];
-
-    const allowedPathsRule = allowedPaths
-      .map((path) => 'Path(`' + path + '`)')
-      .join(' || ');
-
     new traefik.v1alpha1.IngressRoute('ingress-route', {
       metadata: {
         name: 'ingress-route',
@@ -139,7 +123,9 @@ export class Traefik {
         entryPoints: ['websecure'],
         routes: [
           {
-            match: `${domainsRule} && (${allowedPathsRule})`,
+            match:
+              domainsRule +
+              ' && (Path(`/resume.html`) || Path(`/start.html`) || Path(`/sergei-chukh-resume-devops-sre-pdf-ru.pdf`) || Path(`/sergei-chukh-resume-devops-sre-pdf-en.pdf`))',
             kind: 'Rule',
             services: [
               {
