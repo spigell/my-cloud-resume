@@ -19,7 +19,15 @@ const getArgValue = (flags: string[]): string | undefined => {
   return result;
 };
 
-const defaultVariants = ['sre-devops-ru', 'sre-devops-en'];
+const isPlaceholderResumeId = (resumeId: string): boolean =>
+  resumeId.startsWith('TODO-') || resumeId.includes('PLACEHOLDER');
+
+const defaultVariants = [
+  'sre-devops-ru',
+  'sre-devops-en',
+  'tech-support-engineer-ru',
+  'tech-support-engineer-en',
+];
 const variantsArg = getArgValue(['--variants', '-v']);
 const variantsSource = variantsArg ?? process.env.HH_VARIANTS;
 const variants = (
@@ -32,7 +40,7 @@ if (!variants.length) {
   throw new Error('No resume variants specified for HH upload');
 }
 
-const resumes: HeadhunterResumeInfo[] = variants.map((variant) => {
+const resumes = variants.map((variant) => {
   if (!/^[a-z0-9-]+$/.test(variant)) {
     throw new Error(`Invalid headhunter resume variant "${variant}"`);
   }
@@ -50,7 +58,17 @@ const resumes: HeadhunterResumeInfo[] = variants.map((variant) => {
     throw new Error(`Module ${filePath} does not export a \`resume\` object`);
   }
 
-  return module.resume as HeadhunterResumeInfo;
+  const resume = module.resume as HeadhunterResumeInfo;
+  if (isPlaceholderResumeId(resume.resumeId)) {
+    throw new Error(
+      `Variant "${variant}" uses placeholder resumeId "${resume.resumeId}". Replace it with a real HeadHunter resumeId before upload.`,
+    );
+  }
+
+  return {
+    variant,
+    resume,
+  };
 });
 
 const token = process.env.HH_TOKEN;
@@ -61,15 +79,15 @@ if (token === undefined) {
 const api = new HeadHunterAPI(token);
 
 (async () => {
-  resumes.forEach(({ resumeId, data }) => {
+  resumes.forEach(({ variant, resume: { resumeId, data } }) => {
     api
       .updateResume(resumeId, data)
       .then((status) => {
-        console.log(`Updated resume ${resumeId}:`, status);
+        console.log(`Updated variant "${variant}" (${resumeId}):`, status);
       })
       .catch((err: AxiosError) => {
         console.error(
-          `Failed to update resume ${resumeId}:`,
+          `Failed to update variant "${variant}" (${resumeId}):`,
           err.response?.data || err.message,
         );
         process.exit(1);
