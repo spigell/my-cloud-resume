@@ -26,7 +26,7 @@ export const data: Data = {
       highlights: [
         'Built Kubernetes infrastructure on GKE and Hetzner (Talos) for reproducible, reliable deployments',
         'Automated infrastructure with Pulumi and Helm to reduce configuration errors and simplify updates',
-        'Improved platform resilience by isolating unstable external APIs and adding retry/backoff mechanisms',
+        'Introduced AI based SRE tools for outages recovery. Working with Gemini and OpenAI models',
         `Stack: ${personal.experience.selfemployed.stack.join(', ')}`,
       ],
     },
@@ -55,8 +55,7 @@ export const data: Data = {
       endDate: personal.experience.gaijin.endDate,
       summary: `Maintained and developed infrastructure for online games such as War Thunder and Enlisted.`,
       highlights: [
-        'Ensured uptime of high-load game backends by quickly troubleshooting critical incidents, and participated in a 24/7 on-call rotation',
-        'Built a custom service discovery mechanism using native etcd features',
+        'Ensured uptime of high-load game backends by quickly troubleshooting critical incidents',
         'Focused on uptime and rapid recovery in high-load multiplayer environments with live player traffic',
         `Stack: ${personal.experience.gaijin.stack.join(', ')}`,
       ],

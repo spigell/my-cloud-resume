@@ -3,6 +3,9 @@ import * as ru from '../common/tech-support-engineer-ru';
 import { HeadhunterResumeInfo } from './types';
 import { workToHeadhunterExperience } from './utils';
 
+const ruExperience = (work: (typeof ru.data.work)[keyof typeof ru.data.work]) =>
+  workToHeadhunterExperience(work, { highlightsTitle: 'Ключевые моменты' });
+
 export const resume: HeadhunterResumeInfo = {
   resumeId: '71576be1ff102cf4f40039ed1f336a7861507a',
   data: JSON.stringify(
@@ -25,13 +28,13 @@ export const resume: HeadhunterResumeInfo = {
         },
       ],
       experience: [
-        workToHeadhunterExperience(ru.data.work.freelance),
-        workToHeadhunterExperience(ru.data.work.amarkets),
-        workToHeadhunterExperience(ru.data.work.gaijin),
-        workToHeadhunterExperience(ru.data.work.yandex),
-        workToHeadhunterExperience(ru.data.work.rostelecom),
-        workToHeadhunterExperience(ru.data.work.equilibrium),
-        workToHeadhunterExperience(ru.data.work.restream),
+        ruExperience(ru.data.work.freelance),
+        ruExperience(ru.data.work.amarkets),
+        ruExperience(ru.data.work.gaijin),
+        ruExperience(ru.data.work.yandex),
+        ruExperience(ru.data.work.rostelecom),
+        ruExperience(ru.data.work.equilibrium),
+        ruExperience(ru.data.work.restream),
       ],
       languages: [ru.data.languages.russian, ru.data.languages.english],
       certificate: [ru.data.certificates.cka, ru.data.certificates.cks],

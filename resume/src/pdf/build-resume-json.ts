@@ -19,7 +19,7 @@ const defaultWorkKeys: WorkKey[] = [
   'yandex',
   'equilibrium',
   'rostelecom',
-  'restream',
+  //'restream',
 ];
 
 const defaultSkillNames = [

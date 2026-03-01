@@ -11,3 +11,4 @@ resume/*.json
 resume/artifacts/*
 
 frontend/resume.html
+*.tsbuildinfo
