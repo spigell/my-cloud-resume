@@ -108,6 +108,21 @@ export const experience = {
 
 export const skills: Skill[] = [
   {
+    name: 'Monitoring',
+    level: 'advanced',
+    keywords: ['Prometheus', 'Grafana', 'Zabbix', 'Telegraf'],
+  },
+  {
+    name: 'Incident Management',
+    level: 'advanced',
+    keywords: ['Incident Response', 'RCA', 'Postmortem', 'On-call'],
+  },
+  {
+    name: 'Logging',
+    level: 'advanced',
+    keywords: ['ELK', 'Loki', 'Datadog'],
+  },
+  {
     name: 'Kubernetes',
     level: 'advanced',
     keywords: ['K8S', 'Helm'],
@@ -151,16 +166,6 @@ export const skills: Skill[] = [
     name: 'CI/CD',
     level: 'advanced',
     keywords: ['GitLab CI', 'TeamCity', 'GitHub Actions'],
-  },
-  {
-    name: 'Monitoring',
-    level: 'advanced',
-    keywords: ['Prometheus', 'Grafana', 'Zabbix', 'Telegraf'],
-  },
-  {
-    name: 'Logging',
-    level: 'advanced',
-    keywords: ['ELK', 'Loki', 'Datadog'],
   },
   {
     name: 'Web Servers',
