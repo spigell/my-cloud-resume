@@ -7,7 +7,7 @@ export const resume: HeadhunterResumeInfo = {
   resumeId: '59b9dc79ff09cc48d80039ed1f7864386c7758',
   data: JSON.stringify(
     {
-      title: 'SRE/DevOps engineer',
+      title: en.data.basics.label,
       site: [
         {
           type: {
