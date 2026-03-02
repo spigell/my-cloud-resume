@@ -6,7 +6,7 @@ import { commonEducation, commonLanguages } from './resume-common-data';
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
   freelance: withStack('freelance', [
     'Led RCA for production incidents in a startup trading platform and implemented automated fixes to restore service quickly.',
-    'Maintained runbooks for exchange API failures (REST/WebSocket) to speed up recurring incident triage.',
+    'Maintained runbooks for exchange API failures (REST/WebSocket) to speed up recurring incident triage in crypto trading workloads.',
   ]),
   amarkets: withStack('amarkets', [
     'Diagnosed escalated production issues across PostgreSQL, MySQL, Redis, and application services, coordinating fixes with developers.',
@@ -39,8 +39,8 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
 export const data: Data = {
   basics: {
     ...baseData.basics,
-    label: 'Technical Support Engineer (L2) / SRE Bridge',
-    summary: `Technical support engineer with hands-on L2 experience in cloud and high-load production systems. Focused on incident triage, deep diagnostics, and restoring service under pressure. Strong bridge between support, SRE, and development teams: I convert recurring incidents into runbooks, monitoring improvements, and durable operational practices.`,
+    label: 'SRE / Support Engineer',
+    summary: `SRE / Support Engineer with hands-on L2 experience in cloud and high-load production systems. Focused on incident triage, deep diagnostics, and service restoration under pressure. Strong bridge between support, SRE, and development teams, including crypto trading and blockchain infrastructure domains: I convert recurring incidents into runbooks, monitoring improvements, and durable operational practices.`,
   },
   education: commonEducation,
   languages: commonLanguages,

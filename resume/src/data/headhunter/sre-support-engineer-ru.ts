@@ -1,5 +1,5 @@
 import * as personal from '../common/personal';
-import * as ru from '../common/tech-support-engineer-ru';
+import * as ru from '../common/sre-support-engineer-ru';
 import { HeadhunterResumeInfo } from './types';
 import { workToHeadhunterExperience } from './utils';
 
@@ -10,7 +10,7 @@ export const resume: HeadhunterResumeInfo = {
   resumeId: '71576be1ff102cf4f40039ed1f336a7861507a',
   data: JSON.stringify(
     {
-      title: 'Инженер технической поддержки (L2) / SRE',
+      title: 'SRE / Инженер поддержки',
       site: [
         {
           type: {

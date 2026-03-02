@@ -1,4 +1,4 @@
-import * as data from '../data/common/tech-support-engineer-en';
+import * as data from '../data/common/sre-support-engineer-ru';
 import { buildResumeJson } from './build-resume-json';
 
 const skillNames = [
@@ -21,7 +21,7 @@ const workKeys = [
 
 const jsonData = buildResumeJson({
   data: data.data,
-  lang: 'en',
+  lang: 'ru',
   skillNames,
   workKeys: [...workKeys],
 });

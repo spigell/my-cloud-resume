@@ -7,8 +7,8 @@ RESUME_PDF_LIST := devops-sre-pdf-ru devops-sre-pdf-en \
 	automation-platform-engineer-ru \
 	senior-devops-engineer-en \
 	senior-devops-engineer-ru \
-	tech-support-engineer-en \
-	tech-support-engineer-ru
+	sre-support-engineer-en \
+	sre-support-engineer-ru
 THEME_REPO := https://github.com/ObserverOfTime/jsonresume-theme-relaxed
 THEME_REF := 9bf686c4239a05c85fe3ac18615918462c5729f4
 THEME_DIR := jsonresume-theme-relaxed

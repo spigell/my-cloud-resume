@@ -25,8 +25,8 @@ const isPlaceholderResumeId = (resumeId: string): boolean =>
 const defaultVariants = [
   'sre-devops-ru',
   'sre-devops-en',
-  'tech-support-engineer-ru',
-  'tech-support-engineer-en',
+  'sre-support-engineer-ru',
+  'sre-support-engineer-en',
 ];
 const variantsArg = getArgValue(['--variants', '-v']);
 const variantsSource = variantsArg ?? process.env.HH_VARIANTS;
