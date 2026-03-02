@@ -108,9 +108,19 @@ export const experience = {
 
 export const skills: Skill[] = [
   {
+    name: 'Linux',
+    level: 'advanced',
+    keywords: ['Debian', 'Talos', 'RHEL'],
+  },
+  {
     name: 'Monitoring',
     level: 'advanced',
     keywords: ['Prometheus', 'Grafana', 'Zabbix', 'Telegraf'],
+  },
+  {
+    name: 'Databases',
+    level: 'advanced',
+    keywords: ['PostgreSQL', 'MySQL', 'MongoDB'],
   },
   {
     name: 'Incident Management',
@@ -133,19 +143,9 @@ export const skills: Skill[] = [
     keywords: ['Pulumi', 'Terraform', 'Ansible', 'Chef'],
   },
   {
-    name: 'Linux',
-    level: 'advanced',
-    keywords: ['Debian', 'Talos', 'RHEL'],
-  },
-  {
     name: 'Cloud',
     level: 'advanced',
     keywords: ['AWS', 'GCP', 'Hetzner Cloud'],
-  },
-  {
-    name: 'Databases',
-    level: 'advanced',
-    keywords: ['PostgreSQL', 'MySQL', 'MongoDB'],
   },
   {
     name: 'Messaging',

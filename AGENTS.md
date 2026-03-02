@@ -16,13 +16,6 @@ TypeScript and JavaScript use 2-space indentation, single quotes, and trailing c
 ## Testing Guidelines
 The project relies on artifact inspection. After running `yarn build:website-resume`, open `frontend/resume.html` locally or via `python3 -m http.server` to confirm layout and localization. For PDFs, spot-check fonts and page breaks in each regenerated file. When touching infrastructure or backend helpers, run targeted Pulumi previews and, if applicable, unit tests under the corresponding service directory (add `npm test` scripts when new logic appears).
 
-## Commit & Pull Request Guidelines
-Commits follow short imperative subjects similar to the current history (`Fix missing icons`, `add five resumes`) with optional emoji prefixes (e.g., `:sparkles:`). Each pull request should include:
-1. Summary of the change and affected resume variants or infra stacks.
-2. Linked issues or Cloud Resume Challenge tasks.
-3. Screenshots or PDF diffs for visual updates, plus Pulumi preview output when infra changes occur.
-Ensure Husky/prettier hooks pass, rerun GitHub Actions when artifacts change, and avoid committing credentials or private data.
-
 ## Security & Configuration Tips
 Store temporary secrets in local `.env` files excluded by `.gitignore`. Keep Pulumi state backends consistent with the values referenced in `infra/` docs before running `pulumi up`. Images and PDFs contain personal information; verify sharing permissions before uploading generated artifacts outside this repository.
 

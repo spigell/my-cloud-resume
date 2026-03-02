@@ -24,6 +24,7 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Provided operational support for Wink API services, combining incident triage, troubleshooting, and post-incident improvements.',
     'Set up and tuned monitoring/alerting to detect service degradation early and guide on-call teams during outages.',
     'Trained 24/7 operations staff, improved support runbooks, and aligned technical decisions with business priorities.',
+    'Performed capacity planning for critical nodes (CPU/RAM/Disk) and coordinated hardware procurement to sustain platform growth.',
   ]),
   equilibrium: withStack('equilibrium', [
     'Supported blockchain infrastructure operations and resolved day-to-day incidents affecting node reliability and CI/CD stability.',
