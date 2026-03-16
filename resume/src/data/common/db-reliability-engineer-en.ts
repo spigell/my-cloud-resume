@@ -4,7 +4,7 @@ import { createVariantWork, withStack, WorkKey } from './resume-variant-utils';
 import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack('freelance', [
+  trading_startup: withStack('trading_startup', [
     'Monitored the health and latency of a crypto trading bot platform integrated with centralized and decentralized exchanges.',
     'Set up metrics, logs, and alerts around exchange API calls, order execution flow, and error rates.',
     'Improved incident response by tuning alert thresholds and runbooks for failed API calls and degraded platform performance.',

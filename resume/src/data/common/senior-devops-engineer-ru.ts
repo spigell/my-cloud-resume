@@ -9,8 +9,8 @@ import {
 } from './resume-variant-utils';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack(
-    'freelance',
+  trading_startup: withStack(
+    'trading_startup',
     [
       'Консультировал по вопросам Kubernetes, облачной инфраструктуры и надежности платформы торговых ботов, интегрированной с API CEX и DEX.',
       'Спроектировал и внедрил автоматизацию разрертывания кластеров и сервисов на базе GitHub, Pulumi и Helm, работая преимущественно автономно, описывая инструкции в sops and readme',

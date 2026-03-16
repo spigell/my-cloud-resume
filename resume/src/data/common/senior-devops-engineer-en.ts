@@ -4,7 +4,7 @@ import { createVariantWork, withStack, WorkKey } from './resume-variant-utils';
 import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack('freelance', [
+  trading_startup: withStack('trading_startup', [
     'Provided consulting on Kubernetes, cloud, and platform reliability for a crypto trading bot platform integrating with CEX and DEX APIs.',
     'Designed and implemented cluster and service deployment automation using GitHub, Pulumi, and Helm, working primarily autonomously and documenting instructions in SOPs and READMEs.',
     'Maintain the pulumi-talos-cluster OSS project and used it as a foundation for client environments, incorporating lessons from real-world incidents.',

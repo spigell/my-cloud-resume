@@ -9,8 +9,8 @@ import {
 } from './resume-variant-utils';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack(
-    'freelance',
+  trading_startup: withStack(
+    'trading_startup',
     [
       'Спроектировал Kubernetes-инфраструктуру в GKE и Hetzner Cloud для обеспечения воспроизводимых мульти-облачных развертываний.',
       'Автоматизировал провижининг с помощью Pulumi и Helm, чтобы каждый релиз проходил через предсказуемые пайплайны с возможностью отката.',

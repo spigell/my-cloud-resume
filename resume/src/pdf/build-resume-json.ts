@@ -13,7 +13,7 @@ export interface BuildResumeJsonOptions {
 }
 
 const defaultWorkKeys: WorkKey[] = [
-  'freelance',
+  'trading_startup',
   'amarkets',
   'gaijin',
   'yandex',

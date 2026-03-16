@@ -18,11 +18,11 @@ export const data: Data = {
   education: commonEducation,
   languages: commonLanguages,
   work: {
-    freelance: {
-      name: 'Freelancer',
+    trading_startup: {
+      name: 'Web3 Trading Startup (NDA)',
       position: 'DevOps Engineer / SRE / Developer',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Working as a freelance engineer in a startup environment on a trading bot platform that connects to centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.`,
+      summary: `Working as an SRE / Infrastructure engineer in a startup environment on a trading bot platform that connects to centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.`,
       highlights: [
         'Built Kubernetes infrastructure on GKE and Hetzner (Talos) for reproducible, reliable deployments',
         'Automated infrastructure with Pulumi and Helm to reduce configuration errors and simplify updates',
