@@ -9,8 +9,8 @@ import {
 } from './resume-variant-utils';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack(
-    'freelance',
+  trading_startup: withStack(
+    'trading_startup',
     [
       'Развернул инфраструктуру в GCP/Hetzner с помощью Pulumi (Typescript) и Helm для работы платформы.',
       'Шаблонизировал чарты для GKE и Hetzner/Talos, чтобы сделать инфраструктуру воспроизводимой и управляемой кодом.',

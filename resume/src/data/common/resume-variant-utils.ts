@@ -10,7 +10,7 @@ export enum StackLabel {
 }
 
 const experienceKeyMap: Record<WorkKey, keyof typeof personal.experience> = {
-  freelance: 'selfemployed',
+  trading_startup: 'selfemployed',
   amarkets: 'amarkets',
   gaijin: 'gaijin',
   yandex: 'yandex',

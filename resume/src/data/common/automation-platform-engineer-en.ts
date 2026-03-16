@@ -4,7 +4,7 @@ import { createVariantWork, withStack, WorkKey } from './resume-variant-utils';
 import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack('freelance', [
+  trading_startup: withStack('trading_startup', [
     'Automated Kubernetes infrastructure provisioning with Pulumi and Helm to accelerate multi-cloud deployments.',
     'Templated stacks for GKE and Hetzner/Talos to make infrastructure reproducible and scriptable.',
     'Designed automation to isolate flaky APIs and recover workloads with retry/backoff policies.',

@@ -9,8 +9,8 @@ import {
 } from './resume-variant-utils';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack(
-    'freelance',
+  trading_startup: withStack(
+    'trading_startup',
     [
       'Мониторил здоровье и задержки платформы крипто-торговых ботов, интегрированной с централизованными и децентрализованными биржами.',
       'Настроил метрики, логи и алерты вокруг вызовов API бирж, потока исполнения ордеров и уровня ошибок.',

@@ -33,11 +33,11 @@ export const data: Data = {
     },
   },
   work: {
-    freelance: {
-      name: 'Фрилансер',
+    trading_startup: {
+      name: 'Web3 Trading Startup (NDA)',
       position: 'SRE / DevOps инженер / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
-      summary: `Работаю в условиях стартапа как фриланс-инженер над платформой торговых ботов, которая взаимодействует с централизованными (Bybit, Mexc) и децентрализованными (Uniswap, Mira) биржами через REST и WebSocket API.`,
+      summary: `Работа в роли SRE / Infrastructure инженера в стартапе над платформой торговых ботов, подключенной к централизованным (Bybit, Mexc) и децентрализованным (Uniswap, Mira) биржам через REST и WebSocket API.`,
       highlights: [
         'Создал Kubernetes-инфраструктуру на GKE и Hetzner (Talos) для воспроизводимых и надёжных развёртываний',
         'Автоматизировал инфраструктуру с помощью Pulumi и Helm, чтобы снизить количество ошибок конфигурации и упростить обновления',

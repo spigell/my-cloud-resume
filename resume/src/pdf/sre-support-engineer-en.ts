@@ -2,21 +2,19 @@ import * as data from '../data/common/sre-support-engineer-en';
 import { buildResumeJson } from './build-resume-json';
 
 const skillNames = [
+  'Web3 & Blockchain',
   'Monitoring',
-  'Logging',
   'Linux',
-  'Databases',
-  'Cloud',
-  'CI/CD',
+  'AI',
+  'Kubernetes',
 ];
 const workKeys = [
-  'freelance',
+  'trading_startup',
   'amarkets',
   'gaijin',
   'yandex',
   'rostelecom',
   'equilibrium',
-  'restream',
 ] as const;
 
 const jsonData = buildResumeJson({

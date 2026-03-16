@@ -1,52 +1,84 @@
 import { Data } from './types';
 import { data as baseData } from './sre-devops-en';
-import { createVariantWork, withStack, WorkKey } from './resume-variant-utils';
+import { createVariantWork, WorkKey } from './resume-variant-utils';
 import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
-  freelance: withStack('freelance', [
-    'Led RCA for production incidents in a startup trading platform and implemented proactive health checks to restore service and prevent recurring outages.',
-    'Maintained runbooks for exchange API failures (REST/WebSocket) to speed up triage in high-frequency crypto trading workloads.',
-  ]),
-  amarkets: withStack('amarkets', [
-    'Diagnosed escalated production issues across PostgreSQL, MySQL, Redis, and application services, reducing MTTR by 20% through standardized troubleshooting playbooks.',
-    'Architected playbooks for slow queries and backend degradation to resolve recurring incidents with predictable results.',
-    'Improved handoff quality between support, SRE, and product teams through clear incident timelines and actionable post-mortems.',
-  ]),
-  gaijin: withStack('gaijin', [
-    'Supported high-load online game backends with a focus on rapid incident response, 99.9% availability, and fast rollback decisions.',
-  ]),
-  yandex: withStack('yandex', [
-    'Worked as an L2 support specialist for Yandex Cloud services (Managed DB, Compute, Kubernetes), handling critical escalations for Enterprise clients.',
-    'Performed deep diagnostics for production Kubernetes issues and documented outcomes for repeatable incident response.',
-  ]),
-  rostelecom: withStack('rostelecom', [
+  trading_startup: [
+    'Provided L2/L3 support and led Root Cause Analysis (RCA) for production incidents in a crypto trading platform interfacing directly with major CEXs (Bybit, MEXC) and DEXs (Uniswap).',
+    'Created and maintained troubleshooting runbooks for critical exchange API failures (REST/WebSocket drops, rate limiting), reducing triage time during high-volatility market events.',
+    'Implemented proactive health checks for trading bots and network latency, preventing recurring outages and financial impact.',
+    'Accelerated incident resolution and RCA by leveraging AI agents (Gemini-CLI, Claude, Codex) to parse complex logs and instantly generate targeted diagnostic scripts.',
+    'Stack: Kubernetes (GKE/Talos), Pulumi, Web3.js/Ethers.js, Cloudflare, Prometheus, Node.js, WebSocket/RPC APIs',
+  ],
+  amarkets: [
+    'Diagnosed escalated production issues (PostgreSQL, Redis), reducing MTTR by 20% through standardized troubleshooting playbooks.',
+    'Improved handoff quality between support and product teams through clear incident timelines and actionable post-mortems.',
+    'Stack: Kubernetes, AWS, PostgreSQL, Redis, RabbitMQ, Prometheus, Golang, MetaTrader 5',
+  ],
+  gaijin: [
+    'Supported high-load online game backends with a focus on rapid incident response and 99.9% availability.',
+    'Stack: Bare Metal Kubernetes, AWS (RDS/EC2), CentOS, Redis, Graphite, Telegraf, Ansible',
+  ],
+  yandex: [
+    'Provided Premium L2 Technical Support for Enterprise B2B clients on Yandex Cloud, managing critical escalations for Managed Kubernetes, Compute, and Database services.',
+    'Acted as the technical bridge between major customers and core engineering, reproducing complex infrastructure bugs and providing clear, empathetic communication during high-severity outages.',
+    'Consistently met strict SLAs for critical incidents, diagnosing network latency, pod eviction loops, and stateful application failures under extreme pressure.',
+    'Authored post-mortems and internal knowledge base articles, converting one-off deep diagnostics into repeatable incident response playbooks for the L1/L2 teams.',
+  ],
+  rostelecom: [
     'Provided operational support for Wink API services, combining incident triage, troubleshooting, and systemic post-incident improvements.',
     'Set up and tuned monitoring/alerting to detect service degradation early and guide on-call teams during outages.',
-    'Trained 10+ NOC engineers on platform internals, improving runbooks and reducing the escalation rate to core engineering.',
     'Performed capacity planning for critical nodes (CPU/RAM/Disk) and coordinated hardware procurement to sustain platform growth.',
-  ]),
-  equilibrium: withStack('equilibrium', [
-    'Supported blockchain infrastructure and resolved day-to-day incidents affecting node reliability (ETH/Parity, EOS/Nodeos).',
-    'Diagnosed P2P connectivity issues and JSON-RPC API latency to ensure stable network synchronization and validator uptime.',
-    'Improved service recoverability by hardening deployment procedures and documenting routine support actions for blockchain nodes.',
-  ]),
-  restream: withStack('restream', [
+  ],
+  equilibrium: [
+    'Delivered technical support and SRE for public blockchain infrastructure, resolving complex syncing, consensus, and state-corruption issues for ETH (Parity) and EOS (Nodeos) nodes.',
+    'Troubleshot JSON-RPC API latency, P2P peer drops, and out-of-sync events, ensuring high validator uptime and stable query performance for Web3 clients.',
+    'Improved node recoverability by hardening deployment procedures and writing step-by-step documentation for routine L1/L2 support actions.',
+    'Stack: Ubuntu, AWS, Parity (Ethereum), Nodeos (EOS), Docker Swarm, Prometheus',
+  ],
+  restream: [
     'Started in monitoring and technical support, processing tickets and triaging incidents in the Interactive TV platform.',
     'Provisioned and maintained CentOS hosts, tracked configuration via Puppet, and handled first-line diagnostics for service issues.',
     'Established foundational expertise in Linux diagnostics, host provisioning, and large-scale monitoring operations.',
-  ]),
+  ],
 };
 
 export const data: Data = {
   basics: {
     ...baseData.basics,
-    label: 'SRE / Support Engineer',
-    summary: `SRE / Support Engineer with hands-on L2 experience in cloud and high-load production systems. Focused on incident triage, deep diagnostics, and service restoration under pressure. Strong bridge between support, SRE, and development teams, including crypto trading and blockchain infrastructure domains: I convert recurring incidents into runbooks, monitoring improvements, and durable operational practices.`,
+    label: 'SRE / Technical Support Engineer',
+    summary: `Technical Support / SRE Engineer with a strong focus on Web3 infrastructure, RPC node operations, and enterprise cloud platforms. Hands-on L2/L3 experience diagnosing complex blockchain connectivity issues, REST/WebSocket API degradations, and production Kubernetes clusters. Strong bridge between enterprise B2B clients, SRE, and development teams: I specialize in converting recurring incidents into runbooks, leveraging AI agents for rapid RCA, meeting strict SLAs under pressure, and ensuring maximum uptime during high-volatility events.`,
   },
   education: commonEducation,
   languages: commonLanguages,
   work: createVariantWork(variantHighlights),
   certificates: baseData.certificates,
-  skills: baseData.skills,
-};
+  skills: [
+    {
+      name: 'Web3 & Blockchain',
+      level: 'advanced',
+      keywords: ['JSON-RPC', 'WebSocket'],
+    },
+    {
+      name: 'AI',
+      level: 'advanced',
+      keywords: ['Gemini-CLI', 'Claude', 'Codex'],
+    },
+    {
+      name: 'Linux',
+      level: 'advanced',
+      keywords: ['Debian', 'Talos', 'RHEL'],
+    },
+    {
+      name: 'Monitoring',
+      level: 'master',
+      keywords: ['Prometheus', 'Grafana', 'Datadog'],
+    },
+    {
+      name: 'Kubernetes',
+      level: 'advanced',
+      keywords: ['K8S', 'K3S', 'Helm', 'Bare Metal'],
+    },
+  ],
+  };
