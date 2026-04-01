@@ -7,7 +7,6 @@ export interface BuildResumeJsonOptions {
   lang: string;
   version?: string;
   workKeys?: WorkKey[];
-  skillNames?: string[];
   certificateKeys?: (keyof Data['certificates'])[];
   languages?: { language: string; fluency: string }[];
 }
@@ -22,15 +21,6 @@ const defaultWorkKeys: WorkKey[] = [
   //'restream',
 ];
 
-const defaultSkillNames = [
-  'Kubernetes',
-  'IaC',
-  'Linux',
-  'Cloud',
-  'Databases',
-  'CI/CD',
-];
-
 const defaultCertificateKeys: Array<keyof Data['certificates']> = [
   'cka',
   'cks',
@@ -41,7 +31,6 @@ export const buildResumeJson = ({
   lang,
   version = 'v0.0.1',
   workKeys = defaultWorkKeys,
-  skillNames = defaultSkillNames,
   certificateKeys = defaultCertificateKeys,
   languages,
 }: BuildResumeJsonOptions): string => {
@@ -58,8 +47,6 @@ export const buildResumeJson = ({
         Boolean(entry),
     );
 
-  const skills = data.skills.filter((skill) => skillNames.includes(skill.name));
-
   const languageEntries =
     languages ??
     [data.languages.russian, data.languages.english].filter(
@@ -74,7 +61,6 @@ export const buildResumeJson = ({
     },
     basics: data.basics,
     work,
-    skills,
     certificates,
     languages: languageEntries,
   };

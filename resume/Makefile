@@ -1,12 +1,4 @@
 RESUME_PDF_LIST := devops-sre-pdf-ru devops-sre-pdf-en \
-	cloud-kubernetes-engineer-en \
-	cloud-kubernetes-engineer-ru \
-	db-reliability-engineer-en \
-	db-reliability-engineer-ru \
-	automation-platform-engineer-en \
-	automation-platform-engineer-ru \
-	senior-devops-engineer-en \
-	senior-devops-engineer-ru \
 	sre-support-engineer-en \
 	sre-support-engineer-ru
 THEME_REPO := https://github.com/ObserverOfTime/jsonresume-theme-relaxed
