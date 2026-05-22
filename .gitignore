@@ -12,3 +12,4 @@ resume/artifacts/*
 
 frontend/resume.html
 *.tsbuildinfo
+.antigravitycli/
