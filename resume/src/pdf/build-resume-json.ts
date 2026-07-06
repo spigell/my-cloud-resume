@@ -12,6 +12,7 @@ export interface BuildResumeJsonOptions {
 }
 
 const defaultWorkKeys: WorkKey[] = [
+  'uspio',
   'trading_startup',
   'amarkets',
   'gaijin',

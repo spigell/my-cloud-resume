@@ -4,6 +4,11 @@ import { createVariantWork, WorkKey } from './resume-variant-utils';
 import { commonEducation, commonLanguages } from './resume-common-data';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
+  uspio: [
+    'Providing L2/L3 support for high-load telecommunication platforms and core infrastructure.',
+    'Managing incident resolution and technical escalations for enterprise clients.',
+    'Stack: Kubernetes, Docker, Terraform, Ansible, Prometheus, Grafana, GitLab CI',
+  ],
   trading_startup: [
     'Provided L2/L3 support and led Root Cause Analysis (RCA) for production incidents in a crypto trading platform interfacing directly with major CEXs (Bybit, MEXC) and DEXs (Uniswap).',
     'Created and maintained troubleshooting runbooks for critical exchange API failures (REST/WebSocket drops, rate limiting), reducing triage time during high-volatility market events.',
@@ -81,4 +86,4 @@ export const data: Data = {
       keywords: ['K8S', 'K3S', 'Helm', 'Bare Metal'],
     },
   ],
-  };
+};

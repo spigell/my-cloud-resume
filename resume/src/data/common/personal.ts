@@ -14,6 +14,7 @@ export const education = {
 export const experience = {
   selfemployed: {
     startDate: '2024-12',
+    endDate: '2026-04',
     stack: [
       'GCP (GKE)',
       'Talos',
@@ -24,6 +25,18 @@ export const experience = {
       'Pulumi',
       'Hetzner',
       'Github',
+    ],
+  },
+  uspio: {
+    startDate: '2026-05',
+    stack: [
+      'Kubernetes',
+      'Docker',
+      'Terraform',
+      'Ansible',
+      'Prometheus',
+      'Grafana',
+      'GitLab CI',
     ],
   },
   amarkets: {

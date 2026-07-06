@@ -18,10 +18,21 @@ export const data: Data = {
   education: commonEducation,
   languages: commonLanguages,
   work: {
+    uspio: {
+      name: 'Uspio LTD',
+      position: 'DevOps Engineer',
+      startDate: personal.experience.uspio.startDate,
+      summary: `Uspio is an international software company providing advanced telecommunication solutions and high-load platforms.`,
+      highlights: [
+        'Contributing to the reliability and scalability of high-load platforms as a DevOps Engineer',
+        `Stack: ${personal.experience.uspio.stack.join(', ')}`,
+      ],
+    },
     trading_startup: {
       name: 'Web3 Trading Startup (NDA)',
       position: 'DevOps Engineer / SRE / Developer',
       startDate: personal.experience.selfemployed.startDate,
+      endDate: personal.experience.selfemployed.endDate,
       summary: `Working as an SRE / Infrastructure engineer in a startup environment on a trading bot platform that connects to centralized (Bybit, Mexc) and decentralized (Uniswap, Mira) exchanges via REST and WebSocket APIs.`,
       highlights: [
         'Built Kubernetes infrastructure on GKE and Hetzner (Talos) for reproducible, reliable deployments',

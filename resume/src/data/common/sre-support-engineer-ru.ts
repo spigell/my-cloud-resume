@@ -1,12 +1,14 @@
 import { Data } from './types';
 import { data as baseData } from './sre-devops-ru';
 import { commonEducation, commonLanguages } from './resume-common-data';
-import {
-  createVariantWork,
-  WorkKey,
-} from './resume-variant-utils';
+import { createVariantWork, WorkKey } from './resume-variant-utils';
 
 const variantHighlights: Partial<Record<WorkKey, string[]>> = {
+  uspio: [
+    'Обеспечение поддержки уровня L2/L3 для высоконагруженных телекоммуникационных платформ и основной инфраструктуры.',
+    'Управление разрешением инцидентов и техническими эскалациями для корпоративных клиентов.',
+    'Стек: Kubernetes, Docker, Terraform, Ansible, Prometheus, Grafana, GitLab CI',
+  ],
   trading_startup: [
     'Обеспечивал поддержку уровня L2/L3 и проводил RCA инцидентов для платформы крипто-трейдинговых ботов, напрямую интегрированной с крупнейшими CEX (Bybit, MEXC) и DEX (Uniswap).',
     'Создавал и актуализировал runbook-документацию по критическим сбоям API бирж (разрывы REST/WebSocket, лимиты запросов), снижая время реакции (triage) во время высокой волатильности рынка.',
@@ -42,9 +44,9 @@ const variantHighlights: Partial<Record<WorkKey, string[]>> = {
     'Выполнял первичную настройку ОС (CentOS) на серверах, вел конфигурационный учет через Puppet и делал первичную диагностику сбоев.',
     'Заложил основу технической экспертизы в области диагностики Linux-систем, сопровождения хостов и автоматизации конфигураций.',
   ],
-  };
+};
 
-  export const data: Data = {
+export const data: Data = {
   basics: {
     ...baseData.basics,
     label: 'SRE / Инженер поддержки',

@@ -33,10 +33,21 @@ export const data: Data = {
     },
   },
   work: {
+    uspio: {
+      name: 'Uspio LTD',
+      position: 'DevOps инженер',
+      startDate: personal.experience.uspio.startDate,
+      summary: `Uspio — международная IT-компания, предоставляющая передовые телекоммуникационные решения и высоконагруженные платформы.`,
+      highlights: [
+        'Обеспечение надежности и масштабируемости высоконагруженных платформ в роли DevOps инженера',
+        `Стек: ${personal.experience.uspio.stack.join(', ')}`,
+      ],
+    },
     trading_startup: {
       name: 'Web3 Trading Startup (NDA)',
       position: 'SRE / DevOps инженер / Разработчик',
       startDate: personal.experience.selfemployed.startDate,
+      endDate: personal.experience.selfemployed.endDate,
       summary: `Работа в роли SRE / Infrastructure инженера в стартапе над платформой торговых ботов, подключенной к централизованным (Bybit, Mexc) и децентрализованным (Uniswap, Mira) биржам через REST и WebSocket API.`,
       highlights: [
         'Создал Kubernetes-инфраструктуру на GKE и Hetzner (Talos) для воспроизводимых и надёжных развёртываний',
