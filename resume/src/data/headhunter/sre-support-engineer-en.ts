@@ -25,7 +25,6 @@ export const resume: HeadhunterResumeInfo = {
         },
       ],
       experience: [
-        workToHeadhunterExperience(en.data.work.uspio),
         workToHeadhunterExperience(en.data.work.trading_startup),
         workToHeadhunterExperience(en.data.work.amarkets),
         workToHeadhunterExperience(en.data.work.gaijin),

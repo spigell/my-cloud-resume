@@ -1,7 +1,6 @@
 import * as data from '../data/common/sre-support-engineer-en';
 import { buildResumeJson } from './build-resume-json';
 const workKeys = [
-  'uspio',
   'trading_startup',
   'amarkets',
   'gaijin',

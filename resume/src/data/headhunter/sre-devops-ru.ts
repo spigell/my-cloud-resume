@@ -28,7 +28,6 @@ export const resume: HeadhunterResumeInfo = {
         },
       ],
       experience: [
-        ruExperience(ru.data.work.uspio),
         ruExperience(ru.data.work.trading_startup),
         ruExperience(ru.data.work.amarkets),
         ruExperience(ru.data.work.gaijin),
