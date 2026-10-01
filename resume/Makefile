@@ -18,7 +18,7 @@ clean:
 	cd $(THEME_DIR) && git fetch origin && git checkout $(THEME_REF) &&\
 	patch -p1 --forward < ../$(THEME_ICON_PATCH) &&\
 	patch -p1 --forward < ../$(THEME_FONT_PATCH) &&\
-	npm install && npm add ts-node@v9.1 &&\
+	npm install && npm add ts-node@v9.1 typescript@4.6.4 &&\
 	cp ../src/pdf/i18n-ru.json ./i18n/ru.json -v &&\
     for a in $(RESUME_PDF_LIST); do \
         npx ts-node ../src/pdf/$${a}.ts > resume.json &&\
