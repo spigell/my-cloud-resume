@@ -23,7 +23,7 @@ jobs:
     environment:
       name: ${{ github.ref_name }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - uses: benjlevesque/short-sha@v2.2
         id: short-sha
         with:
@@ -77,7 +77,7 @@ jobs:
       url: ${{ steps.get-env-url.outputs.url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - uses: benjlevesque/short-sha@v2.2
         id: short-sha
         with:
