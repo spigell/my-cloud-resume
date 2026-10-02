@@ -43,7 +43,7 @@ jobs:
           echo "TAG=${{ env.REGISTRY }}/${{ env.GCP_PROJECT }}/resume-images/gcp-proxy:${{ env.GCS_REF }}" >> $GITHUB_OUTPUT
       - id: docker-push-tagged
         name: Tag Docker image and push to Google Artifact Registry
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v7
         with:
           context: backend/gcs-proxy
           push: true
