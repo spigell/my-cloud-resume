@@ -19,7 +19,7 @@ jobs:
       url: ${{ steps.pulumi.outputs.url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v7
       - id: 'auth'
         uses: 'google-github-actions/auth@v1'
         with:
