@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Install pulumi cli
-        uses: pulumi/actions@v4
+        uses: pulumi/actions@v7
         with:
           pulumi-version: 3.142.0
       - name: Wait for builds
@@ -98,7 +98,7 @@ jobs:
       - name: Installing dependencies
         run: yarn install
       - name: Install pulumi cli
-        uses: pulumi/actions@v4
+        uses: pulumi/actions@v7
       - name: Wait for builds
         uses: lewagon/wait-on-check-action@v1.3.1
         with:

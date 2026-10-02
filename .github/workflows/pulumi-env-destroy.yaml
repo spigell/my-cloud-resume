@@ -36,7 +36,7 @@ jobs:
       - name: Installing dependencies
         run: yarn install
         working-directory: infra
-      - uses: pulumi/actions@v4
+      - uses: pulumi/actions@v7
         id: pulumi
         with:
           command: destroy
