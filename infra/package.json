@@ -11,6 +11,6 @@
     "@pulumi/random": "^4.16.7",
     "cloudflare": "^3.5.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^6.0.0"
   }
 }
