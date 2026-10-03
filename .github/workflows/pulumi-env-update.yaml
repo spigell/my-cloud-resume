@@ -23,8 +23,8 @@ jobs:
     environment:
       name: ${{ github.ref_name }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: benjlevesque/short-sha@v2.2
+      - uses: actions/checkout@v7
+      - uses: benjlevesque/short-sha@v4.0
         id: short-sha
         with:
           length: 6
@@ -38,7 +38,7 @@ jobs:
           cluster_name: 'main'
           location: 'us-central1-c'
       - name: Setup Node LTS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Install dependencies
@@ -77,8 +77,8 @@ jobs:
       url: ${{ steps.get-env-url.outputs.url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: benjlevesque/short-sha@v2.2
+      - uses: actions/checkout@v7
+      - uses: benjlevesque/short-sha@v4.0
         id: short-sha
         with:
           length: 6
@@ -92,7 +92,7 @@ jobs:
           cluster_name: 'main'
           location: 'us-central1-c'
       - name: Setup Node LTS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
           node-version: 18
       - name: Installing dependencies
