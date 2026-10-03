@@ -18,7 +18,7 @@ jobs:
           length: 6
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - name: Check connectivity to Simple Icons CDN
         run: curl -I https://cdn.simpleicons.org/telegram
       - run: yarn install
