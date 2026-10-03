@@ -48,7 +48,7 @@ jobs:
         with:
           pulumi-version: 3.142.0
       - name: Wait for builds
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.9.1
         with:
           ref: ${{ github.ref }}
           check-name: "Build and save html and pdf"
@@ -100,7 +100,7 @@ jobs:
       - name: Install pulumi cli
         uses: pulumi/actions@v7
       - name: Wait for builds
-        uses: lewagon/wait-on-check-action@v1.3.1
+        uses: lewagon/wait-on-check-action@v1.9.1
         with:
           ref: ${{ github.ref }}
           check-name: "Build and save html and pdf"
