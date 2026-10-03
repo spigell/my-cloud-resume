@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@types/node": "^22.10.1",
+    "@types/node": "^24.0.0",
     "husky": "^9.1.7",
     "mrm": "^4.1.22",
     "prettier": "^3.4.2",
