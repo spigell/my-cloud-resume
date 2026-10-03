@@ -24,12 +24,12 @@ jobs:
       name: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v7
-      - uses: benjlevesque/short-sha@v2.2
+      - uses: benjlevesque/short-sha@v4.0
         id: short-sha
         with:
           length: 6
       - id: 'auth'
-        uses: 'google-github-actions/auth@v1'
+        uses: 'google-github-actions/auth@v3'
         with:
           credentials_json: '${{ secrets.GKE_DEPLOYER_CREDENTIALS }}'
       - id: 'get-credentials'
@@ -38,13 +38,13 @@ jobs:
           cluster_name: 'main'
           location: 'us-central1-c'
       - name: Setup Node LTS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - name: Install dependencies
         run: yarn install
       - name: Install pulumi cli
-        uses: pulumi/actions@v4
+        uses: pulumi/actions@v7
         with:
           pulumi-version: 3.142.0
       - name: Wait for builds
@@ -78,12 +78,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: benjlevesque/short-sha@v2.2
+      - uses: benjlevesque/short-sha@v4.0
         id: short-sha
         with:
           length: 6
       - id: 'auth'
-        uses: 'google-github-actions/auth@v1'
+        uses: 'google-github-actions/auth@v3'
         with:
           credentials_json: '${{ secrets.GKE_DEPLOYER_CREDENTIALS }}'
       - id: 'get-credentials'
@@ -92,13 +92,13 @@ jobs:
           cluster_name: 'main'
           location: 'us-central1-c'
       - name: Setup Node LTS
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v7
         with:
-          node-version: 18
+          node-version: 24
       - name: Installing dependencies
         run: yarn install
       - name: Install pulumi cli
-        uses: pulumi/actions@v4
+        uses: pulumi/actions@v7
       - name: Wait for builds
         uses: lewagon/wait-on-check-action@v1.3.1
         with:
