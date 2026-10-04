@@ -470,7 +470,7 @@
     glob "^12.0.0"
     shell-quote "^1.6.1"
 
-"@pulumi/pulumi@^3.136.0", "@pulumi/pulumi@^3.142.0":
+"@pulumi/pulumi@^3.142.0":
   version "3.267.0"
   resolved "https://registry.yarnpkg.com/@pulumi/pulumi/-/pulumi-3.267.0.tgz#3bf393bc0b18598507f4f6149c15baf082e015ec"
   integrity sha512-dd/K3sxqNKqiYAvcg14TtEL7ZYqSyphMQMuqDeZvooX7jIKaa0t6QeNBnu6KeyH4bqKqNzmta07a/tgmUkw8/w==
@@ -502,11 +502,11 @@
     upath "^1.1.0"
 
 "@pulumi/random@^4.16.7":
-  version "4.16.7"
-  resolved "https://registry.yarnpkg.com/@pulumi/random/-/random-4.16.7.tgz#6c787f9d9fddb16f6d7ce2d137dbafd8a83484b3"
-  integrity sha512-lY51FGL6dbD2o37HKqisrlHQH+q2yd+dInEcZR0H78fT33vTjzNHo2rUf89eK0Gb9JjFTCTw/CHC2qtT02MALA==
+  version "4.21.2"
+  resolved "https://registry.yarnpkg.com/@pulumi/random/-/random-4.21.2.tgz#a9b0ed10aba29a456d582af9d6fc64783516ee29"
+  integrity sha512-yQVSPeQE55oqL4KHoWwKqTTTjx3jYGaJ3RCXnlUOcqmGW5zT3hmKWqAS+5nBYCtrVPA8J06UqjC1ZOrQP+Q5yg==
   dependencies:
-    "@pulumi/pulumi" "^3.136.0"
+    "@pulumi/pulumi" "^3.142.0"
 
 "@sigstore/bundle@^4.0.0":
   version "4.0.0"
