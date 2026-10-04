@@ -2,13 +2,12 @@
   "compilerOptions": {
     "target": "es2016",
     "module": "commonjs",
-    "moduleResolution": "node",
     "strict": true,
     "noEmit": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "types": ["node"],
     "lib": ["es2020", "dom"]
   },
   "exclude": ["node_modules", "infra"]
