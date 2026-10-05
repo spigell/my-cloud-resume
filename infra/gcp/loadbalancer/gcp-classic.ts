@@ -45,6 +45,7 @@ export class GCPClassic {
 
     const service = new gcp.compute.BackendService(this.params.name, {
       name: `${this.params.name}`,
+      loadBalancingScheme: 'EXTERNAL',
       enableCdn: false,
       connectionDrainingTimeoutSec: 10,
       backends: [
