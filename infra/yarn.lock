@@ -454,9 +454,9 @@
   integrity sha512-b1UQwcEZ4yCnMCD8DAL1VlbvBJE9/IX4FTIp7BG1xYpf29SLazLSrqUkj4w7Y5y7cCVP6E5tcqqcI0xemPkHug==
 
 "@pulumi/gcp@^10.0.0":
-  version "10.0.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-10.0.0.tgz#29b0f78d52c620dcf543f9d96c7a63be374f350f"
-  integrity sha512-dQapX/wcU0SsO4BhdD4jxBRWE2Uz95o+IUswkptFU5c06PiOmTbEatB59+WPpqX1CYfNNzSkJTY0dItQJrtbuQ==
+  version "10.1.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-10.1.0.tgz#8f2fbbdafe21f4101d363978b48e4287c2bdfcb4"
+  integrity sha512-0q448t5FCZv6RZQsL1Do7J8z7RjLfZk8CCZKgViT0ZKwkhm+di941PAEYBi44X/lArPLeXTOwtdlgGLCCocKNA==
   dependencies:
     "@pulumi/pulumi" "^3.142.0"
     "@types/express" "^4.16.0"
