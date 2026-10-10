@@ -63,7 +63,7 @@ jobs:
       - name: Copy artifacts to frontend directory
         run: mv -v ../build-artifacts-*/* ../frontend
       - name: Run pulumi preview via automation API
-        run: npx ts-node ./automations.ts
+        run: npx tsx ./automations.ts
         env:
           DRY_RUN: true
           STACK_NAME: ${{ github.ref_name }}
@@ -115,7 +115,7 @@ jobs:
       - name: Copy artifacts to frontend directory
         run: mv -v ../build-artifacts-*/* ../frontend
       - name: Run pulumi update via automation API
-        run: npx ts-node ./automations.ts
+        run: npx tsx ./automations.ts
         env:
           STACK_NAME: ${{ github.ref_name }}
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}

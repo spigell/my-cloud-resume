@@ -2,4 +2,12 @@ name: my-cloud-resume
 description: Based on Cloud Resume Challenge
 backend:
   url: gs://spigell-infra-pulumi-states
-runtime: nodejs
+runtime:
+  name: nodejs
+  options:
+    packagemanager: yarn
+    # TypeScript 7 has no compiler API, so ts-node (and Pulumi's built-in
+    # TypeScript support, which uses ts-node) cannot run it. tsx strips the
+    # types with esbuild instead; `yarn typecheck` runs tsc.
+    typescript: false
+    nodeargs: '--import tsx --no-warnings'
