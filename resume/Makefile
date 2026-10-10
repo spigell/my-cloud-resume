@@ -26,7 +26,7 @@ clean:
     done
 
 dev-build-website-resume:
-	yarn ts-node ./resume/build-website-resume.ts
+	yarn tsx ./resume/build-website-resume.ts
 	cp artifacts/resume.html ../frontend/resume.html
 
 build-pdf: clean .build-pdf

@@ -2,7 +2,8 @@
   "name": "my-cloud-resume",
   "main": "index.ts",
   "devDependencies": {
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "typescript": "^7.0.0"
   },
   "dependencies": {
     "@pulumi/gcp": "^10.0.0",
@@ -10,7 +11,9 @@
     "@pulumi/pulumi": "^3.142.0",
     "@pulumi/random": "^4.16.7",
     "cloudflare": "^7.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^6.0.0"
+    "tsx": "^4.23.15"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
   }
 }
