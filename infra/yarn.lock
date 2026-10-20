@@ -559,9 +559,9 @@
   integrity sha512-b1UQwcEZ4yCnMCD8DAL1VlbvBJE9/IX4FTIp7BG1xYpf29SLazLSrqUkj4w7Y5y7cCVP6E5tcqqcI0xemPkHug==
 
 "@pulumi/gcp@^10.0.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-10.1.0.tgz#8f2fbbdafe21f4101d363978b48e4287c2bdfcb4"
-  integrity sha512-0q448t5FCZv6RZQsL1Do7J8z7RjLfZk8CCZKgViT0ZKwkhm+di941PAEYBi44X/lArPLeXTOwtdlgGLCCocKNA==
+  version "10.2.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/gcp/-/gcp-10.2.0.tgz#c0cea13e16c93cb648ee52b44b0ea07ad3fee367"
+  integrity sha512-SkNSx0MhAVQI/TI4/np9lrM41U1I1L6YeSrtq0D9flkwr3bHWcXKpvgYasJR6qL+3eoLt9UwZmGQuPpYUxIxdQ==
   dependencies:
     "@pulumi/pulumi" "^3.142.0"
     "@types/express" "^4.16.0"
@@ -722,7 +722,14 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.5.tgz#1ef302e01cf7d2b5a0fa526790c9123bf1d06690"
   integrity sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==
 
-"@types/node@*", "@types/node@>=13.7.0":
+"@types/node@*":
+  version "26.6.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.5.tgz#cb35209e7767c503551b5fa42a48231c7441d979"
+  integrity sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==
+  dependencies:
+    undici-types "~8.9.0"
+
+"@types/node@>=13.7.0":
   version "26.6.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.4.tgz#5aaac1a7337945f7f9a2de4e0d14e7107157e813"
   integrity sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==
