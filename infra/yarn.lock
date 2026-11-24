@@ -596,9 +596,9 @@
     "@types/express" "^4.16.0"
 
 "@pulumi/kubernetes@^4.18.3":
-  version "4.34.2"
-  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-4.34.2.tgz#feb8187721bb20cc73d6b5dbffc58a6e310c4d48"
-  integrity sha512-OcIe8OUwivkEngmjinrmke54INbJ0L6u/CWm8mLh6F7pmIDXyHGTM8PzcZsg5QbSm24HnNUHLl2tEUoOBxDo3w==
+  version "4.35.0"
+  resolved "https://registry.yarnpkg.com/@pulumi/kubernetes/-/kubernetes-4.35.0.tgz#f44dfde30ad3e307055be98648496847f8557093"
+  integrity sha512-kTZCuaVX+pTIkChZ1Q5THhMKYu+3RMqrop/n6KYaKd7DzbrRu904x6wrs0P5TT/9475ZUud4Xr+piqYDgFDshw==
   dependencies:
     "@pulumi/pulumi" "^3.142.0"
     glob "^12.0.0"
@@ -971,9 +971,9 @@ bin-links@^6.0.0:
     write-file-atomic "^7.0.0"
 
 brace-expansion@^5.0.8:
-  version "5.0.12"
-  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-5.0.12.tgz#995fbb4750a77c4d16a7dc942ff2ca6ef8e675ec"
-  integrity sha512-YovQ3rzhaLMIrDjNDMkNS01tea93qhEhG5xy8f6+R0l+dw3Ki+5sCoIoI942iuLZTHWogWktgwVDhU09iNEimQ==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-5.1.0.tgz#719c6a5c65fc0dee849b69ff25b4c023458537e2"
+  integrity sha512-aa11Dv491GKnYqxaul3aRJ0szew7yMJMfZPnqD44NjGrZXoj62l41OEDDpdpC4eE2P88vBFfLuSyRhpG91NUvg==
   dependencies:
     balanced-match "^4.0.2"
 
