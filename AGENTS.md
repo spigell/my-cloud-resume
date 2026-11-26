@@ -7,7 +7,7 @@ Frontend assets live in `frontend/`, containing `resume.html`, `styles.css`, and
 - `yarn install` – installs the shared TypeScript toolchain (tsx, prettier).
 - `yarn build:website-resume [--variant sre-devops-en]` – executes `resume/build-website-resume.ts`, producing `resume/artifacts/resume.html` and copying it into `frontend/resume.html`.
 - `yarn build:pdf` – calls `make build-pdf` inside `resume/`, cloning the JSON Resume theme, patching icons/fonts, and emitting PDFs named `sergei-chukh-resume-<variant>.pdf`.
-- `yarn update:hh-resumes` – refreshes HeadHunter-specific blocks before rebuilding.
+- `yarn update:hh-resumes` – uploads resume variants to HeadHunter; requires `HH_TOKEN`.
 - `pulumi preview --stack dev --cwd infra` – validates infra changes for the targeted stack. The Pulumi program runs through tsx (`main`: `index.ts`, `typescript: false`, `nodeargs: '--import tsx --no-warnings'`). Do not go back to ts-node: it cannot load TypeScript 7.
 
 ## Coding Style & Naming Conventions
