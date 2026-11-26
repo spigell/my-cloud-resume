@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { AxiosError } from 'axios';
 import { HeadHunterAPI } from './src/headhunter/headhunter';
 import { HeadhunterResumeInfo } from './src/data/headhunter/types';
+import { uploadHhResumes } from './upload-hh-resumes';
 
 const getArgValue = (flags: string[]): string | undefined => {
   let result: string | undefined;
@@ -78,19 +78,8 @@ if (token === undefined) {
 
 const api = new HeadHunterAPI(token);
 
-(async () => {
-  resumes.forEach(({ variant, resume: { resumeId, data } }) => {
-    api
-      .updateResume(resumeId, data)
-      .then((status) => {
-        console.log(`Updated variant "${variant}" (${resumeId}):`, status);
-      })
-      .catch((err: AxiosError) => {
-        console.error(
-          `Failed to update variant "${variant}" (${resumeId}):`,
-          err.response?.data || err.message,
-        );
-        process.exit(1);
-      });
-  });
-})();
+uploadHhResumes(resumes, (resumeId, data) =>
+  api.updateResume(resumeId, data),
+).then((failed) => {
+  if (failed) process.exitCode = 1;
+});
