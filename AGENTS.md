@@ -5,7 +5,8 @@ Frontend assets live in `frontend/`, containing `resume.html`, `styles.css`, and
 
 ## Build, Test, and Development Commands
 - `yarn install` – installs the shared TypeScript toolchain (tsx, prettier).
-- `yarn build:website-resume [--variant sre-devops-en]` – executes `resume/build-website-resume.ts`, producing `resume/artifacts/resume.html` and copying it into `frontend/resume.html`.
+- `yarn build:website-resume [--variant sre-devops-en]` – executes `resume/build-website-resume.ts`, writing `resume/artifacts/resume-<variant>.html` and, for the default variant, `resume/artifacts/resume.html`.
+- `cd resume && make dev-build-website-resume` – builds the default website resume and copies it to `frontend/resume.html` for local preview.
 - `yarn build:pdf` – calls `make build-pdf` inside `resume/`, cloning the JSON Resume theme, patching icons/fonts, and emitting PDFs named `sergei-chukh-resume-<variant>.pdf`.
 - `yarn update:hh-resumes` – uploads resume variants to HeadHunter; requires `HH_TOKEN`.
 - `pulumi preview --stack dev --cwd infra` – validates infra changes for the targeted stack. The Pulumi program runs through tsx (`main`: `index.ts`, `typescript: false`, `nodeargs: '--import tsx --no-warnings'`). Do not go back to ts-node: it cannot load TypeScript 7.
@@ -14,7 +15,7 @@ Frontend assets live in `frontend/`, containing `resume.html`, `styles.css`, and
 TypeScript and JavaScript use 2-space indentation, single quotes, and trailing commas; no git hook formats code, so run `yarn prettier --write <paths>` on the files you touch before committing. Filenames stay kebab-case (`sre-support-engineer-en.ts`). CSS utility rules belong in `frontend/additional.css`, while `styles.css` holds base typography/layout. Resume variant IDs follow `<role>-<language>` and should match filenames in `resume/src/data/common/`.
 
 ## Testing Guidelines
-The project relies on artifact inspection. After running `yarn build:website-resume`, open `frontend/resume.html` locally or via `python3 -m http.server` to confirm layout and localization. For PDFs, spot-check fonts and page breaks in each regenerated file. When touching infrastructure or backend helpers, run targeted Pulumi previews and, if applicable, unit tests under the corresponding service directory (add `npm test` scripts when new logic appears).
+The project relies on artifact inspection. After running `yarn build:website-resume`, inspect the generated HTML in `resume/artifacts/` to confirm layout and localization. For a local preview, run `cd resume && make dev-build-website-resume`, then open `frontend/resume.html` locally or via `python3 -m http.server`. For PDFs, spot-check fonts and page breaks in each regenerated file. When touching infrastructure or backend helpers, run targeted Pulumi previews and, if applicable, unit tests under the corresponding service directory (add `npm test` scripts when new logic appears).
 
 ## Security & Configuration Tips
 Store temporary secrets in local `.env` files excluded by `.gitignore`. Keep Pulumi state backends consistent with the values referenced in `infra/` docs before running `pulumi up`. Images and PDFs contain personal information; verify sharing permissions before uploading generated artifacts outside this repository.
