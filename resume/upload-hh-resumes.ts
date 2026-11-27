@@ -1,7 +1,17 @@
-import { AxiosError } from 'axios';
+import { isAxiosError } from 'axios';
 import { HeadhunterResumeInfo } from './src/data/headhunter/types';
 
 type ResumeUpload = { variant: string; resume: HeadhunterResumeInfo };
+
+function describeUploadError(err: unknown): unknown {
+  if (isAxiosError(err)) {
+    return err.response?.data || err.message;
+  }
+  if (err instanceof Error) {
+    return err.message;
+  }
+  return err;
+}
 
 export async function uploadHhResumes(
   resumes: ResumeUpload[],
@@ -14,10 +24,9 @@ export async function uploadHhResumes(
         console.log(`Updated variant "${variant}" (${resumeId}):`, status);
         return false;
       } catch (err) {
-        const error = err as AxiosError;
         console.error(
           `Failed to update variant "${variant}" (${resumeId}):`,
-          error.response?.data || error.message,
+          describeUploadError(err),
         );
         return true;
       }
