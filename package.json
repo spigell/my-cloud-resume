@@ -1,8 +1,6 @@
 {
   "devDependencies": {
     "@types/node": "^26.0.0",
-    "husky": "^9.1.7",
-    "mrm": "^4.1.22",
     "prettier": "^3.4.2",
     "typescript": "^7.0.0"
   },
@@ -12,13 +10,9 @@
     "tsx": "^4.23.15"
   },
   "scripts": {
-    "prepare": "husky install",
     "typecheck": "tsc --noEmit",
     "update:hh-resumes": "tsx ./resume/update-hh-resumes.ts",
     "build:pdf": "cd resume && make build-pdf",
     "build:website-resume": "tsx ./resume/build-website-resume.ts"
-  },
-  "lint-staged": {
-    "*.ts": "prettier --write"
   }
 }
